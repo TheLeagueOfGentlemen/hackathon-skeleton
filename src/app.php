@@ -19,7 +19,7 @@ $app->register(new Provider\TwigServiceProvider(), array(
 $app->register(new Provider\SessionServiceProvider());
 
 // Database
-$app->register(new Yoga\ServiceProvider\EloquentServiceProvider());
+$app->register(new Foo\ServiceProvider\EloquentServiceProvider());
 
 $app['foo.controller'] = $app->share(function() use ($app) {
 	return new Foo\Controller\FooController($app);

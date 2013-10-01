@@ -1,6 +1,6 @@
 <?php
 
-namespace Yoga\ServiceProvider;
+namespace Foo\ServiceProvider;
 
 use Silex\Application;
 use Silex\ServiceProviderInterface;
