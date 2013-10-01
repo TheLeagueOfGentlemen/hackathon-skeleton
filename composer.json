@@ -1,0 +1,33 @@
+{
+    "name": "secretoftheooze/hackathon-skeleton",
+    "description": "Hackathon Skeleton",
+    "authors": [
+        {
+            "name": "Ben Glassman",
+            "email": "bglassman@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "silex/silex": "1.0.*@dev",
+        "silex/web-profiler": "1.0.*",
+        "symfony/browser-kit": "~2.2",
+        "symfony/class-loader": "~2.2",
+        "symfony/config": "~2.2",
+        "symfony/console": "~2.2",
+        "symfony/css-selector": "~2.2",
+        "symfony/finder": "~2.2",
+        "symfony/monolog-bridge": "~2.2",
+        "symfony/process": "~2.2",
+        "symfony/twig-bridge": "~2.2",
+        "symfony/validator": "~2.2",
+		"illuminate/container": "v4.0.0",
+		"illuminate/events": "v4.0.0",
+		"illuminate/database": "v4.0.5"
+    },
+    "autoload": {
+        "psr-0": {
+			"": "src/"
+		}
+    }
+}

@@ -1,0 +1,5 @@
+app/config/params.php
+cache
+logs
+tags
+vendor
