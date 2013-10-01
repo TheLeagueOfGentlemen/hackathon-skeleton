@@ -1,5 +1,5 @@
 app/config/params.php
-cache
-logs
+logs/*
+cache/*
 tags
-vendor
+vendor/*
