@@ -22,22 +22,20 @@ $app->register(new Provider\SessionServiceProvider());
 $app->register(new Foo\ServiceProvider\EloquentServiceProvider());
 
 $app['foo.controller'] = $app->share(function() use ($app) {
-	return new Foo\Controller\FooController($app);
+    return new Foo\Controller\FooController($app);
 });
 
 // Param converters: Convert url parameters into business objects
-$app['user.param_converter'] = function() use ($app) { 
-	return function ($id) use ($app) {
-		$user = User::with('profile')->find($id);
-		if (null === $user) $app->abort(404, 'Could not load user with id '. $id);
-
-		return $user;
-	};
+$app['user.param_converter'] = function() use ($app) {
+    return function ($id) use ($app) {
+        $user = User::with('profile')->find($id);
+        if (null === $user) $app->abort(404, 'Could not load user with id '. $id);
+        return $user;
+    };
 };
 
 $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
     // add custom globals, filters, tags, ...
-
     return $twig;
 }));
 
@@ -45,13 +43,12 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
  * Before Filters
  */
 $app->before( function() use ( $app ) {
-	$db = $app['db']; // Resolve the database connection
+    $db = $app['db']; // Resolve the database connection
 
     $flash = $app[ 'session' ]->get( 'flash' );
     $app[ 'session' ]->set( 'flash', null );
 
-    if ( !empty( $flash ) )
-    {
+    if ( !empty( $flash ) ) {
         $app[ 'twig' ]->addGlobal( 'flash', $flash );
     }
 
