@@ -43,15 +43,12 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
  * Before Filters
  */
 $app->before( function() use ( $app ) {
-    $db = $app['db']; // Resolve the database connection
-
     $flash = $app[ 'session' ]->get( 'flash' );
     $app[ 'session' ]->set( 'flash', null );
 
     if ( !empty( $flash ) ) {
         $app[ 'twig' ]->addGlobal( 'flash', $flash );
     }
-
 });
 
 return $app;

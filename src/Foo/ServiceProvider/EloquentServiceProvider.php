@@ -23,5 +23,6 @@ class EloquentServiceProvider implements ServiceProviderInterface
 
     public function boot(Application $app)
     {
+        $db = $app['db']; // resolve the database connection
     }
 }
