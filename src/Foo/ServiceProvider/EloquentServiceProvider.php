@@ -20,4 +20,8 @@ class EloquentServiceProvider implements ServiceProviderInterface
             return $capsule;
         });
     }
+
+    public function boot(Application $app)
+    {
+    }
 }
