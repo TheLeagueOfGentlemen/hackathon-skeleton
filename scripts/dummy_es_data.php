@@ -34,21 +34,8 @@ $client->indices()->create($index);
 //Clean and index everything
 $result = array_map(array($client, 'index'),
     assocIndexify('vtgrants', 'grant',
-        assocFieldTo(function ($row) {
-            list($name, $geo) = array_map('trim', explode('(', trim($row)));
-            list($lat, $lon) = array_map('floatval', array_map('trim', explode(',', substr($geo, 0 , -1))));
-            list($town, $_) = array_map('trim', explode(',', $name));
-            return [
-                'town' => $town,
-                'geolocation' => [
-                    'lat' => $lat,
-                    'lon' => $lon
-                ]
-            ];
-        }, 'location 1',
-            assocFieldTo(function ($row) {
-                return intval(substr($row, 1));
-            }, 'award',
+        assocFieldTo('compositeStringToGeo', 'location 1',
+            assocFieldTo('cdrToFloat', 'award',
                 cvsToAssoc(__DIR__ . '/../data/vermont-grants.csv')))));
 
 //check for failure
@@ -71,6 +58,23 @@ if (count($failures)) {
 
     $results = $client->search($params);
     var_dump($results);
+}
+
+function compositeStringToGeo ($row) {
+    list($name, $geo) = array_map('trim', explode('(', trim($row)));
+    list($lat, $lon) = array_map('floatval', array_map('trim', explode(',', substr($geo, 0 , -1))));
+    list($town, $_) = array_map('trim', explode(',', $name));
+    return [
+        'town' => $town,
+        'geolocation' => [
+            'lat' => $lat,
+            'lon' => $lon
+        ]
+    ];
+}
+
+function cdrToFloat ($row) {
+    return intval(substr($row, 1));
 }
 
 function cvsToAssoc ($path) {
