@@ -5,6 +5,9 @@
 
         <link href="{{ app.request.basepath }}/css/main.css" rel="stylesheet" type="text/css" />
 
+        {% block extrahead %}
+        {% endblock %}
+
     </head>
     <body>
         {% block flash %}
