@@ -1,12 +1,12 @@
 Unlock Vermont
 ==================
 
-===Manifest===
+###Manifest
 
 Discover Vermont adventures that are just for you. Find something new with every trip.
 
 
-===Flow===
+###Flow
 
 Action [Hike|Ski|Taste] + Destination
     -> "Treasure Map" of 2 to 3 objectives [Restaurant|Brewery|Shop|Farm|etc.]
@@ -14,7 +14,7 @@ Action [Hike|Ski|Taste] + Destination
     -> Acheive badges
 
 
-===What it Does===
+###What it Does
 
 - Replaces tourism passports and punch cards.
   - They are easily lost.
@@ -25,14 +25,14 @@ Action [Hike|Ski|Taste] + Destination
   - Gives otherwise unrelated business exposure.
 
 
-===Badge Types===
+###Badge Types
 
 - Visited every [Brewery|Vinyard|Ski Slope]
 - Visited everything within a region
 - Single adventure badges
 
 
-===Functionality===
+###Functionality
 
 - Random/roll the dice button to be assigned a random mission.
 - User profile to determine interests
@@ -41,7 +41,7 @@ Action [Hike|Ski|Taste] + Destination
 - Check in at locations is determined by proximity to geopoint. (geocachy)
 
 
-===Future Opportunity===
+###Future Opportunity
 
 - Provide deals at participating locations for "adventurers"
 - Schwag provided for unlocking certain badges (every brewery, get a hat and t-shirt)
