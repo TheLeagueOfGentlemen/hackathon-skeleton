@@ -7,11 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 /*-------------------------------------------------*/
 
 $app->get('/', function () use ($app) {
-    $context = array(
-        'hello' => 'Doesnt do much',
-        'app_name' => array('name' => 'Foo', 'link' => 'foo'),
-        );
-    return $app['twig']->render('index.html.twig', $context);
+    return $app['twig']->render('index.html.twig', array());
 })
 ->bind('home')
 ;
