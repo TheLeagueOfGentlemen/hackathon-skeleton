@@ -2,9 +2,6 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-use Foo\Model\User,
-    Foo\Model\UserProfile;
-
 $app = require __DIR__.'/../src/app.php';
 require __DIR__.'/../app/config/prod.php';
 
