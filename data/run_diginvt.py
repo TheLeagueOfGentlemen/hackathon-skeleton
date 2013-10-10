@@ -11,12 +11,14 @@ from lxml import html as LH
 
 PLACES_URL = 'http://www.diginvt.com/search-results/?Categories__ID=&RegionID='
 EVENTS_URL = 'http://www.diginvt.com/events/'
+TRAILS_URL = 'http://www.diginvt.com/trails/'
 
 DIR = os.path.abspath(os.path.dirname(__file__))
 DATA_DIR = os.path.join(DIR, 'diginvt')
 
 PLACES_DIR = os.path.join(DATA_DIR, 'places')
 EVENTS_DIR = os.path.join(DATA_DIR, 'events')
+TRAILS_DIR = os.path.join(DATA_DIR, 'trails')
 
 
 def batch(list_, size, sleep=None):
@@ -186,13 +188,63 @@ def parse_event(html):
 def parse_events():
     return __load_and_parse(EVENTS_DIR, parse_event, 'events')
 
+def parse_trail(html):
+    lh = LH.document_fromstring(html)
+
+    def get_name():
+        div = lh.find_class('block pageheader clr')[0]
+        return div.find('h1').text
+
+    def get_trail_places():
+        ul = lh.find_class('trails clr')[0]
+        hrefs = [li.find('div').find('h3').find('a').get('href')\
+                 for li in ul.getchildren()]
+        return {'places': ['http://www.diginvt.com' + x for x in hrefs]}
+
+    d = {'name': get_name(),
+         'description': get_cls(lh, 'trail-description clr'),
+         }
+    d.update(categories_and_seasons(lh))
+    d.update(get_trail_places())
+    return d
+
+
+def get_trails_urls():
+    def get_trails_indexes():
+        trails_urls = ['http://www.diginvt.com/trails/TrailSearchForm?Keyword='\
+                    + '&RegionID=&TownID=&action_doSearch=Search&start=%i' % i\
+                    for i in xrange(0,22,3)]
+        reqs = (grequests.get(url) for url in trails_urls)
+        return [r.text for r in grequests.map(reqs)]
+
+    def get_trails_page_urls(trails_indexes):
+        ret = []
+        for html in trails_indexes:
+            lh = LH.document_fromstring(html)
+            trails = lh.find_class('trails clr')[0].getchildren()
+
+            for trail in trails:
+                url = trail.find('h4').find('a').get('href')
+                ret.append(url)
+        return ret
+
+    return get_trails_page_urls(get_trails_indexes())
+
+def cache_trails():
+    errors = dl_and_save(get_trails_urls(), TRAILS_DIR)
+    return errors
+
+def parse_trails():
+    return __load_and_parse(TRAILS_DIR, parse_trail, 'trails')
 
 if __name__ == '__main__':
     #cache_places(PLACES_DIR)
     #cache_events(EVENTS_DIR)
+    #cache_trails(TRAILS_DIR)
 
     d = {'places': parse_places(),
-         'events': parse_events()}
+         'events': parse_events(),
+         'trails': parse_trails()}
 
     with open(os.path.join(DATA_DIR, 'parsed_data.json'), 'w') as f:
         f.write(json.dumps(d))
