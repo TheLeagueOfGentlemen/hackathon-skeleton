@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "value": "Addison County",
+        "tokens": [
+            "Addison",
+            "County"
+        ]
+    },
+    {
+        "id": 2,
+        "value": "Chittenden County",
+        "tokens": [
+            "Chittenden",
+            "County"
+        ]
+    }
+]

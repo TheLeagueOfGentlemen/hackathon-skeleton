@@ -6,7 +6,8 @@
 </head>
 <body>
 <form action="" method="get" accept-charset="utf-8">
-    <input type="text" name="action" id="action" value="" />
+    I want to <input type="text" name="action" id="action" placeholder="Hike, eat, drink, etc." value="" />
+    at <input type="text" name="location" id="location" value="" />
 </form>
     
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -14,6 +15,11 @@
 <script type="text/javascript">
 
 window.localStorage.clear();
+
+var unlock = unlock || {
+    current_action: null,
+};
+
 $('#action').typeahead({
     name: 'actions',
     prefetch: '/data/activities.json',
@@ -22,6 +28,39 @@ $('#action').typeahead({
     },
 }).on('typeahead:selected typeahead:autocompleted', function(e, TypeaheadEvent) {
     console.log(TypeaheadEvent.id);
+    unlock.current_action = TypeaheadEvent.id;
+});
+
+$('#location').typeahead([
+  {
+    name: 'counties',
+    prefetch: '/data/counties.json',
+    template: function(result) {
+        return result.value;
+    }
+  },
+  {
+    name: 'attractions',
+    prefetch: '/data/attractions.json',
+    template: function(result) {
+        return result.value;
+    }
+  },
+  {
+    name: 'remote',
+    remote: {
+        url: '/the/json/endpoint',
+        replace: function(url, uriEncodedQuery) {
+            var endpoint = [url, '?action=', unlock.current_action, '&query=', uriEncodedQuery].join('');
+            return endpoint;
+        }
+    },
+    template: function(result) {
+        return result.value;
+    }
+  }
+]).on('typeahead:selected typeahead:autocompleted', function(e, TypeaheadEvent) {
+    console.log(TypeaheadEvent);
 });
     
 </script>
