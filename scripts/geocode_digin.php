@@ -19,13 +19,15 @@ function array_pluck($arr, $keys) {
     );
 }
 
-function format_address($address, $city, $state, $zip, $format = '%s, %s, %s %s') {
-    return sprintf($format, $address, $city, $state, $zip);
+function add_format_field($data, array $keys, $format, $key) {
+    $data[$key] = call_user_func_array('sprintf', array_merge(array($format), array_pluck($data, $keys)));
+    return $data;
 }
 
-function add_address_strings($data, $key = 'address_string') {
-    $data[$key] = call_user_func_array('format_address', array_pluck($data, array('address', 'town', 'state', 'zipcode')));
-    return $data;
+function make_add_format_field_fn(array $keys, $format, $key) {
+    return function($data) use ($keys, $format, $key) {
+        return call_user_func('add_format_field', $data, $keys, $format, $key);
+    };
 }
 
 function console_write($message) {
@@ -48,7 +50,6 @@ function make_add_geolocation_fn($geocoder, $addressKey = 'address_string', $lat
     };
 };
 
-
 // Configure Geocoder with google maps provider
 $adapter  = new \Geocoder\HttpAdapter\GuzzleHttpAdapter();
 $geocoder = new \Geocoder\Geocoder();
@@ -62,7 +63,7 @@ console_write('Reading from ' . $inFile);
 $data = json_decode(file_get_contents($inFile), true);
 
 $data['places'] = array_map(make_add_geolocation_fn($geocoder), 
-    array_map('add_address_strings', $data['places']));
+    array_map(make_add_format_field_fn(array('address', 'town', 'state', 'zipcode'), '%s, %s, %s %s', 'address_string'), $data['places']));
 
 console_write('Writing to ' . $outFile);
 file_put_contents($outFile, json_encode($data, JSON_PRETTY_PRINT));
