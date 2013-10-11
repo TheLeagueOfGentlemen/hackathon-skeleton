@@ -48,9 +48,14 @@ def trail_node_parser(node):
                 'TrailMarker': node_to_dict,
                 'TrailLine': None,
                 }
-    ret = dict([
-        (el.tag, mappings[el.tag](el))\
-        for el in node if mappings[el.tag] is not None])
+    ret = []
+    for el in node:
+        if isinstance(el, (list, tuple)):
+            ret.append(('TrailLines', [node_to_dict(n) for n in el]))
+        elif mappings[el.tag] is not None:
+            ret.append((el.tag, mappings[el.tag](el)))
+    ret = dict(ret)
+
     rename_key(ret, 'useicons', 'trailuses')
     rename_key(ret, 'TrailMarker', 'trailmarker')
     rename_key(ret, 'surface', 'features')
@@ -69,8 +74,17 @@ def trailuses_lookup(parsed):
 def parse_trails():
     with open(TRAILS_XML, 'r') as f:
         tree = ET.ElementTree(file=f)
-    trails = (t.getchildren() for t in tree.iter('Trail'))
-    parsed = dict(map(trail_node_parser, trails))
+    trails = [t.getchildren() for t in tree.iter('Trail')]
+    trails_to_parse = []
+    for node in trails:
+        new_node = []
+        for el in node:
+            if el.tag != 'TrailLine':
+                new_node.append(el)
+        new_node.append([el for el in node if el.tag == 'TrailLine'])
+        trails_to_parse.append(new_node)
+
+    parsed = dict(map(trail_node_parser, trails_to_parse))
     uses_lookup = trailuses_lookup(parsed)
     for key, value in parsed.items():
         parsed[key]['trailuses'] = [x['title'] for x in value['trailuses']]
