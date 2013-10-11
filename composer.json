@@ -24,7 +24,10 @@
 		"illuminate/container": "v4.0.0",
 		"illuminate/events": "v4.0.0",
 		"illuminate/database": "v4.0.5",
-        "elasticsearch/elasticsearch": "~0.4"
+        "elasticsearch/elasticsearch": "~0.4",
+        "willdurand/geocoder": "2.2.0",
+        "guzzle/guzzle": "3.7.*",
+        "gabordemooij/redbean": "3.5"
     },
     "autoload": {
         "psr-0": {
