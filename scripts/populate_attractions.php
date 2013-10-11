@@ -10,7 +10,7 @@ use RedBean_Facade as R;
 R::setup(sprintf('mysql:host=%s;dbname=%s', $app['db.options']['host'], $app['db.options']['database']), $app['db.options']['username'], $app['db.options']['password']);
 
 R::exec('SET FOREIGN_KEY_CHECKS = 0');
-R::wipe('place');
+R::wipe('attraction');
 R::wipe('category');
 R::exec('SET FOREIGN_KEY_CHECKS = 1');
 
@@ -19,15 +19,15 @@ $placeProperties = array("town", "website", "name", "zipcode", "hours", "phone",
 $categories = array();
 foreach ($data['places'] as $placeData) {
 
-    $place = R::dispense('place');
-    $place->import(array_pluck($placeData, $placeProperties));
+    $attraction = R::dispense('attraction');
+    $attraction->import(array_pluck($placeData, $placeProperties));
 
     foreach ($placeData['categories'] as $category) {
         if ( ! isset($categories[$category])) {
             $categories[$category] = R::dispense('category');
             $categories[$category]->name = $category;
         }
-        $categories[$category]->sharedPlaces[] = $place;
+        $categories[$category]->sharedAttractions[] = $attraction;
 
     }
 }

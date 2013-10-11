@@ -425,7 +425,8 @@
             ],
             "email": "gaidys@aol.com",
             "categories": [
-                "Farm Visits, Farmstands & U-Pick"
+                "Farm Visits",
+                "Farmstands & U-Pick"
             ],
             "description": "A family farm in Barre, VT. Bill and Loretta along with help from their adult children, Bill, Rachel, Andrew and Joe, raise grass fed beef, pastured pork, free range chicken and eggs, broiler chickens, and turkeys, both traditional and heritage breeds. All of our animals are humanely and naturally raised with access to the outdoors year round. Beef is rotationally grazed, grass fed. Pigs are pastured, forage, and supplemented with hay and grain. There is no routine use of antibiotics or other medications. Hormones are never used. Cows are vaccinated against common pathogens including rabies.",
             "address_string": "253 Phelps Rd., Barre, VT 05461",
@@ -449,7 +450,8 @@
             ],
             "email": "sales@middleburyinn.com",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "Our restaurants goal is to use only the freshest ingredients of the highest quality. Our comfort selections and classic cuisine always makes heads turn and always fills large appetites. Come and let our staff take care of you.",
             "address_string": "14 Courthouse Square, Middlebury, VT 05753",
@@ -473,7 +475,8 @@
             ],
             "email": "hydeaway@madriver.com",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "The Hyde Away Inn and Restaurant is a farmstead, circa 1824, located in the Mad River Valley in the heart of Vermont\u2019s Green Mountains.Nestled between the quaint, historic villages of Waitsfield and Warren, the inn opened New Year\u2019s Day, 1949 as the Ulla Lodge \u2014 a comfortable haven with friendly people, good food and a casual tavern where you can relax with friends before turning in for the night in one of our cozy rooms.The Inn consists of nine rooms for lodging (some pet friendly), a full service restaurant and tavern \u2014 all of which are open daily, year round. A popular spot for locals and tourists alike, The Hyde Away is one of the few establishments in the Valley that offers dining, drinking and lodging under one roof. Year \u2019round, the tavern and restaurant attract a regular crowd of locals and visitors who return year after year for the comfortable, friendly atmosphere, friendly staff, affordable pricing, and good food.",
             "address_string": "1428 Millbrook Road, Waitsfield, VT 05673",
@@ -495,7 +498,9 @@
             ],
             "email": "info@anjalifarm.com",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits, Classes & Workshops"
+                "Farmstands & U-Pick",
+                "Farm Visits",
+                "Classes & Workshops"
             ],
             "description": "Anjali Farms is nestled on ten acres of gentle south slope above the West River in the village of South Londonderry. We have been growing Certified Organic heirloom vegetables, shitake mushrooms, culinary and medicinal herbs since 1998. A small flock of gallivanting chickens lay eclectic eggs and help us work the land. During the growing season, there are many special events on the farm. We also host students of all ages in both the field and our Barn Classroom. We host farm tours, special events, internships and workshops. Last season we hosted over 40 students from area grade schools on the farm.  Summer harvest and Fall foliage weekly apartment rentals available on farm.",
             "address_string": "395 Middleton Road, South Londonderry, VT 05155",
@@ -564,7 +569,8 @@
             ],
             "email": "jen@champlainorchards.com",
             "categories": [
-                "Farmstands & U-Pick, Wineries & Distilleries"
+                "Farmstands & U-Pick",
+                "Wineries & Distilleries"
             ],
             "description": "Located in Shoreham, Vermont, our apple orchard and organic farm overlooks Lake Champlain and the Adirondack Mountains. We are a family-owned Vermont orchard that takes pride in growing a diversity of ecologically-grown fruits and vegetables. Our fresh produce and unique value-added products attest to our commitment to Vermont\u2019s local food economy. Stop by our Farm Market to pick up fresh apples and vegetables, homemade cider donuts, apple pies, and all of the other great local products we carry!",
             "address_string": "3597 Route 74 West, Shoreham, VT 05770",
@@ -695,7 +701,8 @@
             ],
             "email": "info@cabotcheese.com",
             "categories": [
-                "Cheese, Food Markets"
+                "Cheese",
+                "Food Markets"
             ],
             "description": "Nibble your way through generous samplings of Cabot's award-winning flavored and traditional cheeses, including the World's Best Cheddar.  Shop our exquisite collection of handcrafted products from the Best of Vermont \u2014 our partnership with some of the most talented artisans in America who call Vermont home.  Discover an impressive array of Vermont specialty foods and savor a full taste of why this small state has a big reputation for premium products.",
             "address_string": "5573 Woodstock Rd, Quechee, VT 05059",
@@ -815,7 +822,8 @@
             ],
             "email": "joe@vermontpuremaplesyrup.com",
             "categories": [
-                "Eateries, Maple Syrup"
+                "Eateries",
+                "Maple Syrup"
             ],
             "description": "Green Mountain Maple Sugar provides Vermont pure maple syrup and maple products.",
             "address_string": "204 Boarding House Hill Rd., Belvidere Center, VT 05442",
@@ -926,7 +934,10 @@
             ],
             "email": null,
             "categories": [
-                "Cheese, Maple Syrup, Classes & Workshops, Food Markets"
+                "Cheese",
+                "Maple Syrup",
+                "Classes & Workshops",
+                "Food Markets"
             ],
             "description": "We have a retail store in Windsor, Vermont that is a showcase for our honey and maple products. The store also carries an incredible selection of the best cheese from Vermont dairy farms. Stop in any time to enjoy a sample of any of our cheese.In the Winter, we hold special tastings, pairings and cheese making classes where people get to learn more about all of our products.  In the Summer we use the store to hold classes on sustainable beekeeping. Please check our calendar for upcoming events.The store is located in the Artisans Park in Windsor, Vermont.  We are located 1 mile south of Exit 9 off Interstate 91. We are open 7 days a week from 11-5pm.We have great neighbors in the Harpoon Brewery, Simon Pearce Glass Factory, Silo Distillery, Great River Outfitters, Vt Farmstead Cheese and the Path of Life Sculpture Garden.  You can easily plan on spending a day in the park as there is so much to see and do.",
             "address_string": "71 Artisans Way, Windsor, VT 05089",
@@ -1061,7 +1072,10 @@
             ],
             "email": "lights@hollisterhillfarm.com",
             "categories": [
-                "Inns & B&B's, Farm Visits, Farmstands & U-Pick, Farm Stays"
+                "Inns & B&B's",
+                "Farm Visits",
+                "Farmstands & U-Pick",
+                "Farm Stays"
             ],
             "description": "The best decision we ever made was moving to Vermont back in 1972. Maybe one of the best decisions you\u2019ll make this year is to stay at our Bed and Breakfast and visit our farm.Vermont is truly a special place and one of the things that make it so special is its working landscape. We had no idea that we would become farmers but one cow changed our lives forever. Starting out as back-to-the-landers, to full blown dairy farmers, to B&B hosts and diversified farmers, the many twist and turns in our farming career have led us back to milking four lovely Jersey cows once again.Our guests love this place and appreciate the fact that we share our lifestyle with them. They write in our guest book that we are friendly and warm, our farm raised food for our breakfasts, exceptional, and conversations enjoyable and interesting. Folks feel that they learn and share a lot while they are here. Once you are in Vermont and stay at our farm, you will experience a gentler way of living on this planet. We hope that this feeling will stay in your thoughts and hearts for a long time to come. We invite you to visit this place we call home.First opened in 2001, we started offering for sale our own naturally\/organically raised Beefalo beef, pork, chickens, turkeys, eggs and maple syrup. All 100% anti-biotic and hormone-free products and produced right here at our farm. Folks from all over the area came and enjoyed our products, these were the early days of the localvore movement.  Our customers and especially the kids love being on the farm and visiting with the animals. Our animals are raised with the utmost of care and respect. They have a happy, healthy life while they are here at Hollister Hill Farm.In 2009 we had the opportunity to expand the farm store. Not only did we make it bigger but we made it more energy efficient. We are now selling organic vegetables and berries from Lee\u2019s garden as well. But, the most wonderful part of this opportunity, we were able to start milking a few cows again. Many of our customers when asked if they would be interested in buying raw milk from us were very enthusiastic. So, we added a milk room\/dairy equipment and bought four lovely Jersey cows. Having dairy cows on our farm again makes our farm feel complete.You now have the opportunity to be a localvore yourself. At our farm you will find small farm raised food at fair prices.Our store is open daily 9am-5pm.",
             "address_string": "2193 Hollister Hill Rd., Marshfield, VT 05658",
@@ -1130,7 +1144,8 @@
             ],
             "email": "stonehearth@vermontel.net",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "A friendly and relaxing atmosphere paired with Vermont's natural beauty and charm creates a memorable experience.  A small restaurant that supports and promotes community. We are always looking for ways to improve our product and keep our business local.",
             "address_string": "698 Rt. 11 West, Chester, VT 05143",
@@ -1151,7 +1166,8 @@
             ],
             "email": "david.ambrose1@gmail.com ",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits"
+                "Farmstands & U-Pick",
+                "Farm Visits"
             ],
             "description": "We are a micro-orchard serving the city of Vergennes and all surrounding towns in northern Addison County. The trees were planted in 2002 focusing on a pick-your-own concept with low scaffold branches to make it easy for small family members to pick. The orchard has over 250 trees to choose from including several popular varieties - Honeycrisp, McIntosh, Empire, Cortland, Macoun, Liberty, Redfree, Rome and Sweet 16. All trees receive pesticide sprays following weekly guidance from the University of Vermont and Cornell University using the latest Integrated Pest Managements practices. This practice requires monitoring both fungus and insect activity within the orchard. We then use a very conservative approach to correct a problem if it exceeds specific economic thresholds. We hope that you will enjoy our orchard as much as we do, and don\u2019t forget to buy local.",
             "address_string": "175 Plank Rd., Vergennes, VT 05491",
@@ -1220,7 +1236,8 @@
             ],
             "email": "seyon.lodge.park@state.vt.us",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "Seyon Lodge State Park has an inn secluded on Noyes Pond in Groton State Forest. The Inn includes a large living room with fireplace and dining room. Activities in the park include fly-fishing, snowshoeing, x-country skiing and hiking. Conference room available. Dining available at the Lodge.",
             "address_string": "2967 Seyon Pond Rd, Groton, VT 05046",
@@ -1565,7 +1582,8 @@
             ],
             "email": "madtom@madtomorchard.com",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits"
+                "Farmstands & U-Pick",
+                "Farm Visits"
             ],
             "description": "We are a family owned pick your own orchard with apples and raspberries. Bring your family and enjoy our fruit and the views.  We are located on Mad Tom Road 2 1\/2 miles from US RT 7 at the East Dorset General Store.\u00a0 Look forward to seeing you!",
             "address_string": "2615 Mad Tom Road, East Dorset, VT 05253",
@@ -1589,7 +1607,8 @@
             ],
             "email": "info@citymarket.coop",
             "categories": [
-                "Eateries, Food Markets"
+                "Eateries",
+                "Food Markets"
             ],
             "description": "Ecological means of food production and distribution; provides educational materials on nutrition and agriculture and more. Deli-style restaurant located in store.",
             "address_string": "82 South Winooski Avenue, Burlington, VT 05401",
@@ -1703,7 +1722,8 @@
             ],
             "email": "webmaster@chapinorchard.com",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits"
+                "Farmstands & U-Pick",
+                "Farm Visits"
             ],
             "description": "For well over 100 years Chapin Farm and Orchard has been a landmark in Essex, VT. We offer pick-your-own apples, a fully stocked retail and visitor center, gift certificates, field trips, and more.At Chapin Orchard our mission is to produce high quality fruit and farm products using management practices that encourage a sustainable orchard environment. Through careful and minimal use of pesticides, applied only when needed, we provide customers with healthy and good tasting fruit and cider. We also aim to further your enjoyment and experience of a visit to Chapin Orchard by offering a wide selection of Vermont farm products and crafts in our retail center. We choose products that support working Vermonters, family farms, local businesses and the local economy.",
             "address_string": "150 Chapin Rd, Essex Junction, VT 05451",
@@ -1727,7 +1747,8 @@
             ],
             "email": "info@graftonvillagecheese.com",
             "categories": [
-                "Cheese, Food Markets"
+                "Cheese",
+                "Food Markets"
             ],
             "description": "Our Brattleboro Specialty Cheese & Wine Shop is located close to Route 91, across from the river and next to the Retreat Petting Farm.  A visit to our Brattleboro store includes an opportunity to watch our cheddar being made via our viewing area.",
             "address_string": "400 Linden St, Brattleboro, VT 05301",
@@ -1751,7 +1772,8 @@
             ],
             "email": "stay@reluctantpanther.com",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "Recognized by Zagat as the highest rated boutique hotel on the East Coast, the Reluctant Panther, located in the heart of Manchester Village, offers 20 rooms and suites of the highest quality and an exceptional dining experience. The Panther's spacious accommodations feature antique furnishings, fireplaces, marble baths and original, museum quality artwork. These elegant design details combined with 300 thread count linens, Anichini coverlets and Frette robes create a truly gracious and relaxing overnight experience. The Reluctant Panther Restaurant features contemporary American cooking in a relaxed yet elegantly upscale atmosphere. With an emphasis on locally sourced products, our Chef creates a sophisticated dining experience that is unsurpassed in northern New England. Paired with a Wine Spectator award winning wine list, dinner at the Panther is an easy-paced, artistic and celebratory event. It satisfies and stimulates the palate while reinforcing a sense of place and reasserting value for the regional landscape.  Our culinary philosophy extends to breakfast service and is included with every stay!The raw bar is open for the summer.  View the menu at http:\/\/reluctantpanther.com\/uploads\/pdf\/RawBarMenu_2013.pdf.",
             "address_string": "39 West Rd., Manchester Village, VT 05254",
@@ -1797,7 +1819,8 @@
             ],
             "email": "perryfamilyfarm@hotmail.com",
             "categories": [
-                "Farm Visits, Farm Stays"
+                "Farm Visits",
+                "Farm Stays"
             ],
             "description": "We are a small diverse hill farm nestled in the Green Mountains of Central Vermont.  We believe diversity is crucial to maintaining a healthy environment.  Our bespoke designed and constructed accommodation is relaxing and comforting. Cook your locally purchased foods in your own fully equipped kitchen. Entertain friends inside or outside on the deck with views over rolling countryside, distant mountains, and the roaming farm animals.  The apartment has one queen bedroom with a private bath. There is a second queen room available, separate from the apartment but sharing the patio courtyard. This room also has its own private bathroom.  We are located centrally in the Green Mountain State. Local to the state capitol, Montpelier, and several ski resorts including Sugarbush and Mad River Glen. There are plenty of excellent restaurants in the area, many of which serve locally grown food.",
             "address_string": "133 Windy Meadow Road, Northfield, VT 05663",
@@ -1929,7 +1952,8 @@
             ],
             "email": "lesterfarm@yahoo.com",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits"
+                "Farmstands & U-Pick",
+                "Farm Visits"
             ],
             "description": "Lester Farm grows a variety of high-quality produce that is picked fresh daily. The 28 acre farm and market is open 7 days a week, and is located just four miles north of Middlebury. Produce includes: sweet corn, tomatoes, peppers, cucumbers, broccoli, cabbage, cauliflower, squash, eggplant, melons, beets, carrots, potatoes, sweet potatoes, onions, pumpkins, gourds and flowers. Other seasonal and local products are also available at the farm market. Open mid-July through Thanksgiving, mother nature permitting.",
             "address_string": "2297 Ethan Allen Highway, New Haven, VT 05472",
@@ -1953,7 +1977,8 @@
             ],
             "email": "info@pitcherinn.com",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "The Pitcher Inn and Restaurant is a Relais and Chateaux property located in the picturesque village of Warren, Vermont. The Inn has 11 uniquely appointed rooms with fireplaces, large balconies and private bathrooms with steam showers and Jacuzzi tubs.",
             "address_string": "275 Main Street, Warren, VT 05674",
@@ -2046,7 +2071,8 @@
             ],
             "email": null,
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "Since its inception over fifteen years ago, The River Tavern Restaurant has developed a reputation for evoking the essence of elegant dining in a casual Vermont atmosphere. Award-winning Chef Marc Scott is acclaimed for his delectable, Regional New American and World Cuisine that blends seasonal and seemingly unlikely ingredients into harmonious combinations that delight both the most discriminating eye and seasoned palate. Fine wines from elite vineyards throughout the globe complement the distinctive presentation of each course.",
             "address_string": "75 Billings Road, Plymouth, VT 05056",
@@ -2156,7 +2182,8 @@
             ],
             "email": "fourspringsfarm@gmail.com",
             "categories": [
-                "Farm Visits, Farm Stays"
+                "Farm Visits",
+                "Farm Stays"
             ],
             "description": "Tucked high on a west-facing slope with vistas of the Green Mountains and lovely sunsets, the orchards, greenhouses and vegetable gardens of this multi-faceted organic farm along with pastured poultry dotting the fields, provide a welcoming landscape for visitors who come to Four Springs Farm for rustic camping, volunteering or educational programs.",
             "address_string": "776 Gee Hill Road, Royalton, VT 05068",
@@ -2342,7 +2369,8 @@
             ],
             "email": "info@hildene.org",
             "categories": [
-                "Cheese, Farm Visits"
+                "Cheese",
+                "Farm Visits"
             ],
             "description": "The barn at Hildene Farm is designed specifically to house Hildene\u2019s herd of Nubian goats and for public viewing of cheese production from milking to small batch processing, pasteurization, aging and packaging of Hildene Farm Artisanal Cheeses. This is a micro operation with our cheesemakers, making and banking cheese year round using cow\u2019s milk from local farms to produce havarti.  After the annual kidding season, production turns to the making of fresh chevre. Goat\u2019s milk havarti is also produced during the spring and summer seasons. The goat farming operation clearly broadens the focus of Hildene, beyond its designation as a historic home, and is now an integral part of the thriving agricultural education component of the institution.",
             "address_string": "1005 Hildene Rd, Manchester, VT 05254",
@@ -2411,7 +2439,8 @@
             ],
             "email": null,
             "categories": [
-                "Eateries, Breweries"
+                "Eateries",
+                "Breweries"
             ],
             "description": "Located at the heart of the Green Mountains, we have the unique pleasure of serving handcrafted beers alongside homemade food that is fresh and creative. Our brewmaster, Mark Magiera, uses high quality grains, hops and yeast strains to create up to a dozen true to style beers. With his unending expertise, Mark is passionate and innovative without losing the tradition behind each style. In the kitchen, we work hard to bring consistency and quality to the table. We focus on local ingredients to enhance our creative comfort food.",
             "address_string": "5 Main Street, Bristol, VT 05443",
@@ -2434,7 +2463,8 @@
             ],
             "email": "alpaca@wcvt.com",
             "categories": [
-                "Farm Visits, Farm Stays"
+                "Farm Visits",
+                "Farm Stays"
             ],
             "description": "We are a family run farm in the beautiful Champlain Valley.  We have been raising alpacas since 1998, and now have added some lovely Hereford and Angus ladies and a two year old Marquette vineyard.  We welcome farm stay guests to our three season private pool cottage, one family at a time. Well behaved dogs and horses may accompany your family.  Enjoy the quiet, interact with the delightful animals, or relax by the pool and catch up on your reading.  Our wedding barn is a lovely and rustic venue for any event.",
             "address_string": "152 Merino Lane, Bridport, VT 05734",
@@ -2528,7 +2558,8 @@
             ],
             "email": "stonybrookfarm@aol.com",
             "categories": [
-                "Farm Visits, Farm Stays"
+                "Farm Visits",
+                "Farm Stays"
             ],
             "description": "Stony Brook Farm offers country lodging accommodations for parties of up to 6 in a beautifully renovated cottage on the farm. While at the farm guests and visitors can join us for a farmstead tour to meet our friendly animals. We have goats, baby calves, chickens, ducks and geese! Depending on when you come you might be lucky and get a chance to help feed the animals and gather eggs! We also have suggestions for what you can do on your visit whether you join us in winter, summer or fall.",
             "address_string": "239 Brook Road, Hyde Park, VT 05655",
@@ -2597,7 +2628,8 @@
             ],
             "email": "Info@cropvt.com",
             "categories": [
-                "Eateries, Breweries"
+                "Eateries",
+                "Breweries"
             ],
             "description": "Crop believes in simplicity\u2026..We believe food is at its most flavorful, its most creative, its most passionate, when it\u2019s at its freshest.We believe food is at its best when it highlights the care and craftsmanship of those who bring it from the field to your plate.We believe food is community, a series of connections between farmers and chefs and guests.Seasonal, local flavors, hand-crafted ales and inventive libations, lovingly prepared and cheerfully served\u2026Come and share the bounty of Crop.",
             "address_string": "1859 Mountain Road, Stowe, VT 05672",
@@ -2645,7 +2677,8 @@
             ],
             "email": "Mendonmt@yahoo.com",
             "categories": [
-                "Farmstands & U-Pick, Inns & B&B's"
+                "Farmstands & U-Pick",
+                "Inns & B&B's"
             ],
             "description": "Mendon Mountain Orchards is not only a charming Vermont motel, but also a working apple orchard. We offer a unique lodging experience, with all the charm of a country inn and the privacy of a motel.  Stroll  through our 28 acre apple orchard that was planted in the late 1920s by Dr. John Thomas, president of Middlebury College back in 1908.We offer a wonderful \"Pick Your Own Apples\" experience every fall, a beautiful time of year here in Vermont. Check out our orchard store, we have fresh apple cider, delicious homemade pies, world famous turnovers, apple cider vinegar, Vermont products, and of course, apples.Mendon Mountain Orchards and Motel offers affordable accommodations, nestled in our historic apple orchard. But the best part of your stay may be the aroma of homemade apple pies from our bakery and the complimentary coffee and apple turnovers each morning!",
             "address_string": "16 U.S. 4, Mendon, VT 05701",
@@ -2669,7 +2702,8 @@
             ],
             "email": "innkeepers@redcloverinn.com",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "Red Clover Inn & Restaurant is best known for its destination-quality cuisine prepared by Chef Dennis Vieira. One of the best places to eat near Killington and Rutland the restaurant features great Vermont-farm-to-table food, casual fine dining, a relaxed, fireside setting, and a small, sociable tavern, plus a sizable wine cellar. The private hill farm setting right near Pico and Killington is perfect for romance, friends, weddings and parties.",
             "address_string": "54 Red Clover Lane, Mendon, VT 05701",
@@ -2741,7 +2775,8 @@
             ],
             "email": "andrie@tds.net",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "Built in 1829, our bed and breakfast in Vermont is located at the base of Okemo Mountain on a quiet village street. We offer a romantic getaway for the most discerning traveler. We also offer a well kept room with all of the essentials for your stay, homemade meals, privacy and one of the most gorgeous views. What more could you possibly ask for? With a limited number of spaces, you are guaranteed your privacy and the quiet you\u2019ve been looking for. The Andrie Rose Inn also features a chef owned & operated fine dining restaurant with a seasonally changing menu.",
             "address_string": "13 Pleasant Street, Ludlow, VT 05145",
@@ -2998,7 +3033,8 @@
             ],
             "email": "info@graftonvillagecheese.com",
             "categories": [
-                "Cheese, Food Markets"
+                "Cheese",
+                "Food Markets"
             ],
             "description": "We have relocated our retail shop in Grafton, so we now have a brand new Specialty Cheese & Wine Shop in the heart of historic Grafton village, right next to the Grafton Inn. Viewing cheesemaking can be done at our production facility on 533 Townshend Road on select days. Our retail shop will have the most updated schedule.",
             "address_string": "533 Townshend Rd, Grafton, VT 05301",
@@ -3066,7 +3102,9 @@
             ],
             "email": "scottfrm@sover.net",
             "categories": [
-                "Farmstands & U-Pick, Classes & Workshops, Inns & B&B's"
+                "Farmstands & U-Pick",
+                "Classes & Workshops",
+                "Inns & B&B's"
             ],
             "description": "Scott Farm produces 90 varieties of ecologically grown apples - heirloom apples such as Roxbury Russet, Belle de Boskoop, and Cox\u2019s Orange Pippin and unusual apples like Winter Banana and Hidden Rose - some of the finest in color, texture, and taste. Other fine fruits include quince, gooseberries, medlars, Asian pears, plums, raspberries, elderberries, table grapes, pears, blueberries, nectarines, and peaches.",
             "address_string": "707 Kipling Rd, Dummerston, VT 05301",
@@ -3253,7 +3291,8 @@
             ],
             "email": "blueledge@hotmail.com",
             "categories": [
-                "Cheese, Farm Visits"
+                "Cheese",
+                "Farm Visits"
             ],
             "description": "Established in 2000, we are a seasonal goat dairy and cheesemaking operation. We produce nine types of goat and cow cheeses, from very fresh chevres, to semi-aged bloomy rind, to harder aged cheeses, all ripened in our underground caves.  We offer a self-guided tour map. Tours of our painting studio available by appointment (www.blueledgegallery.com)",
             "address_string": "2001 Old Jerusalem Rd., Salisbury, VT 05769",
@@ -3724,7 +3763,9 @@
             ],
             "email": "maplecrest@vermontel.net",
             "categories": [
-                "Maple Syrup, Inns & B&B's, Farm Visits"
+                "Maple Syrup",
+                "Inns & B&B's",
+                "Farm Visits"
             ],
             "description": "Our 8th generation totals 204 years of producing award winning maple syrup. As we are a working farm and B&B please call ahead for reservations and tour.  Retrace Robert Frost's footsteps while enjoying our wonderful mountain view.  Maple products and our own grass fed beef available for purchase.We are a proud participant in the VT Maple Open House Weekend.",
             "address_string": "2450 Lincoln Hill Rd, Shrewsbury, VT 05738",
@@ -3748,7 +3789,8 @@
             ],
             "email": "mail@michaelsonthehill.com",
             "categories": [
-                "Eateries, Classes & Workshops"
+                "Eateries",
+                "Classes & Workshops"
             ],
             "description": "Innovative European fine dining in a circa 1820 farmhouse. Focusing on local ingredients, using all the best the season has to offer. Prepared by Swiss chef\/owner Michael Kloeti.",
             "address_string": "4182 Waterbury-Stowe Rd Rte 100 North, Waterbury Center, VT 05677",
@@ -3911,7 +3953,8 @@
             ],
             "email": "info@hackettsorchard.com",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits"
+                "Farmstands & U-Pick",
+                "Farm Visits"
             ],
             "description": "A family owned and diversified farm and farm market in South Hero with 47 varieties of apples. Enjoy our own cider donuts, apple crisp and freshly pressed sweet cider. Find great local products in our farm market including Vermont maple syrup and honey, jams and jellies, yellow eye beans, Cabot cheese and a wide selection of cookbooks. Fresh vegetables and fruit in season, pumpkins and gourds in the fall. Spend some time enjoying our large picnic and play area. Scheduled wagon rides and orchard tours are available.",
             "address_string": "86 South Street, South Hero, VT 05486",
@@ -3959,7 +4002,8 @@
             ],
             "email": "jdevoid@myfairpoint.net",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits"
+                "Farmstands & U-Pick",
+                "Farm Visits"
             ],
             "description": "The Devoid Family at Maple Meadow Farm have been producing and delivering Farm Fresh Eggs and Maple Syrup throughout central and southern Vermont since 1946.",
             "address_string": "518 Maple Street, Salisbury, VT 05769",
@@ -3983,7 +4027,9 @@
             ],
             "email": "innkeep@norwichinn.com",
             "categories": [
-                "Eateries, Inns & B&B's, Breweries"
+                "Eateries",
+                "Inns & B&B's",
+                "Breweries"
             ],
             "description": "The Norwich Inn is a historic 27 guest room inn in the town of Norwich, VT.  Our dining room serves breakfast, lunch, and dinner Tuesday through Sunday with a Sunday Brunch as well.  Jasper Murdock's Alehouse offers a lite fare menu along with our home brewed English Ales.  Both dining options are unique to each other but both offering amazing menus.",
             "address_string": "325 Main St., Norwich, VT 05055",
@@ -4100,7 +4146,9 @@
             ],
             "email": "info@merckforest.org",
             "categories": [
-                "Maple Syrup, Farm Visits, Classes & Workshops"
+                "Maple Syrup",
+                "Farm Visits",
+                "Classes & Workshops"
             ],
             "description": "Merck Forest and Farmland Center is an educational nonprofit organization that strives to teach, demonstrate, and sustain a working landscape through sustainable methods.  42 acres of MFFC's 3,100 acre managed forest are part of the certified organic sugaring operation, and the 62 acre farm raises pastured pork and lamb, you-pick berries, potatoes, garlic, and assorted seasonal vegetables.  This summer, stop by for Farm Chores: Summer Series and check out the new grazing garden.",
             "address_string": "3270 Route 315, Rupert, VT 05761",
@@ -4260,7 +4308,8 @@
             ],
             "email": "wilburtoninn@gmail.com",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "The Wilburton Inn is a hilltop historic estate with spectacular views, wonderful dining and large comfortable lodging rooms. We specialize in weddings, family events and romantic vacations.",
             "address_string": "257 Wilburton Drive, Manchester, VT 05254",
@@ -4398,7 +4447,9 @@
             ],
             "email": "vchang@shelburnefarms.org",
             "categories": [
-                "Cheese, Farm Visits, Classes & Workshops"
+                "Cheese",
+                "Farm Visits",
+                "Classes & Workshops"
             ],
             "description": "Shelburne Farms is a 1,400-acre working farm, National Historic Landmark and nonprofit environmental education organization whose mission is to cultivate a conservation ethic for a sustainable future.  This is accomplished by teaching and demonstrating the stewardship of natural and agricultural resources. Shelburne Farms produces farmhouse cheddar cheese from the milk of our own Brown Swiss Cows; award-winning farmhouse cheddar cheese aged six-months (mild), one-year (sharp), two-years (extra sharp) and smoked.",
             "address_string": "1611 Harbor Rd, Shelburne, VT 05482",
@@ -4445,7 +4496,8 @@
             ],
             "email": "lcfarm@gmavt.net ",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits"
+                "Farmstands & U-Pick",
+                "Farm Visits"
             ],
             "description": "Lewis Creek Farm has been a leader in sustainable farming since 1981, growing 60 acres of vegetables, herbs, fruits and cover crops as well as 3 greenhouses worth of plants for the home gardener. We deliver wholesale to the Burlington and Middlebury areas from June through February.",
             "address_string": "3071 VT Route 116, Starksboro, VT 05487",
@@ -4469,7 +4521,8 @@
             ],
             "email": "info@freshtracksfarm.com",
             "categories": [
-                "Farm Visits, Wineries & Distilleries"
+                "Farm Visits",
+                "Wineries & Distilleries"
             ],
             "description": "Fresh Tracks Farm produces award-winning wines from our 14 acres of vineyards. We also produce Maple Syrup and jam on the farm. Established in 2003, our Berlin, VT vineyard has grown to 14 acres. With the opening of our winery in 2006, we are delighted to be bringing fine, local wines to Central Vermont.",
             "address_string": "4373 VT RTE 12, Berlin, VT 05602",
@@ -4747,7 +4800,8 @@
             ],
             "email": "brad@windfallorchardvt.com",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits"
+                "Farmstands & U-Pick",
+                "Farm Visits"
             ],
             "description": "We grow apples, pears, plums, cherries, and quince in the orchard. The market garden has a variety of vegetables throughout the season, and foraged foods during the growing season. We also produce and sell Ice Cider at farmer\u2019s markets and at our farm stand. Come visit to sample our products and learn more about the orchard!",
             "address_string": "1491 Route 30, Cornwall, VT 05753",
@@ -4771,7 +4825,8 @@
             ],
             "email": "vtapple@upickvermont.com",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits"
+                "Farmstands & U-Pick",
+                "Farm Visits"
             ],
             "description": "For over 25 years the Adams Apple Orchard & Farm Market  has provided the highest quality produce and Vermont Products possible.  We have grown from a small family orchard into a richly diverse farm, offering fresh produce, specialty products, baked goods, annuals, perennials, crafts, toys and more!",
             "address_string": "986 Old Stage Road, Williston, VT 05495",
@@ -4819,7 +4874,8 @@
             ],
             "email": "info@oldtavern.com",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "Chef Smith endorses and promotes the incorporation of seasonal, locally grown food and artisanal products for their exceptional flavors and unsurpassed quality. The inn's large organic kitchen garden features heirloom vegetables and herbs used in the restaurant.The inn's popular Tuesday night Localvore dinner series features a 100% local three-course menu.",
             "address_string": "92 Main Street, Grafton, VT 05146",
@@ -4933,7 +4989,8 @@
             ],
             "email": "orchard@gmavt",
             "categories": [
-                "Farmstands & U-Pick, Farmers Markets"
+                "Farmstands & U-Pick",
+                "Farmers Markets"
             ],
             "description": "Pick your own apple orchard. Fresh pressed cider. Local grown fruits and vegetables. Cider donuts, baked goods, honey, maple syrup, pumpkins.",
             "address_string": "1823 Monkton Rd, Monkton, VT 05469\u200e",
@@ -4981,7 +5038,9 @@
             ],
             "email": "beth@libertyhillfarm.com",
             "categories": [
-                "Farm Visits, Farm Stays, Inns & B&B's"
+                "Farm Visits",
+                "Farm Stays",
+                "Inns & B&B's"
             ],
             "description": "Stay at a working dairy farm with 150 head of cattle and generous amounts of kittens! This farm vacation offers lodging with meals (dinner and breakfast) served at the family table. Visit the barn, swim or fish in the river, hike or snowshoe in the woods. Great place to schedule a family reunion or find new friends! Featured in Family Fun, Yankee Magazine, Gourmet, Travel and Leisure.",
             "address_string": "511 Liberty Hill Road, Rochester, VT 05767",
@@ -5005,7 +5064,8 @@
             ],
             "email": null,
             "categories": [
-                "Eateries, Food Markets"
+                "Eateries",
+                "Food Markets"
             ],
             "description": "Almost Home Market is located in downtown Bristol, VT.  We offer a wonderful, community atmosphere with freshly made baked goods, sandwiches, soups, salads and convenience gourmet foods. Browse our selection of hand picked wines, Vermont and specialty beer, and unique housewares and gifts. With over 20 years of wedding planning, our catering services can help create the perfect menu and service style for every event. Stop by and visit us soon!",
             "address_string": "28 North Street, Bristol, VT 05443",
@@ -5053,7 +5113,8 @@
             ],
             "email": "info@cabotcheese.com",
             "categories": [
-                "Cheese, Food Markets"
+                "Cheese",
+                "Food Markets"
             ],
             "description": "Located along Vermont\u2019s Route 100, the Cabot Annex Store is a favorite stop whenever you're in the greater Stowe\/Waterbury area.  Browse our fantastic selection of Cabot products, sample our award-winning cheeses, and delight in many other Vermont specialty foods.  Shop our collection of Vermont-made crafts.  Enjoy our choice selection of Vermont microbrews and domestic, international, and Vermont wines. Stop by the Snow Farm Winery tasting corner, pick up some award-winning Lake Champlain Chocolates, re-energize with a cup of coffee from Green Mountain Coffee Roasters, and more!",
             "address_string": "2657 Waterbury-Stowe Rd, Waterbury Center, VT 05677",
@@ -5193,7 +5254,8 @@
             ],
             "email": "consider@considerbardwellfarm.com",
             "categories": [
-                "Cheese, Farm Visits"
+                "Cheese",
+                "Farm Visits"
             ],
             "description": "Consider Bardwell Farm in West Pawlet Vermont is a producer of award winning handmade cheese from goat and cow milk.  Our animals rotationally graze on organic pastures to produce the sweetest milk and tastiest cheese.  Our raw milk cheese is antibiotic and hormone free, and nutritionally complete.  Farm tours, cheese-making workshops, and farm dinners scheduled throughout the year.",
             "address_string": "1333 Rt 153, West Pawlett, VT 05775",
@@ -5305,7 +5367,8 @@
             ],
             "email": "scott@killdeerfarm.com",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits"
+                "Farmstands & U-Pick",
+                "Farm Visits"
             ],
             "description": "Killdeer is a Certified Organic vegetable and strawberry farm in Norwich, VT where we've grown and lived for over 30 years. We pride ourselves in growing and selling diverse produce varieties selected foremost for their flavor. We pay careful attention to the highest quality standards we can possibly maintain. While we sell 90% of what we grow at our farm stand (open 7 days a week from May through Thanksgiving), we also wholesale to local food coops; work with restaurants and caterers; and partner with local businesses.",
             "address_string": "163 Route 5 South, Norwich, VT 05055",
@@ -5484,7 +5547,8 @@
             ],
             "email": "info@northherhouse.com",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "The North Hero House Inn and Restaurant is a historic bed and breakfast located in the Lake Champlain Islands with a spectacular view of the Green Mountains.  The 26 room Inn is open year around and is ideal for vacations, weddings and conferences.",
             "address_string": "3643 Route 2, North Hero, VT 05474",
@@ -5508,7 +5572,8 @@
             ],
             "email": "stay@mountaintopinn.com",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "The Mountain Top Inn & Resort offers unparalleled dining in the rustically elegant restaurant framed by spectacular mountain peaks and complemented by a Wine Spectator Award-Winning Wine List.  The Highlands Tavern features casual bistro fare with seasonal outdoor dining on the Terrace.  We welcome local guests, as well as our Resort guests to both restaurants and we are children friendly.",
             "address_string": "195 Mountain Top Rd, Chittenden, VT 05737",
@@ -5580,7 +5645,8 @@
             ],
             "email": "getaway@sweetretreat-vermont.com",
             "categories": [
-                "Maple Syrup, Inns & B&B's"
+                "Maple Syrup",
+                "Inns & B&B's"
             ],
             "description": "Take in the splendor of Vermont's mountains as you relax in the quiet comfort and privacy of our well-appointed guesthouse. Sweet Retreat is nestled in the heart of the Green Mountains, conveniently located fifteen minutes south of the capital city of Montpelier, forty minutes to Sugarbush, Stowe, and Bolton Valley ski resorts, and an hour from Burlington International Airport. You will find our spacious guesthouse equipped with everything you need to stay a night, a week, or even a month! To get you started, we stock the guesthouse with ample breakfast fixings for your first morning meal. We invite you to help yourself to fresh veggies from our lush garden in summer, and to complementary maple syrup from our sugarhouse year round throughout your stay. Food shopping is six miles away, and fine dining within a ten minute drive.",
             "address_string": "329 Frost Rd, Northfield, VT 05663",
@@ -5601,7 +5667,8 @@
             ],
             "email": "BHodges@sunriseorchards.com",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits"
+                "Farmstands & U-Pick",
+                "Farm Visits"
             ],
             "description": "Sunrise Orchards is a 200 acre, family owned and operated, wholesale apple farm devoted to growing excellent apples for our local community as well as the entire Northeast region.  We grow approximately 130,000 bushels of apples each year including varieties such as McIntosh, Empire, Cortland, Honeycrisp, Macoun, Red Delicious, Jonagold, Granny Smith and Paula Red.  When harvest begins at Sunrise Orchards in mid-August, we pack and distribute our apples through our local delivery route all over Vermont and outside the state to markets in Boston, New York, Philadelphia and Washington, D.C. through the following May or June.  Explore our site to learn more about our growing methods, our wonderful staff and where you can find Sunrise Orchards apples!",
             "address_string": "1287 North Bingham street, Cornwall, VT 05753",
@@ -5829,7 +5896,8 @@
             ],
             "email": "info@trappfamily.com",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "European-style cuisine featured in our three restaurants -- The Dining Room, The Lounge, and The Austrian Tea Room -- each with its own distinct character. Seasonal menus to reflect both Austrian and Vermont traditions. Weekly wine tastings, jazz pianist & harpist performing nightly. Reservations requested. More than a decade ago Johannes von Trapp started thinking about brewing his own beer, for guests of the resort. His dream was to produce an American version of the tasty Lager he has enjoyed over the years on his trips to the countryside near his ancestral Austrian home.Johannes\u2019 dream became reality in the Spring of 2010, with the opening of the Trapp Family Brewery. The modest facility (60,000 or so gallons a year) is located in the lower level of the DeliBakery (formerly the Austrian Tea Room), where draughts of the heavenly concoction will be available year round.",
             "address_string": "700 Trapp Hill Rd., Stowe, VT 05672",
@@ -5853,7 +5921,9 @@
             ],
             "email": "christinef@vtculinaryresort.com",
             "categories": [
-                "Eateries, Inns & B&B's, Classes & Workshops"
+                "Eateries",
+                "Inns & B&B's",
+                "Classes & Workshops"
             ],
             "description": "The Essex is a true Vermont food destination for guests from near and far!  We offer a unique mix of culinary offerings!  Dine with us in Amuse, our signature restaurant that showcases the best of what Vermont farms and our own organic gardens produce.  For a culinary adventure, have a seat at Chef's Table at Amuse. View, talk and taste as our chef prepares your food in front of you.  Acquaint yourself with and savor local ingredients as different courses are created each and every night.  Delicious and engaging! To try your hand in using some of Vermont\u2019s finest ingredients, why not take a cooking class!  Offered daily with a variety of classes to fit every cook\u2019s interest, you will cook with a chef to teach and encourage you in this hands-on low pressure learning environment!  If a relaxed casual evening is what you crave join us in The Tavern for some locally sourced pub favorites!   The Essex is a true destination, offering a full-service Spa and Fitness Center, along with our culinary offerings-- all of which perfectly complement our classic accommodations. The Essex is the premier choice for your next group event and is the perfect Vermont wedding destination for dozens of happy couples tying the knot each year.",
             "address_string": "70 Essex Way, Essex, VT 05452",
@@ -5877,7 +5947,10 @@
             ],
             "email": "jcouture@maplesyrupvt.net",
             "categories": [
-                "Maple Syrup, Inns & B&B's, Farm Visits, Farm Stays"
+                "Maple Syrup",
+                "Inns & B&B's",
+                "Farm Visits",
+                "Farm Stays"
             ],
             "description": "We operate a dairy and maple farm.  Our Bed & Breakfast offers our guests an opportunity to see farm life the way we live it!  Our farm is certified organic. Our milk is sold to Organic Valley and Agri-Mark and contributes to making Cabot dairy products and Stonyfield yogurt.  We make a wide variety of maple products which are available for sale at our farm store and on our website.",
             "address_string": "560 VT Rte 100, Westfield, VT 05874",
@@ -5972,7 +6045,8 @@
             ],
             "email": "info@westmountaininn.com",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "Nestled on 150 mountainside acres overlooking the Battenkill Valley, the century old West Mountain Inn has been welcoming travelers with warmth and hospitality for the last 30 years. The Inn offers romantic, antique-filled guest rooms, fantastic views, extensive gardens and fabulous dining... all providing the perfect get-away to relax and re-connect. Dining here at the Inn is a very important part of your stay. Chef Jeff Scott prepares delicious New England Fare with the freshest, local and organic ingredients.",
             "address_string": "144 West Mountain Rd., Arlington, VT 05250",
@@ -6088,7 +6162,8 @@
             ],
             "email": "arethusafarm@gmail.com",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits"
+                "Farmstands & U-Pick",
+                "Farm Visits"
             ],
             "description": "We're a 20-acre certified organic vegetable farm located only two miles north of downtown Burlington. We grow over 50 varieties of vegetables and herbs and we sell the freshest vegetables directly to our local restaurants and grocery stores. We want people to be connected to their food, to eat seasonally, and to get to know their farmers.",
             "address_string": "The Intervale, Burlington, VT 05402",
@@ -6136,7 +6211,8 @@
             ],
             "email": "info@agapehillfarm.com",
             "categories": [
-                "Farm Visits, Classes & Workshops"
+                "Farm Visits",
+                "Classes & Workshops"
             ],
             "description": "Have a day to remember at Agape Hill Farm where you can feed the animals, walk a llama or create fiber art!  Offering farm tours, llama trail walks, workshops and a personalized visit program.  The Fiber Shop is open year round and features raw and processed fiber from our animals, dyed fiber collections, fiber art and other farm-related gifts.  Farm Tours and Trail Walks are scheduled by appointment from May through October.",
             "address_string": "618 Houston Hill Road, Hardwick, VT 05843",
@@ -6158,7 +6234,8 @@
             ],
             "email": "gallopingvines@aol.com",
             "categories": [
-                "Wineries & Distilleries, Farm Visits"
+                "Wineries & Distilleries",
+                "Farm Visits"
             ],
             "description": "Situated on the rolling hillsides of Huntington, Galloping Hill Vineyards has 7 varieties of red & white grapes. The vineyard operation is run by the Guilfoy family, managed by father & son, Ed & Ryan Guilfoy.",
             "address_string": "344 Moody Road, Huntington, VT 05462",
@@ -6182,7 +6259,9 @@
             ],
             "email": "farmers@eatstayfarm.com ",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits, Farm Stays"
+                "Farmstands & U-Pick",
+                "Farm Visits",
+                "Farm Stays"
             ],
             "description": "We are a small diversified farm providing an Omnivore's Farm Share. We raise healthy (natural & sustainable), happy (free-range & loved) animals & vegetables for sale to residents and restaurants.We practice relational farming, inviting members and visitors to share and enjoy our farm and its products\u2014connecting people to farms so they can both source high quality, healthy, well-raised food, and so they can learn how their food can be produced sustainably.",
             "address_string": "923 Loop Road, Northfield, VT 05663",
@@ -6229,7 +6308,8 @@
             ],
             "email": "stay@weathersfieldinn.com",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "A full service Inn serving contemporary 'New Vermont' cuisine with an emphasis on local products in a classic 1792 stagecoach stop. We use the finest and freshest ingredients that are found throughout the state. The dinner menu changes weekly based on market and availability.",
             "address_string": "1342 Rte 106, Perkinsville, VT 05151",
@@ -6253,7 +6333,8 @@
             ],
             "email": "mail@vermontbrewery.com",
             "categories": [
-                "Eateries, Breweries"
+                "Eateries",
+                "Breweries"
             ],
             "description": "Vermont\u2019s original brewpub handcrafts an award-winning variety of real ales and lagers in our cellar brewery.  Our elegant pub and casual service provide a relaxed ambiance to enjoy seafood, steak, burgers and British Empire fare.  The best of Burlington\u2019s vibrant music on stage summer weekend nights.  Outside seating weather permitting.  Experimental beer offered every Monday.",
             "address_string": "144 College St., Burlington, VT 05401",
@@ -6301,7 +6382,8 @@
             ],
             "email": "echolkinn@aol.com",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "An authentic Vermont country inn with fine dining.",
             "address_string": "2 Dublin Road, Ludlow, VT 05149",
@@ -6373,7 +6455,8 @@
             ],
             "email": null,
             "categories": [
-                "Eateries, Breweries"
+                "Eateries",
+                "Breweries"
             ],
             "description": "Trout River Brewing was founded in July 1996 by Dan and Laura Gates. We began brewing in early December of that year. We still own and operate this microbrewery in the northeastern region of Vermont--The Northeast Kingdom! Come visit this special and beautiful place and taste all that the Kingdom has to offer.Trout River Brewing prides itself on creating and serving fresh, all natural, premium ales and lagers. Our beers are made with pure Vermont water, the best imported and domestic malts and hops, and quality yeasts. Nothing else is added and we take nothing away!At Trout River Brewing, we believe that the naturally occuring settling of unfiltered brews results in a more flavorful and complex taste. As well, filtration robs the aroma which is a very important part of the beer experience. Therefore, we do not filter our beers!",
             "address_string": "58 Broad St, Lyndonville, VT 05851",
@@ -6445,7 +6528,9 @@
             ],
             "email": "willowmoonfarm@gmail.com",
             "categories": [
-                "Farmstands & U-Pick, Cheese, Farm Visits"
+                "Farmstands & U-Pick",
+                "Cheese",
+                "Farm Visits"
             ],
             "description": "Our creamery makes a farmstead and artisinal cheese and as such, is seasonal in nature.  Availability and  flavor depends upon the time of year, the \"stage of the milk production\" and the natural grasses, herbs and other pasture flora that may be in season.  We strive to produce a consistent, quality product but with the essential elements of \"terroir\" directing its final outcome. All of our cheese is made by hand from the fresh milk of our own herd of Nigerian Dwarf Dairy Goats and from the Jersey Cows of our neighbors at Hollister Hill Farm.",
             "address_string": "1495 Coburn Road, Plainfield, VT 05667",
@@ -6541,7 +6626,8 @@
             ],
             "email": "info@windhamhill.com",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "Windham Hill Inn is a small country inn with a fine dining restaurant and 21 luxurious rooms on 160 unspoiled acres in Southern VT.",
             "address_string": "311 Lawrence Dr, West Townshend, VT 05359",
@@ -6587,7 +6673,8 @@
             ],
             "email": "info@basinharbor.com",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "For over a century, families have been coming to our historic New England resort to escape the hustle and bustle of modern life, recharge, and reconnect with one another while soaking in the timeless beauty of Lake Champlain. With endless activities for guests from golf, tennis, boating, children's programs and 700-acres of walking and hiking, Basin Harbor Club is a Vermont treasure. The dining scene at Basin Harbor leaves every belly happy and full. With three restaurants and weekly outdoor dinners on the North Dock, Basin Harbor is commited to local food sourcing and supporting local farmers and growers. Join them this summer! http:\/\/basinharbor.com\/dining.php",
             "address_string": "4800 Basin Harbor Road, Vergennes, VT 05491",
@@ -6611,7 +6698,9 @@
             ],
             "email": "dmorter@dakinfarm.com",
             "categories": [
-                "Maple Syrup, Food Markets, Cheese"
+                "Maple Syrup",
+                "Food Markets",
+                "Cheese"
             ],
             "description": "\"What Vermont Tastes Like\" - Experience the flavor of Vermont's finest pure Vermont Maple Syrup, cob-cmoked meats, thick-sliced bacon, aged cheddar cheese and other specialty foods.  See how they're made and enjoy the FREE samples!  In Spring - don't miss Sugaring Season and try our NEW Crop of Pure Vermont Maple Syrup (Mid March, Annually), In Summer - stop in for a delicious Maple Cremee!; In Fall - enjoy the beautiful colors of fall and sample smoked meats and Artisan cheeses; In Winter - send the very best of Vermont to loved ones - we are your holiday gift headquarters.    Located 9.5 miles south of Shelburne Museum and Vermont Teddy Bear Company and about a half hour South of Burlington.We have a South Burlington location as well!",
             "address_string": "5797 Route 7, Ferrisburgh, VT 05456",
@@ -6678,7 +6767,8 @@
             ],
             "email": "info@cafeprovencevt.com",
             "categories": [
-                "Eateries, Classes & Workshops"
+                "Eateries",
+                "Classes & Workshops"
             ],
             "description": "French Bistro serving eclectic American\/ French foods seven days a week.",
             "address_string": "11 Center Street, Brandon, VT 05733",
@@ -6726,7 +6816,8 @@
             ],
             "email": "feedback@healthylivingmarket.com",
             "categories": [
-                "Eateries, Food Markets"
+                "Eateries",
+                "Food Markets"
             ],
             "description": "Healthy Living is Vermont's largest natural foods store, with the state's best selection of local, natural, and organic foods.  Family owned and operated for over 20 years.",
             "address_string": "222 Dorset Street, South Burlington, VT 05403",
@@ -6821,7 +6912,10 @@
             ],
             "email": "sara@sandiwoodfarm.com ",
             "categories": [
-                "Farmstands & U-Pick, Maple Syrup, Farm Visits, Classes & Workshops"
+                "Farmstands & U-Pick",
+                "Maple Syrup",
+                "Farm Visits",
+                "Classes & Workshops"
             ],
             "description": "75 acre beautiful mountain top farm. 3 acres of diverse produce, herbs, cut flowers, plant sales in spring, 6 greenhouses, maple syrup sales year round including shipping nationwide. On Farm sunset dinners, tours, workshops, Justice of the peace services, catering. Family built and run farm for over 20 years. Eldest daughter is a NECI chef, chemical free practices.We sell our produce at the Stowe Farmers markets on Sundays, wholsale and sell from our farm stand.",
             "address_string": "1665 Town Hill Rd., Wolcott, VT 05680",
@@ -7206,7 +7300,8 @@
             ],
             "email": "email@woodstockinn.com",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "The Woodstock Inn & Resort, a Preferred Hotel, offers modern amenities and services within a quintessential Vermont setting. 142 Spacious rooms, plush bedding and breathtaking grounds create a cozy, welcoming escape any time of year. Couples, families and adventure seekers alike will find plenty to do both indoors and out. For those looking to unwind and unplug, Our NEW Spa features nourishing treatments and organic products that will leave you feeling refreshed and rejuvenated.The Woodstock Inn & Resort serves gourmet cuisine with fresh, seasonal ingredients. Our four-diamond culinary team specializes in regional recipes and using locally grown food to blend traditional style with sophisticated tastes. For the littler ones, we have a mouth-watering children\u2019s menu with family favorites like mashed potatoes and corn on the cob. Savory side dishes, artisan breads, and rich, decadent desserts complement our full menu selection. Great food, good company and amazing staff will turn your meal into a Woodstock Inn & Resort dining experience.",
             "address_string": "14 The Green, Woodstock, VT 05091",
@@ -7251,7 +7346,8 @@
             ],
             "email": "info@sheepcheese.com",
             "categories": [
-                "Cheese, Farmstands & U-Pick"
+                "Cheese",
+                "Farmstands & U-Pick"
             ],
             "description": "Willow Hill Farm is a small diversified farm run by a husband and wife team established in 1991. Certified organic by VOF for NOFA-VT (Northeast Organic Farming Association) since 1992, the farm is predominantly a cheese making dairy (we milk both cows and sheep) but we also raise a small patch of U-pick blueberries.  Blueberries are certified organic.We handcraft unique farm-developed and internationally award-winning cheeses that age in our underground cave here on the farm. All aged cheeses ripen on hardwood planks harvested right here on the farm. In July-Aug of each year we are open for blueberry picking.",
             "address_string": "313 Hardscrabble Rd, Milton, VT 05468",
@@ -7318,7 +7414,9 @@
             ],
             "email": "contact@sugarbushfarm.com",
             "categories": [
-                "Cheese, Maple Syrup, Farm Visits"
+                "Cheese",
+                "Maple Syrup",
+                "Farm Visits"
             ],
             "description": "Visit a working maple syrup, cheese and beef farm.  Free admission, free samples of maple syrup and 15 cheeses.  Open year round. While maple sugaring is in the spring, the sugarhouse is open year round with displays, video and explanation of how sap is boiled down to maple syrup.  Walk the maple trail to see how trees are tapped both with buckets and maple tubing.  Farm store, shipping available.  Watch how cheese is hand waxed for safe travel.",
             "address_string": "591 Sugarbush Farm Rd, Woodstock, VT 05091",
@@ -7414,7 +7512,8 @@
             ],
             "email": "mdoe@sugarbush.com",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "Join us at Timbers for an upscale, slopeside dining experience featuring prime steaks, locally grown produce & seafood.",
             "address_string": "Gate House Road, Warren, VT 05674",
@@ -7436,7 +7535,8 @@
             ],
             "email": "apples@surfglobal.net",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits"
+                "Farmstands & U-Pick",
+                "Farm Visits"
             ],
             "description": "Vaillancourt Orchard is a family run Vermont apple orchard located on Kendall Road in South Franklin, Vermont. In addition to Pick Your Own apples and Pick Your Own blueberries, we have pre-picked apples, apple pies, apple sauce, cider doughnuts, Vermont Maple Syrup, apple cider and, in season, pumpkins. We look forward to having you visit our orchard, however, it is always advisable to call for recorded picking information.",
             "address_string": "651 Kendall Rd, South Franklin, VT 05450",
@@ -7553,7 +7653,10 @@
             ],
             "email": "growing@cedarcirclefarm.org",
             "categories": [
-                "Farmstands & U-Pick, Eateries, Farm Visits, Classes & Workshops"
+                "Farmstands & U-Pick",
+                "Eateries",
+                "Farm Visits",
+                "Classes & Workshops"
             ],
             "description": "Cedar Circle Farm & Education Center is a certified organic farm on conserved land along the Connecticut River in East Thetford, Vermont, just minutes from Norwich, Vermont, and Hanover, New Hampshire. The farm has 40 acres in crops, growing a variety of vegetables, small fruits, legumes, oilseed, grain crops, and flowers for the farmstand, farmers markets, wholesale accounts and large community supported agriculture (CSA) program. The farm kitchen transforms crops in to pickles, preserves and value added products, baked goods for the cafe, and fresh food for our community festivals and farm dinners. The Education Center hosts seasonal workshops, classes, farm tours, a self-guided tour, and teaching gardens promoting the use of sustainable food systems and farm based education. Farmstand and Hello Caf\u00e9 are open May-October.",
             "address_string": "225 Pavillion Road, East Thetford, VT 05043",
@@ -7689,7 +7792,8 @@
             ],
             "email": "bflack@together.net",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits"
+                "Farmstands & U-Pick",
+                "Farm Visits"
             ],
             "description": "Flack Family Farm, in the Vermont hills, is a biodynamic farm using organic practices. Natural minerals and planned grazing with American Milking Devon cattle rejuvenate the soil, sequester carbon and yield nutrient dense foods and medicines including milk, grass fed meats, eggs, fermented vegetables (sauerkraut and kimchi \/ kim-chi), and herbal tinctures. We offer educational opportunities, farm visits, and seminars on nutrition, growing and preparing nutrient dense food, diversified farming and fermentation. .",
             "address_string": "3971 Pumpkin Village Rd, Enosburg Falls, VT 05450",
@@ -7779,7 +7883,10 @@
             ],
             "email": "apples@together.net",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits, Farm Stays, Inns & B&B's"
+                "Farmstands & U-Pick",
+                "Farm Visits",
+                "Farm Stays",
+                "Inns & B&B's"
             ],
             "description": "Allenholm Farm is Vermont's oldest commercial apple orchard - in the Allen family since 1870.  Adjacent to our Petting Paddock is the Farm Store. Inside you will find a colorful array of Vermont products, such as Honey, Maple Syrup and Cheese. We sell our own unsweetened Empire Applesauce and spiced Apple Butter, as well as homemade jams and jellies - our specialty is Crab Apple Jelly. During the Summer you can enjoy homegrown vegetables from our gardens, and delicious small fruits such as raspberries, blueberries, plums, peaches, sweet and sour cherries. The Fall harvest brings in our Apple crop, sweet cider and South Hero Applefest!",
             "address_string": "111 South St., South Hero, VT 05486",
@@ -7893,7 +8000,8 @@
             ],
             "email": "info@cabotcheese.coop",
             "categories": [
-                "Cheese, Food Markets"
+                "Cheese",
+                "Food Markets"
             ],
             "description": "Cabot Creamery Cooperative has been in continuous operation in Vermont since 1919, and makes a full line of cheeses, yogurt, sour cream, cottage cheese and butter. Best known as makers of \u201cThe World\u2019s Best Cheddar,\u201d Cabot is owned by 1270 dairy farm families located through New England and upstate New York.",
             "address_string": "2878 Main Street, Cabot, VT 05647",
@@ -7917,7 +8025,8 @@
             ],
             "email": "info@hungermountain.com ",
             "categories": [
-                "Eateries, Food Markets"
+                "Eateries",
+                "Food Markets"
             ],
             "description": "Hunger Mountain Co-op is committed to the sustainability of local food artisans, organic farmers, and meat\/poultry producers and offers a diverse selection of locally baked breads, artisan cheeses, and specialty wine & beer. Our deli\/cafe features prepared foods, salads, meats, fish, and a wonderful coffee bar.",
             "address_string": "623 Stone Cutters Way, Montpelier, VT 05602",
@@ -7938,7 +8047,8 @@
             ],
             "email": "dabell@destinationhotels.com",
             "categories": [
-                "Eateries, Inns & B&B's"
+                "Eateries",
+                "Inns & B&B's"
             ],
             "description": "Vermont is New England's most venerated location for farm fresh produce, heirloom grains and local craftsmanship. Stowe Mountain Lodge has partnered with local Vermont farmers, cheesemakers, and other talented artisans, as well as small farm advocacy groups like the Vermont Fresh Network and Chefs Collaborative, to create a dining experience that is unique to the area, both on the plate and throughout the restaurant environment. Guests will experience a connection to the land of Vermont through dishes that focus on freshness, simplicity, and seasonal flavors.",
             "address_string": "7412 Mountain Road, Stowe, VT 05672",
@@ -7959,7 +8069,8 @@
             ],
             "email": "wellwood@tds.net",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits"
+                "Farmstands & U-Pick",
+                "Farm Visits"
             ],
             "description": "Wellwood Orchards is a locally owned orchard that grows and sells all of our fruits on location. We grow many varieties of Apples, as well as Blueberries, Strawberries, Raspberries, Peaches, Plums, Pumpkins and more! While your here stop by our country store and grab some Vermont Maple Syrup, Vermont Hand Crafts, Honey and many other things. Don't forget the petting zoo!",
             "address_string": "529 Wellwood Orchard Road, Springfield, VT 05156",
@@ -7983,7 +8094,9 @@
             ],
             "email": "info@grandviewfarmvt.net",
             "categories": [
-                "Farm Stays, Inns & B&B's, Classes & Workshops"
+                "Farm Stays",
+                "Inns & B&B's",
+                "Classes & Workshops"
             ],
             "description": "We are a family fiber farm raising sheep, llamas, and angora rabbits for fiber. We offer VT yarns, fiber classes, as well as B&B Farm Stays. Our guests are served breakfast and dinner featuring our organically grown meats, eggs, and vegetables.",
             "address_string": "1638 Scales Hill Rd, Washington, VT 05675",
@@ -8031,7 +8144,8 @@
             ],
             "email": "bread@redhenbaking.com",
             "categories": [
-                "Eateries, Food Markets"
+                "Eateries",
+                "Food Markets"
             ],
             "description": "Our mission is to produce premium quality breads and pastries with traditional methods and carefully selected high quality ingredients. To do this while striving to minimize our impact on the environment, to support the growers and producers of our ingredients, and to provide the finest baked goods and service to our customers.",
             "address_string": "961 B US Rte 2, Middlesex, VT 05602",
@@ -8055,7 +8169,9 @@
             ],
             "email": "turkeyhillfarmvt@gmail.com",
             "categories": [
-                "Classes & Workshops, Cheese, Farm Visits"
+                "Classes & Workshops",
+                "Cheese",
+                "Farm Visits"
             ],
             "description": "Turkey Hill Farm is a 50-acre diversified farm dedicated to self-sufficiency, sustainable practices, and education. The Moo-tique farmstore sells our farmstead creamline yogurt and fresh cheeses, fluid raw milk, eggs from pastured hens, frozen pasture-raised meats, artisan pizzas, maple syrup, t-shirts, sweatshirts, books, and a variety of products from neighboring farms. We also feature a spacious and comfortable on-farm apartment that accommodates up to four people in the same party \u2013 perfect for short- or long-term farmstays.",
             "address_string": "55 Turkey Hill Road, Randolph Center, VT 05061",
@@ -8100,7 +8216,9 @@
             ],
             "email": "dmorter@dakinfarm.com",
             "categories": [
-                "Cheese, Maple Syrup, Food Markets"
+                "Cheese",
+                "Maple Syrup",
+                "Food Markets"
             ],
             "description": "\"What Vermont Tastes Like\" - Experience the flavor of Vermont's finest pure Vermont Maple Syrup, cob-cmoked meats, thick-sliced bacon, aged cheddar cheese and other specialty foods.  See how they're made and enjoy the FREE samples!  In Spring - don't miss Sugaring Season and try our NEW Crop of Pure Vermont Maple Syrup (Mid March, Annually), In Summer - stop in for a delicious Maple Cremee!; In Fall - enjoy the beautiful colors of fall and sample smoked meats and Artisan cheeses; In Winter - send the very best of Vermont to loved ones - we are your holiday gift headquarters.  Located just off 1-89 exit 14E next to Barnes & Noble and EMSWe have a Ferrisburgh location as well!",
             "address_string": "100 Dorset Street, South Burlington, VT 05403",
@@ -8124,7 +8242,8 @@
             ],
             "email": "greatfood@newportnatural.com ",
             "categories": [
-                "Eateries, Food Markets"
+                "Eateries",
+                "Food Markets"
             ],
             "description": "Fresh produce and the highest quality meats go into our daily specials and sandwiches. We cater to all and any dietary needs. Gluten Free? we do that. Vegan? that too. We also have a good selection of wine and beer, many of them local.",
             "address_string": "194 Main St., Newport, VT 05855",
@@ -8189,7 +8308,8 @@
             ],
             "email": "gregburtt@gmail.com",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits"
+                "Farmstands & U-Pick",
+                "Farm Visits"
             ],
             "description": "Our orchard makes up a small six acre plot on our farm. The first trees were planted in 2005 and we are still planting! Designed as a pick-your-own orchard, the trees are planted so that several varieties of apples are within a short walking distance and branches are kept low so that picking is easy. With over 35 varieties there are many choices. Great views of the surrounding Cabot hillside farms and the Green Mountains, plenty of open space for walking and picnics, and people who enjoy simple fun round out the rest of the experience at our orchard.",
             "address_string": "283 Cabot Plains Rd., Cabot, VT 05647",
@@ -8233,7 +8353,8 @@
             ],
             "email": "info@goldenrussetfarm.com",
             "categories": [
-                "Farmstands & U-Pick, Farm Visits"
+                "Farmstands & U-Pick",
+                "Farm Visits"
             ],
             "description": "Golden Russet Farm is a family-run organic farm in Shoreham, Vermont, near Lake Champlain. We grow a wide variety of summer and fall vegetables. In the spring, we offer bedding plants for your flower and vegetable gardens. Read about our Farm-to-Kitchen Connection, providing you with fresh organic vegetables and herbs all summer.Visit us at our farm in Shoreham, Vermont, off Route 22A, 1.3 miles west of the Halfway House Restaurant.",
             "address_string": "1329 Lapham Bay Road, Shoreham, VT 05770",
@@ -8281,7 +8402,8 @@
             ],
             "email": "innkeeper@harvestbarninn.com",
             "categories": [
-                "Inns & B&B's, Classes & Workshops"
+                "Inns & B&B's",
+                "Classes & Workshops"
             ],
             "description": "Overlooking the Connecticut River, the Harvest Barn Inn offers breathtaking views, hearty breakfasts, and yoga\/massage in a cozy setting. Close to skiing, hiking, fine dining, shopping, and historic sites. On-site event space. Packages available.",
             "address_string": "16 Webb Terrace, Bellows Falls, VT 05101",
