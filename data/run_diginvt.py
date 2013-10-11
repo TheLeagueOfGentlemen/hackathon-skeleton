@@ -137,7 +137,8 @@ def categories_and_seasons(lh):
             continue
         name = name.text.lower()
         if name == 'category(s)':
-            ret['categories'] = [a.text_content() for a in detail.findall('p')]
+            categories = [a.text_content().split(',') for a in detail.findall('p')][0]
+            ret['categories'] = [x.strip() for x in categories]
         elif name == 'best visited in':
             ret['seasons'] = [x.strip() for x in detail.find('p').text.split(',')]
     return ret
@@ -247,4 +248,4 @@ if __name__ == '__main__':
          'trails': parse_trails()}
 
     with open(os.path.join(DATA_DIR, 'parsed_data.json'), 'w') as f:
-        f.write(json.dumps(d))
+        f.write(json.dumps(d, indent=2))
