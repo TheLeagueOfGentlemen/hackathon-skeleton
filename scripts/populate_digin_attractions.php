@@ -10,12 +10,14 @@ use RedBean_Facade as R;
 R::setup(sprintf('mysql:host=%s;dbname=%s', $app['db.options']['host'], $app['db.options']['database']), $app['db.options']['username'], $app['db.options']['password']);
 
 $data = json_decode(file_get_contents(__DIR__.'/../data/diginvt/parsed_data_geocoded.json'), true);
-$placeProperties = array("town", "website", "name", "zipcode", "hours", "phone", "state", "address", "email", "description", "lat", "lon");
+$placeProperties = array("town", "website", "name", "hours", "phone", "state", "address", "email", "description", "lat", "lon");
 $categories = array();
 foreach ($data['places'] as $placeData) {
 
     $attraction = R::dispense('attraction');
-    $attraction->import(array_pluck($placeData, $placeProperties));
+    $attractionData = array_pluck($placeData, $placeProperties);
+    $attractionData['zip_code'] = $placeData['zipcode'];
+    $attraction->import($attractionData);
 
     foreach ($placeData['categories'] as $category) {
         if ( ! isset($categories[$category])) {

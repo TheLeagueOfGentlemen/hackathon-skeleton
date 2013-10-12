@@ -1,0 +1,1319 @@
+{
+    "Bromley Mountain Resort": {
+        "website": "http:\/\/www.bromley.com",
+        "stats": {
+            "Alpine": {
+                "Lessons": "Yes",
+                "Snowmaking": "86%",
+                "Total Lifts": [
+                    "3 Surface",
+                    "4 Double",
+                    "2 Quad",
+                    "1 Hi-Speed Quad"
+                ],
+                "Average Annual Snowfall": "12 feet",
+                "Vertical Drop": "1334 feet",
+                "Terrain Parks": "4",
+                "Advanced\/Expert": "35%",
+                "Intermediate": "37%",
+                "Glades": "6",
+                "Total Trails": "46",
+                "Easy": "28%",
+                "Total Acreage": "178 skiable acres",
+                "Rentals": "Yes",
+                "Night Skiing": "No"
+            }
+        },
+        "name": "Bromley Mountain Resort",
+        "address": {
+            "town": "Peru",
+            "state": "VT",
+            "street": "3984 Vermont Route 11, 144 Bromley Lodge Rd",
+            "zipcode": "05152"
+        },
+        "type": [
+            "Alpine"
+        ],
+        "email": "info@bromley.com",
+        "description": "Bromley is the ideal family location.\u00a0 Situated in the heart of Southern Vermont, Bromley is Vermont's Sun Mountain, the only southern facing mountain in Vermont!\u00a0 Bromley is consistently ranked by SKI Magazine as one of the best mountains for families.\nBromley has 46 classic New England Trails and glades with a variety of terrain that is seldom seen elsewhere.\u00a0 It is perfect for skiers and snowboarders of all ability levels, from first-timers to those who crave the gravity adrenaline rush.\nWith one centrally located base-lodge, it's easy for the family to get together, find one another and get back on the slopes.\u00a0 Bromley has the right terrain for everyone.\u00a0 The East Side is full of black diamonds for the experts in the family, while the West Side has some great cruising trails, and the beginner area has all the right elements for the first timer and those who are just learning.\u00a0 We aslo offer 4 unique terrain parks, for every level of freestyle skier and snowboarder in your crew.\u00a0 Whatever your family's level of skiing or riding, there is something at Bromley for everyone.\nBromley isn't just for winter!\u00a0 Vermont's Summer Adventure features rides and attractions for the whole family, with the legendary triple-track Alpine Slide being the park's biggest draw.\u00a0 NEW this season, and scheduled to open in early July, is our Aerial Adventure Park!\u00a0 As you work your way through the canopy, from platform to platform and tree to tree, over bridges of rope, wood and wire, you'll be safe in your harness, exploring a whole new side of Bromley with a squirrel's eye view.\u00a0 We'll have courses for all skill and age levels.\nStill high on the \"must-do\" list is the Sun Mountain Flyer, New England's longest ZipRider, the Big Splash Water slide, the Giant Swing, the Trampoline Things, a beautiful 18-hole Miniature Golf Course, the Adrenaline Zip Line, scenic chairlift rides and many more exciting attractions.\u00a0 Kids six and under have their very own space, the KidZone, with Bumper Boats, Bounce House and 24' Great Slide!",
+        "address_string": "3984 Vermont Route 11, 144 Bromley Lodge Rd, Peru, VT 05152",
+        "lat": 43.2297974,
+        "lon": -72.8978781
+    },
+    "Quechee Ski Area": {
+        "website": "http:\/\/www.quecheeclub.com\/Club\/Scripts\/Home\/home.asp",
+        "stats": [
+
+        ],
+        "name": "Quechee Ski Area",
+        "address": {
+            "town": "Quechee",
+            "state": "VT",
+            "street": "3268 Quechee Main St.",
+            "zipcode": "05059"
+        },
+        "type": [
+
+        ],
+        "email": "info@quecheeclub.com",
+        "description": "The Quechee Lakes community is made up of individuals who own a home site, a completed home or condominium; such ownership automatically confers membership in The Quechee Club. The members own and control all the amenities at Quechee Lakes. In February 1970, the Quechee Lakes Landowners\u2019 Association, Inc. (QLLA) was formed to \u201chold, manage, regulate and maintain\u201d the common land and amenities of the Quechee Development. In May of 1974, the construction of The Clubhouse was finished. This core facility encompasses a multipurpose banquet room and an attractive Grille Room. Also located at this facility: an indoor lap pool, outdoor swimming pool, squash court, health club complete with cardiovascular and circuit training equipment, sauna and locker rooms. The Golf Shop occupies the west end of The Clubhouse and commands sweeping views of the courses. The administrative offices of QLLA are also located in The Clubhouse. The Base Lodge, Tennis Pavilion and Murphy Farm round out the association\u2019s buildings. Quechee Lakes Landowners have, through their Association, developed Vermont\u2019s finest four season community. Everything you want for your vacation - be it spring, summer, fall or winter - can be found at Quechee Lakes.",
+        "address_string": "3268 Quechee Main St., Quechee, VT 05059",
+        "lat": 43.6571122,
+        "lon": -72.4402656
+    },
+    "Trapp Family Lodge XC Ski Center": {
+        "website": "http:\/\/www.trappfamily.com",
+        "stats": {
+            "Nordic": {
+                "Lessons": "Yes",
+                "Snowshoeing": "Yes",
+                "Skating Terrain": "0 km",
+                "Total Terrain": "160 km",
+                "Rentals": "Yes",
+                "Night Skiing": "No",
+                "Tracked Terrain": "60 km"
+            }
+        },
+        "name": "Trapp Family Lodge XC Ski Center",
+        "address": {
+            "town": "Stowe",
+            "state": "VT",
+            "street": "700 Trapp Hil Road",
+            "zipcode": "05672"
+        },
+        "type": [
+            "Nordic"
+        ],
+        "email": "info@trappfamily.com",
+        "description": "Harmony. A simple word that captures the essence of what makes Trapp Family Lodge and resort such a special place. Here in Stowe, Vermont you'll discover so many different experiences, activities and opportunities to enjoy your mountain escape. And yet all this remarkable variety - hiking, swimming, tennis, birding, cross-country skiing, meetings, weddings, an indoor spa, and more - lives in perfect harmony. A vacation here will leave you rested and refreshed. Recharged and reconnected. But most importantly, it will remind you of what's truly important. A magnificent 2,500 acre resort managed by the family that inspired The Sound of Music, this New England treasure is the perfect place for your next vacation.\nWe proudly sponsor The Vermont Ski Museum.",
+        "address_string": "700 Trapp Hil Road, Stowe, VT 05672",
+        "lat": 44.4655744,
+        "lon": -72.7446235
+    },
+    "Cochran's Ski Area": {
+        "website": "http:\/\/www.cochranskiarea.com",
+        "stats": [
+
+        ],
+        "name": "Cochran's Ski Area",
+        "address": {
+            "town": "Richmond",
+            "state": "VT",
+            "street": "910 Cochran Rd.",
+            "zipcode": "05477"
+        },
+        "type": [
+
+        ],
+        "email": "skiarea@cochranskiarea.com",
+        "description": "A small, affordable family ski area in Richmond, VT",
+        "address_string": "910 Cochran Rd., Richmond, VT 05477",
+        "lat": 44.3965922,
+        "lon": -72.9822544
+    },
+    "Northeast Slopes": {
+        "website": "httP:\/\/www.northeastslopes.org",
+        "stats": [
+
+        ],
+        "name": "Northeast Slopes",
+        "address": {
+            "town": "East Corinth",
+            "state": "VT",
+            "street": "10397 Route 25",
+            "zipcode": "05086"
+        },
+        "type": [
+
+        ],
+        "email": "genevievewatson@hotmail.com",
+        "description": "Northeast Slopes is a community ski area founded in 1936. It offers more than 30 acres of skiable terrain and three lifts.\u00a0 Its junior rope tow provides a gentle slope for beginners to learn.\u00a0 More advanced skiers can enjoy the high speed rope tow or the T-bar, which access everything from scenic groomers to gladed steeps.\u00a0 Tickets are excellent value at just $15, with discounts on 1\/2 day Wednesdays ($10) as well as for the junior tow ($5\/$2).\u00a0 There is a small snack bar with hot and cold locally sourced refreshments, as well as slopeside parking and fun events throughout the season.\u00a0 Open Wednesdays after 1:30 and all day Saturday and Sunday.",
+        "address_string": "10397 Route 25, East Corinth, VT 05086",
+        "lat": 44.0729476,
+        "lon": -72.250695
+    },
+    "Ole's Cross Country Center": {
+        "website": "http:\/\/olesxc.com",
+        "stats": [
+
+        ],
+        "name": "Ole's Cross Country Center",
+        "address": {
+            "town": "Warren",
+            "state": "VT",
+            "street": "2355 Airport Rd.",
+            "zipcode": "05674"
+        },
+        "type": [
+
+        ],
+        "email": "ski@olesxc.com",
+        "description": "The combination of open meadows and quiet woods makes Ole's one of the best centers in Vermont to learn to ski. On a clear day, the views of are incomparable. With gently rolling terrain and few steep hills, Ole's is renowned as one of the best places in Vermont for skate skiing. The gentle terrain right out the lodge door is also very kid-friendly. For easy-going families to competitive racers, Ole's has it all. Ski rental, ski lessons, ski shop, and snack bar for you at Ole's Cross Country Center. Also snowshoe trails, rentals, and guided tours.",
+        "address_string": "2355 Airport Rd., Warren, VT 05674",
+        "lat": 44.118954,
+        "lon": -72.827026
+    },
+    "Wild Wings Ski Touring Center": {
+        "website": "http:\/\/wildwingsski.com",
+        "stats": [
+
+        ],
+        "name": "Wild Wings Ski Touring Center",
+        "address": {
+            "town": "Peru",
+            "state": "VT",
+            "street": "P.O. Box 132",
+            "zipcode": "05152"
+        },
+        "type": [
+
+        ],
+        "email": "wwxcski@sover.net",
+        "description": "Wild Wings Ski Touring Center offers classic skiing for all abilities on trails that meander through the woods and along a brook. Visitors often report bobcat, rabbit, deer and sometimes even moose sightings. Wild Wings\u2019 location in a snow pocket means that there is skiable snow even when the valleys are bare. Rental and lessons are available.",
+        "address_string": "P.O. Box 132, Peru, VT 05152",
+        "lat": 43.2297974,
+        "lon": -72.8978781
+    },
+    "Middlebury College Snow Bowl": {
+        "website": "http:\/\/www.middleburysnowbowl.com",
+        "stats": {
+            "Alpine": {
+                "Lessons": "Yes",
+                "Snowmaking": "45%",
+                "Total Lifts": [
+                    "1 Surface",
+                    "1 Double",
+                    "2 Triple"
+                ],
+                "Average Annual Snowfall": "0 feet",
+                "Vertical Drop": "1050 feet",
+                "Terrain Parks": "0",
+                "Advanced\/Expert": "41%",
+                "Intermediate": "24%",
+                "Glades": "5",
+                "Total Trails": "17",
+                "Easy": "35%",
+                "Total Acreage": "125 skiable acres",
+                "Rentals": "Yes",
+                "Night Skiing": "No"
+            }
+        },
+        "name": "Middlebury College Snow Bowl",
+        "address": {
+            "town": "Hancock",
+            "state": "VT",
+            "street": "6886 VT Rte. 125",
+            "zipcode": "05748"
+        },
+        "type": [
+            "Alpine"
+        ],
+        "email": "snowbowl@middlebury.edu",
+        "description": "\nNEW THIS YEAR......Wonder Carpet by SunKid.\u00a0 We are receiving \"Wonder\"ful reviews on our new conveyor carpet lift.\u00a0 It's FREE to the public.\u00a0 Call ahead for hours of operation.\u00a0802-443-7669.\nOur 2012-13 season is boundary to boundary access which will give skiers and riders access to over 500 acres of wooded terrain!\u00a0 Below is our new woods access policy.\nThe Middlebury College Snow Bowl is conveniently located on the newly rebuilt Route 125 midway between Route 7 to the west and Route 100 to the east. The Snow Bowl offers skiing and snowboarding to all ability levels in a friendly, family atmosphere. Although owned and operated by Middlebury College and home to the nationally competitive Panther ski team, the Bowl is open on a daily basis [except Christmas day] to the general public.\nOne hundred\u00a0twenty acres of open terrain that\u2019s varied and exciting are available with trails and glades appealing to all abilities. Access is gained via\u00a0on double chairlift and\u00a0two triple chairs, and about 45 percent of the trail acreage has snowmaking coverage. With 17 trails (one of which is a dedicated ski school trail),\u00a0six designated glades, and a large climbing area, the Snow Bowl offers uncrowded skiing and riding to all abilities at an affordable price. Throw in state-of-the-art grooming, a full-service rental shop, professionally staffed ski school, renowned racing program, one of the nation\u2019s only Collegiate ski patrols, and excellent and inexpensive food, you can see why so many people call the Bowl \u201ctheir\u201d ski area.\nNew at the Bowl this season is boundary to boundary access which will give skiers and riders access to over 500 acres of wooded terrain!\u00a0 Below is our new woods access policy.\n\nSkiing or snowboarding in the woods off designated trails within the ski area boundary is allowed.\u00a0 These areas aren\u2019t maintained or checked by ski area personnel.\u00a0 Unmarked obstacles and other hazards exist. Ski\/ride at your own risk.\u00a0 Do not ski\/ride alone but preferably in groups of three or more.\u00a0 The Middlebury College Snow Bowl has no responsibility for damage to equipment, or for skier\/rider safety, injury or death.\u00a0 Be aware, use good judgment and ski\/ride accordingly.\nWhen you ski or ride the Bowl this season you\u2019ll once again be going green because the Snow Bowl will be offsetting its total carbon footprint, including that associated with customer travel!\u00a0\u00a0\u00a0Also the Bowl\u2019s snowmaking pumps and pump motors have been upgraded in the off season for more efficient and energy saving operation.\nThe Carroll and Jane Rikert Ski Touring Center, also owned and operated by Middlebury College, offers cross country skiing and snowshoeing just 2 miles west on Route 125 at the Breadloaf campus.",
+        "address_string": "6886 VT Rte. 125, Hancock, VT 05748",
+        "lat": 43.9268605,
+        "lon": -72.9229317
+    },
+    "Stratton Mountain Resort": {
+        "website": "http:\/\/www.stratton.com",
+        "stats": {
+            "Nordic": {
+                "Lessons": "Yes",
+                "Snowshoeing": "Yes",
+                "Skating Terrain": "0 km",
+                "Total Terrain": "15 km",
+                "Rentals": "Yes",
+                "Night Skiing": "No",
+                "Tracked Terrain": "0 km"
+            },
+            "Alpine": {
+                "Lessons": "Yes",
+                "Snowmaking": "95%",
+                "Total Lifts": [
+                    "1 Surface",
+                    "1 Double",
+                    "1 Triple",
+                    "3 Quad",
+                    "4 6-Person",
+                    "1 Gondolas"
+                ],
+                "Average Annual Snowfall": "15 feet",
+                "Vertical Drop": "2003 feet",
+                "Terrain Parks": "5",
+                "Advanced\/Expert": "27%",
+                "Intermediate": "33%",
+                "Glades": "15",
+                "Total Trails": "97",
+                "Easy": "40%",
+                "Total Acreage": "625 skiable acres",
+                "Rentals": "Yes",
+                "Night Skiing": "No"
+            }
+        },
+        "name": "Stratton Mountain Resort",
+        "address": {
+            "town": "Stratton Mountain",
+            "state": "VT",
+            "street": "5 Village Lodge Road",
+            "zipcode": "05155"
+        },
+        "type": [
+            "Nordic",
+            "Alpine"
+        ],
+        "email": "feedback@stratton.com",
+        "description": "Stratton Mountain, home of the great snow guarantee and a top Vermont, New England ski and snowboard resort, offers 97 trails, 100+ acres of glades, 600+ acres of skiing and snowboarding terrain including top ranked terrain parks, the fastest fleet of lifts in teh East, convenient lodging, slopeside Village, Sports Center, Spa and a full slate of winter and summer events and activities. It's no surprise that the readers of SKI Magazine rate Stratton in the Top 10 for snow, grooming, lifts, terrain parks, service, on-mountain food and dining. Stratton has something for every visitor - skiers, snowboarders or those simply wanting to get away and enjoy Vermont vacation values from bargain lodging to luxurious condominiums, all within sight of southern Vermont's highest peak.",
+        "address_string": "5 Village Lodge Road, Stratton Mountain, VT 05155",
+        "lat": 43.113819,
+        "lon": -72.90509
+    },
+    "Memphremagog Ski Touring Foundation": {
+        "website": "http:\/\/www.mstf.net",
+        "stats": [
+
+        ],
+        "name": "Memphremagog Ski Touring Foundation",
+        "address": {
+            "town": "Derby",
+            "state": "VT",
+            "street": "PO Box 499",
+            "zipcode": "05830"
+        },
+        "type": [
+
+        ],
+        "email": "info@mstf.net",
+        "description": "\nMSTF is a nonprofit corporation with a mission to create and promote a system of high quality ski and snowshoe trails in the Derby- Newport region of Vermont.\nMSTF trails vary from railroad flat to precipitous, with skate and classic machine grooming on the core network.\nMSTF is made possible by volunteer efforts, many generous landowners, and contributions from users. We hope to see you out on the snow!",
+        "address_string": "PO Box 499, Derby, VT 05830",
+        "lat": 44.9766684,
+        "lon": -71.9606754
+    },
+    "Catamount Outdoor Family Center": {
+        "website": "http:\/\/catamountoutdoor.com",
+        "stats": [
+
+        ],
+        "name": "Catamount Outdoor Family Center",
+        "address": {
+            "town": "Williston",
+            "state": "VT",
+            "street": "592 Governor Chittenden Rd",
+            "zipcode": "05495"
+        },
+        "type": [
+
+        ],
+        "email": "landj@catamountoutdoor.com",
+        "description": "All year long enjoy recreating on our trails as you discover the four corners of our beautiful family farm. Go at a leisurely pace, taking time to enjoy yourself and your family. You can pull off the trails at",
+        "address_string": "592 Governor Chittenden Rd, Williston, VT 05495",
+        "lat": 44.447395,
+        "lon": -73.048714
+    },
+    "Bolton Valley": {
+        "website": "http:\/\/www.boltonvalley.com",
+        "stats": {
+            "Nordic": {
+                "Lessons": "Yes",
+                "Snowshoeing": "Yes",
+                "Skating Terrain": "26 km",
+                "Total Terrain": "100 km",
+                "Rentals": "Yes",
+                "Night Skiing": "No",
+                "Tracked Terrain": "26 km"
+            },
+            "Alpine": {
+                "Lessons": "Yes",
+                "Snowmaking": "60%",
+                "Total Lifts": [
+                    "1 Surface",
+                    "3 Double",
+                    "2 Quad"
+                ],
+                "Average Annual Snowfall": "26 feet",
+                "Vertical Drop": "1704 feet",
+                "Terrain Parks": "3",
+                "Advanced\/Expert": "30%",
+                "Intermediate": "36%",
+                "Glades": "10",
+                "Total Trails": "70",
+                "Easy": "34%",
+                "Total Acreage": "300 skiable acres",
+                "Rentals": "Yes",
+                "Night Skiing": "Yes"
+            }
+        },
+        "name": "Bolton Valley",
+        "address": {
+            "town": "Bolton Valley",
+            "state": "VT",
+            "street": "4302 Bolton Access Rd.",
+            "zipcode": "05477"
+        },
+        "type": [
+            "Nordic",
+            "Alpine"
+        ],
+        "email": "info@boltonvalley.com",
+        "description": "Bolton Valley sits high in the Green Mountains of Vermont. It is a unique, high mountain alpine village surrounded by over 5,000 pristine acres. At Bolton Valley the recreational opportunities are as numerous as the views are spectacular. Whether your interest is skiing or snowboarding, telemark or Nordic, backcountry or night skiing or just a relaxing snowshoe in the woods, Bolton Valley has it all in abundance.\nBolton Valley offers 70 trails and glades for Alpine skiing and riding and 100km of Nordic and backcountry trails. Each year Bolton Valley receives an average of 312 inches of snow.\nBolton Valley is a self contained, family friendly resort focused on providing excellent value to skiers and riders All the lodging, including hotel rooms, suites and condominiums are either ski in\/ski out or within a short walking distance of the lifts. Two restaurants, a cafeteria, deli and general store are conveniently located within the village. The base lodge and rental shop are ski-in ski-out for your convenience. After a great day on the slopes, relax in the Sports Center's Jacuzzi, heated pool or warm up in the sauna. So park your car and forget about it during your stay, everything you need is all right here.\nThis is the place to get away and enjoy the best Vermont has to offer. If you are looking to learn the basics of a new winter sport or expand your skills in one you already participate in, the Bolton Valley Ski and Snowboard School is the place for you. The school offers a wide array of lessons tailored to everyone from kids to adults and beginners to advances skiers and riders.\nAt Bolton Valley, we are conscious about our environmental footprint and are blessed to have nature\u2019s playground at our doorstep. Taking care of it is a no-brainer. As the recipient of the National Ski Areas Association\u2019s 2010 Silver Eagle Award for environmental initiative we continuously look for ways to be more energy efficient. From being one of only two ski resorts in the U.S. to implement wind power as an energy source to using biodegradable and recyclable products throughout the cafeteria and restaurants, We strive to keep our environmental footprint as small as possible. Bolton Valley\u2019s snowmaking is \u201cgreen\u201d through energy efficient HKD snowguns and SMI fan guns to reduce diesel and electric power consumption. We reduce our fossil fuel consumption for heating the base lodge with two Magnum Countryside pellet stoves through our partnership with Energy Co-op of Vermont. Recycling stations throughout the resort, as well as an environmental towel program in the hotel and the use of safe snowmelt on sidewalks are just a few of the small ways that help to make a big environmental impact.",
+        "address_string": "4302 Bolton Access Rd., Bolton Valley, VT 05477",
+        "lat": 44.421074,
+        "lon": -72.84948
+    },
+    "Grafton Ponds Outdoor Center": {
+        "website": "http:\/\/www.graftonponds.com",
+        "stats": {
+            "Nordic": {
+                "Lessons": "Yes",
+                "Snowshoeing": "Yes",
+                "Skating Terrain": "15 km",
+                "Total Terrain": "30 km",
+                "Rentals": "Yes",
+                "Night Skiing": "No",
+                "Tracked Terrain": "15 km"
+            }
+        },
+        "name": "Grafton Ponds Outdoor Center",
+        "address": {
+            "town": "Grafton",
+            "state": "VT",
+            "street": "783 Townshend Road",
+            "zipcode": "05146"
+        },
+        "type": [
+            "Nordic"
+        ],
+        "email": "info@graftonponds.com",
+        "description": "\n\n\nOnline at www.GraftonPonds.com.",
+        "address_string": "783 Townshend Road, Grafton, VT 05146",
+        "lat": 43.162418,
+        "lon": -72.6146009
+    },
+    "Rikert Nordic Center": {
+        "website": "http:\/\/www.rikertnordic.com",
+        "stats": [
+
+        ],
+        "name": "Rikert Nordic Center",
+        "address": {
+            "town": "Ripton",
+            "state": "VT",
+            "street": "Bread Loaf Campus, Route 125",
+            "zipcode": "05766"
+        },
+        "type": [
+
+        ],
+        "email": "mhussey@middlebury.edu",
+        "description": "The Carroll and Jane Rikert Nordic Center, which is owned and operated by Middlebury College, is located 12 miles east of Middlebury on Route 125 just 2 miles west of the Middlebury College Snow Bowl. Situated on the Breadloaf Campus of Middlebury College and bordering the Green Mountain National Forest and the Robert Frost Homestead, The Rikert Ski Touring Center offers 42 kilometers of varied and scenic trails for cross-country skiers and snowshoers of",
+        "address_string": "Bread Loaf Campus, Route 125, Ripton, VT 05766",
+        "lat": 43.9819813,
+        "lon": -73.1263933
+    },
+    "Strafford Nordic Center": {
+        "website": "http:\/\/straffordnordicskiing.com\/",
+        "stats": {
+            "Nordic": {
+                "Lessons": "Yes",
+                "Snowshoeing": "Yes",
+                "Skating Terrain": "30 km",
+                "Total Terrain": "30 km",
+                "Rentals": "Yes",
+                "Night Skiing": "No",
+                "Tracked Terrain": "10 km"
+            }
+        },
+        "name": "Strafford Nordic Center",
+        "address": {
+            "town": "Strafford",
+            "state": "VT",
+            "street": "53 Rockbottom Rd, PO Box 66",
+            "zipcode": "05072"
+        },
+        "type": [
+            "Nordic"
+        ],
+        "email": "hilary@straffordnordicskiing.com",
+        "description": "Opening for the 2011-2012 ski season, enjoy 30K of groomed cross country ski trails for skiers of all ages and abilities, a biathlon range, majestic views of Vermont and New Hampshire, a\u00a0 full service rental department and a cozy ski lodge.\nOur trail system traverses two well known local farms, and our peak height is nearly 2000 feet, so we get snow early at keep it all winter.\nLocated just 10 minutes off I-89 and 2 1\/2 hours from Boston and Hartford CT, we are",
+        "address_string": "53 Rockbottom Rd, PO Box 66, Strafford, VT 05072",
+        "lat": 43.8602229,
+        "lon": -72.4109931
+    },
+    "Woodstock Inn Nordic Center": {
+        "website": "http:\/\/www.woodstockinn.com",
+        "stats": [
+
+        ],
+        "name": "Woodstock Inn Nordic Center",
+        "address": {
+            "town": "Woodstock",
+            "state": "VT",
+            "street": "Route 106",
+            "zipcode": "05091"
+        },
+        "type": [
+
+        ],
+        "email": "email@woodstockinn.com",
+        "description": "If you want to discover some of the most scenic cross country and snowshoeing trails anywhere, you\u2019ll want to head to Woodstock, Vermont this winter. Just out from the ski center are 10 km of gentle \u201cmeadow\u201d skiing that connect to our fitness center and the 20 km of woodland trails on Mt. Peg. There are also 30 km of trails located across the village green on Mt. Tom \u2013 and these quite often become the favorites of those who discover them. Skiing or snowshoeing Mt. Tom puts you on century old carriage roads in the midst of Vermont\u2019s first tree farm and Vermont\u2019s first National Park site. An outing through these woodlands and to our log cabin warming hut is truly an extraordinary experience. Enjoy an escape in Woodstock this winter with your family or friends. The skiing, and all else that Woodstock offers, should delight in pleasant memories and a desire to return again and again. Happy Trails!",
+        "address_string": "Route 106, Woodstock, VT 05091",
+        "lat": 43.5984459,
+        "lon": -72.51898
+    },
+    "Blueberry Hill Ski Center": {
+        "website": "http:\/\/www.blueberryhillinn.com",
+        "stats": {
+            "Nordic": {
+                "Lessons": "Yes",
+                "Snowshoeing": "Yes",
+                "Skating Terrain": "35 km",
+                "Total Terrain": "75 km",
+                "Rentals": "Yes",
+                "Night Skiing": "No",
+                "Tracked Terrain": "55 km"
+            }
+        },
+        "name": "Blueberry Hill Ski Center",
+        "address": {
+            "town": "Goshen",
+            "state": "VT",
+            "street": "1307 Goshen-Ripton Rd",
+            "zipcode": "05733"
+        },
+        "type": [
+            "Nordic"
+        ],
+        "email": "info@blueberryhillinn.com",
+        "description": "With over 40 years of cross country ski experience we offer over 70 km of trails within the 22,000 acres of protected lands of the Moosalamoo National Recreation Area, of the Green Mountain National Forest, and groomed (classical and skating) with state of the art grooming equipment.",
+        "address_string": "1307 Goshen-Ripton Rd, Goshen, VT 05733",
+        "lat": 43.890594,
+        "lon": -73.009178
+    },
+    "Magic Mountain": {
+        "website": "http:\/\/www.magicmtn.com\/",
+        "stats": {
+            "Alpine": {
+                "Lessons": "Yes",
+                "Snowmaking": "70%",
+                "Total Lifts": [
+                    "4 Surface",
+                    "1 Double",
+                    "1 Triple"
+                ],
+                "Average Annual Snowfall": "13 feet",
+                "Vertical Drop": "1700 feet",
+                "Terrain Parks": "1",
+                "Advanced\/Expert": "40%",
+                "Intermediate": "30%",
+                "Glades": "5",
+                "Total Trails": "43",
+                "Easy": "30%",
+                "Total Acreage": "190 skiable acres",
+                "Rentals": "Yes",
+                "Night Skiing": "No"
+            }
+        },
+        "name": "Magic Mountain",
+        "address": {
+            "town": "Londonderry",
+            "state": "VT",
+            "street": "495 Magic Mountain Access Rd, PO Box 396",
+            "zipcode": "05730"
+        },
+        "type": [
+            "Alpine"
+        ],
+        "email": "info@magicmtn.com",
+        "description": "There\u2019s an original Vermont skiing-first spirit at Magic, born over 50 years ago, but now renewed. Magic connects deeply with those who come here for two big reasons: its awesome terrain and its authentic community vibe. It\u2019s why Magic not only endures but now offers skiers and riders a true alternative to today\u2019s corporate-style resorts.\nMagic is a mecca for skiers and riders who want to challenge themselves on its legendary expert trails and off-piste glades. These are real black diamonds, with real snow, real steeps, and real obstacles to overcome. Magic\u2019s original 1960s-style trails deliver an interesting and fun experience at all ability levels.\nIt\u2019s Magic\u2019s skiers and riders who create a spirited community like no other. It\u2019s a laid-back, friendly vibe where friends and families commune at Goniff\u2019sDen to tell stories; where volunteers pitch in to help clear trails and create new glades; where many have invested in Magic\u2019s future; and where new winter friends are made every season.",
+        "address_string": "495 Magic Mountain Access Rd, PO Box 396, Londonderry, VT 05730",
+        "lat": 43.2035568,
+        "lon": -72.7731573
+    },
+    "Stowe Mountain Resort": {
+        "website": "http:\/\/www.stowe.com",
+        "stats": {
+            "Nordic": {
+                "Lessons": "Yes",
+                "Snowshoeing": "Yes",
+                "Skating Terrain": "30 km",
+                "Total Terrain": "75 km",
+                "Rentals": "Yes",
+                "Night Skiing": "No",
+                "Tracked Terrain": "45 km"
+            },
+            "Alpine": {
+                "Lessons": "Yes",
+                "Snowmaking": "80%",
+                "Total Lifts": [
+                    "2 Surface",
+                    "4 Double",
+                    "2 Triple",
+                    "3 Quad",
+                    "3 Hi-Speed Quad",
+                    "2 Gondolas"
+                ],
+                "Average Annual Snowfall": "28 feet",
+                "Vertical Drop": "2160 feet",
+                "Terrain Parks": "3",
+                "Advanced\/Expert": "25%",
+                "Intermediate": "59%",
+                "Glades": "6",
+                "Total Trails": "116",
+                "Easy": "16%",
+                "Total Acreage": "485 skiable acres",
+                "Rentals": "Yes",
+                "Night Skiing": "No"
+            }
+        },
+        "name": "Stowe Mountain Resort",
+        "address": {
+            "town": "Stowe",
+            "state": "VT",
+            "street": "5781 Mountain Road",
+            "zipcode": "05672"
+        },
+        "type": [
+            "Nordic",
+            "Alpine"
+        ],
+        "email": "info@stowe.com",
+        "description": "\nIn a place where the history, community and landscape are legendary for hospitality and adventure, Stowe Mountain Resort in Stowe Vermont has reinforced its internationally respected brand with world-class improvements both on and off the mountain. Stowe's newest facilities and improvements include a brand new High-Speed Quad on Mt. Mansfield, Evolution Stowe's RFID technology tickets and gates, an inter-mountain transfer gondola connecting Mt. Mansfield and Spruce Peak, Stowe Mountain Lodge, a 312 room hotel and spa that has already been recognized as one of the greenest and most luxurious mountainside lodgings in the world, a new state-of-the-art Performing Arts Center at Spruce Peak, new high-speed lifts on Spruce, new base facilities, gourmet restaurants, incredible slopeside real estate opportunities and more. For more information visit",
+        "address_string": "5781 Mountain Road, Stowe, VT 05672",
+        "lat": 44.5311864,
+        "lon": -72.7885504
+    },
+    "Mad River Glen": {
+        "website": "http:\/\/www.madriverglen.com",
+        "stats": {
+            "Alpine": {
+                "Lessons": "Yes",
+                "Snowmaking": "15%",
+                "Total Lifts": [
+                    "1 Surface",
+                    "1 Single",
+                    "3 Double"
+                ],
+                "Average Annual Snowfall": "250 feet",
+                "Vertical Drop": "2037 feet",
+                "Terrain Parks": "0",
+                "Advanced\/Expert": "41%",
+                "Intermediate": "27%",
+                "Glades": "0",
+                "Total Trails": "49",
+                "Easy": "33%",
+                "Total Acreage": "120 skiable acres",
+                "Rentals": "Yes",
+                "Night Skiing": "No"
+            }
+        },
+        "name": "Mad River Glen",
+        "address": {
+            "town": "Waitsfield",
+            "state": "VT",
+            "street": "62 Mad River Resort Road, PO Box 1089",
+            "zipcode": "05673"
+        },
+        "type": [
+            "Alpine"
+        ],
+        "email": "ski@madriverglen.com",
+        "description": "What is it about Mad River Glen? Why is Mad River Glen on the MUST ski list for any skiers worth their salt? There are plenty of areas that are bigger, steeper, and offer more amenities. There are certainly plenty of places that get more reliable snow. So what is it that makes Mad River Glen the iconic \u201choly grail\u201d for so many skiers?\nIt\u2019s a combination of many things and for every skier the answer is a little different. Mad River Glen offers the most challenging and diverse terrain in New England with an uphill capacity that guarantees low skier density on the trails even on the busiest days. It is one of the last bastions of natural snow skiing in New England and is one of only three areas in North America that prohibit snowboarding. The trails were cut to follow the mountain\u2019s natural contours. Skiers can descend the entire 2,037' of vertical on true expert terrain with absolutely no run-outs. On the other hand, Mad River\u2019s mountain layout with a single base area makes it an ideal family mountain. The area\u2019s character, the result of a long and proud history, reflects the terrain and natural beauty. There is a special camaraderie among the skiing community, with its co-op ownership, non-commercial, family-friendly atmosphere, dedicated staff, and - of course- the Single Chair, America\u2019s favorite ski lift.\nCombined, these qualities create a unique ski experience that stands in stark contrast to the mainstream world of skiing.\u00a0 The various facets of the Mad River ski experience appeal to different skiers in different ways but together they create a feeling and sense of place that is truly unique.\u00a0 The mission of the Mad River Glen Cooperative is to protect and preserve these special qualities. The skier-owners of Mad River Glen invite you to discover for yourself the experience they are dedicated to preserving.",
+        "address_string": "62 Mad River Resort Road, PO Box 1089, Waitsfield, VT 05673",
+        "lat": 44.2023007,
+        "lon": -72.9178565
+    },
+    "Mountain Meadows XC Center": {
+        "website": "http:\/\/xcskiing.net",
+        "stats": [
+
+        ],
+        "name": "Mountain Meadows XC Center",
+        "address": {
+            "town": "Killington",
+            "state": "VT",
+            "street": "2363 Route 4",
+            "zipcode": "05751"
+        },
+        "type": [
+
+        ],
+        "email": "bcoutfitters@adelphia.net",
+        "description": "Mtn. Meadows is located in the heart of the Green Mountains and directly in the center of Killington. They have been attracting skiers from all over the world for the past 40 years. Snowmaking, new trail",
+        "address_string": "2363 Route 4, Killington, VT 05751",
+        "lat": 43.668603,
+        "lon": -72.803032
+    },
+    "Okemo Mountain Resort": {
+        "website": "http:\/\/www.okemo.com",
+        "stats": {
+            "Nordic": {
+                "Lessons": "Yes",
+                "Snowshoeing": "Yes",
+                "Skating Terrain": "0 km",
+                "Total Terrain": "22 km",
+                "Rentals": "Yes",
+                "Night Skiing": "No",
+                "Tracked Terrain": "0 km"
+            },
+            "Alpine": {
+                "Lessons": "Yes",
+                "Snowmaking": "96%",
+                "Total Lifts": [
+                    "7 Surface",
+                    "3 Triple",
+                    "9 Quad",
+                    "5 Hi-Speed Quad"
+                ],
+                "Average Annual Snowfall": "200 feet",
+                "Vertical Drop": "2200 feet",
+                "Terrain Parks": "7",
+                "Advanced\/Expert": "32%",
+                "Intermediate": "36%",
+                "Glades": "7",
+                "Total Trails": "119",
+                "Easy": "32%",
+                "Total Acreage": "651 skiable acres",
+                "Rentals": "Yes",
+                "Night Skiing": "No"
+            }
+        },
+        "name": "Okemo Mountain Resort",
+        "address": {
+            "town": "Ludlow",
+            "state": "VT",
+            "street": "77 Okemo Ridge Road",
+            "zipcode": "05149"
+        },
+        "type": [
+            "Nordic",
+            "Alpine"
+        ],
+        "email": "info@okemo.com",
+        "description": "Rising above the village of Ludlow, in south-central Vermont,\nOriginally, a small community-run ski hill, Okemo began to blossom when, in 1982, Tim and Diane Mueller purchased the ski area and transformed it into the popular, four-season resort that it is today. The Muellers also operate Crested Butte Mountain Resort, in Colo., and Mount Sunapee Resort, in N.H.\nOkemo is the ideal hub from which to launch\nWinter sports enthusiasts find southern Vermont's highest vertical drop and vast trail network that spans five distinct alpine areas, an exceptional skiing and riding experience for all ability levels. Nordic skiing, snowshoeing, ice-skating and snow tubing round out the outdoor winter excitement.\nSpecial lodging packages are now available.",
+        "address_string": "77 Okemo Ridge Road, Ludlow, VT 05149",
+        "lat": 43.40161,
+        "lon": -72.716386
+    },
+    "Sleepy Hollow Inn Ski & Bike Center": {
+        "website": "http:\/\/www.skisleepyhollow.com",
+        "stats": [
+
+        ],
+        "name": "Sleepy Hollow Inn Ski & Bike Center",
+        "address": {
+            "town": "Huntington",
+            "state": "VT",
+            "street": "1805 Sherman Hollow Rd",
+            "zipcode": "05462"
+        },
+        "type": [
+
+        ],
+        "email": "info@sleepyhollow.com",
+        "description": "Come cross-country ski or mountain bike with us! Our trails are challenging and great fun. Visit Butternut Cabin, with a stunning view of Camel\u2019s Hump and Vermont\u2019s rolling Green Mountains. Our",
+        "address_string": "1805 Sherman Hollow Rd, Huntington, VT 05462",
+        "lat": 44.352089,
+        "lon": -73.029276
+    },
+    "Brattleboro Outing Club": {
+        "website": "http:\/\/www.brattleborooutingclub.org",
+        "stats": [
+
+        ],
+        "name": "Brattleboro Outing Club",
+        "address": {
+            "town": "Brattleboro",
+            "state": "VT",
+            "street": "348 Upper Dummerston Rd., P.O. Box 335",
+            "zipcode": "05302"
+        },
+        "type": [
+
+        ],
+        "email": "xc@brattleborooutingclub.org",
+        "description": "The BOC Hut is the gateway to Vermont skiing. We are the first area as you head north, off Exit 2 of I-91. Located at the Brattleboro Country Club, just two miles from town, the BOC Hut is where",
+        "address_string": "348 Upper Dummerston Rd., P.O. Box 335, Brattleboro, VT 05302",
+        "lat": 42.8733779,
+        "lon": -72.581618
+    },
+    "Topnotch Resort and Spa": {
+        "website": "http:\/\/www.topnotchresort.com",
+        "stats": {
+            "Nordic": {
+                "Lessons": "Yes",
+                "Snowshoeing": "Yes",
+                "Skating Terrain": "0 km",
+                "Total Terrain": "30 km",
+                "Rentals": "Yes",
+                "Night Skiing": "No",
+                "Tracked Terrain": "0 km"
+            }
+        },
+        "name": "Topnotch Resort and Spa",
+        "address": {
+            "town": "Stowe",
+            "state": "VT",
+            "street": "4000 Mountain Road",
+            "zipcode": "05672"
+        },
+        "type": [
+            "Nordic"
+        ],
+        "email": "info@topnotchresort.com",
+        "description": "Authentic, understated and gracious,",
+        "address_string": "4000 Mountain Road, Stowe, VT 05672",
+        "lat": 44.49345,
+        "lon": -72.739365
+    },
+    "Blueberry Lake X-C": {
+        "website": "http:\/\/blueberrylakeskivt.com",
+        "stats": {
+            "Nordic": {
+                "Lessons": "Yes",
+                "Snowshoeing": "Yes",
+                "Skating Terrain": "21 km",
+                "Total Terrain": "30 km",
+                "Rentals": "Yes",
+                "Night Skiing": "No",
+                "Tracked Terrain": "21 km"
+            }
+        },
+        "name": "Blueberry Lake X-C",
+        "address": {
+            "town": "Warren",
+            "state": "VT",
+            "street": "424 Plunkton Road",
+            "zipcode": "05674"
+        },
+        "type": [
+            "Nordic"
+        ],
+        "email": "no_email@blueberrylakeskivt.com",
+        "description": "\u201cThe Snow Bowl of Sugarbush.\u201d Offers 30 km of trails which are groomed daily. A full line of rentals (including snowshoes) and instruction are also available. Dogs are welcome. If it is cold and windy where you ski come to Blueberry Lake. We are very protected from the wind and get and hold the snow better than most.",
+        "address_string": "424 Plunkton Road, Warren, VT 05674",
+        "lat": 44.0972469,
+        "lon": -72.8263648
+    },
+    "Suicide Six Ski Area": {
+        "website": "http:\/\/suicide6.com\/",
+        "stats": [
+
+        ],
+        "name": "Suicide Six Ski Area",
+        "address": {
+            "town": "Woodstock",
+            "state": "VT",
+            "street": "14 the Green",
+            "zipcode": "05091"
+        },
+        "type": [
+
+        ],
+        "email": "lcv@woodstockinn.com",
+        "description": "\nOur trail grooming and snowmaking capabilities insure that you and your family can plan on an exhilarating day of skiing or riding.\u00a0 And you'll be sharing a family experience that dates back to Wallace \"Bunny\" Bertram, who opened the first ski lift on Hill No. 6 (thus, the name) back in 1936.\nAnd snowboarders are welcome on the same slopes that proudly hosted the first National Snow Snurfing (the original name) competition in 1982!",
+        "address_string": "14 the Green, Woodstock, VT 05091",
+        "lat": 43.623174,
+        "lon": -72.518896
+    },
+    "Pico Mountain": {
+        "website": "http:\/\/www.picomountain.com",
+        "stats": {
+            "Alpine": {
+                "Lessons": "Yes",
+                "Snowmaking": "75%",
+                "Total Lifts": [
+                    "1 Surface",
+                    "2 Double",
+                    "2 Triple",
+                    "2 Quad",
+                    "2 Hi-Speed Quad"
+                ],
+                "Average Annual Snowfall": "21 feet",
+                "Vertical Drop": "1967 feet",
+                "Terrain Parks": "1",
+                "Advanced\/Expert": "34%",
+                "Intermediate": "47%",
+                "Glades": "3",
+                "Total Trails": "53",
+                "Easy": "19%",
+                "Total Acreage": "265 skiable acres",
+                "Rentals": "Yes",
+                "Night Skiing": "No"
+            }
+        },
+        "name": "Pico Mountain",
+        "address": {
+            "town": "Killington",
+            "state": "VT",
+            "street": "73 Alpine Drive",
+            "zipcode": "05751"
+        },
+        "type": [
+            "Alpine"
+        ],
+        "email": "info@picomoountain.com",
+        "description": "In 1937 on Thanksgiving morning, a legend was born,",
+        "address_string": "73 Alpine Drive, Killington, VT 05751",
+        "lat": 43.6621499,
+        "lon": -72.842512
+    },
+    "Timber Creek XC Ski Area": {
+        "website": "http:\/\/www.timbercreekxc.com",
+        "stats": [
+
+        ],
+        "name": "Timber Creek XC Ski Area",
+        "address": {
+            "town": "West Dover",
+            "state": "VT",
+            "street": "Route 100 North",
+            "zipcode": "05356"
+        },
+        "type": [
+
+        ],
+        "email": "vtcxc@sover.net",
+        "description": "Across from Mount Snow, cradled by the Green Mountains, is Timber Creek\u2026a very high quality cross country ski area. With a dependable mountain climate and a high elevation, an abundance of snow becomes a way of life at Timber Creek. The skier has a choice of adventures on a trail system that meanders and explores where you can ski the forested hills or reach up to the high Green Mountain ridges or enjoy 4 new km of snowshoe trails. We hope you will discover a wonderful world in Vermont\u2019s mountains\u2026and enjoy it along the way. We certainly do!",
+        "address_string": "Route 100 North, West Dover, VT 05356",
+        "lat": 43.7907016,
+        "lon": -72.7614485
+    },
+    "Viking Nordic Center": {
+        "website": "http:\/\/www.vikingnordic.com",
+        "stats": {
+            "Nordic": {
+                "Lessons": "Yes",
+                "Snowshoeing": "Yes",
+                "Skating Terrain": "30 km",
+                "Total Terrain": "35 km",
+                "Rentals": "Yes",
+                "Night Skiing": "Yes",
+                "Tracked Terrain": "35 km"
+            }
+        },
+        "name": "Viking Nordic Center",
+        "address": {
+            "town": "Londonderry",
+            "state": "VT",
+            "street": "615 Little Pond Rd., PO Box 187",
+            "zipcode": "05148"
+        },
+        "type": [
+            "Nordic"
+        ],
+        "email": "skiandstay@vikingnordic.com",
+        "description": "Viking Nordic Center is one of the oldest cross-country ski centers in North America. With 35 kilometers of trails we offer something for every skier. From the rolling gentle terrain of our inner trail system to the long loops through the woods of our outer trail system, beginners and experts can find terrain that will both please and challenge them. 35 km of trails are open for snowshoeing. After a long day of skiing you can enjoy a hearty cup of soup in our caf\u00e9 or bring your own lunch for a picnic at our warming hut overlooking Vermont\u2019s Stratton Mountain.",
+        "address_string": "615 Little Pond Rd., PO Box 187, Londonderry, VT 05148",
+        "lat": 43.2263639,
+        "lon": -72.784088
+    },
+    "Catamount Trail Association": {
+        "website": "http:\/\/catamounttrail.org",
+        "stats": [
+
+        ],
+        "name": "Catamount Trail Association",
+        "address": {
+            "town": "Burlington",
+            "state": "VT",
+            "street": "1 Mill St., Suite 350",
+            "zipcode": "05401"
+        },
+        "type": [
+
+        ],
+        "email": "info@catamounttrail.org",
+        "description": "The Catamount Trail (CT) runs through the heart of Vermont\u2019sGreen Mountains for over 300-miles from the Massachusetts border to the Canadian border and offers opportunities for every type of",
+        "address_string": "1 Mill St., Suite 350, Burlington, VT 05401",
+        "lat": 44.48842,
+        "lon": -73.1847928
+    },
+    "Hazen's Notch Association": {
+        "website": "http:\/\/www.hazensnotch.org",
+        "stats": {
+            "Nordic": {
+                "Lessons": "Yes",
+                "Snowshoeing": "Yes",
+                "Skating Terrain": "0 km",
+                "Total Terrain": "60 km",
+                "Rentals": "Yes",
+                "Night Skiing": "No",
+                "Tracked Terrain": "40 km"
+            }
+        },
+        "name": "Hazen's Notch Association",
+        "address": {
+            "town": "Montgomery Center",
+            "state": "VT",
+            "street": "1423 Hazen's Notch Road, P.O. Box 478",
+            "zipcode": "05471"
+        },
+        "type": [
+            "Nordic"
+        ],
+        "email": "info@hazensnotch.org",
+        "description": "Located at the top of Vermont in the \u201cCovered Bridge Town\u201d of Montgomery near the Jay Peak Resort, Hazen\u2019s Notch is on the western edge of the beautiful, uncrowded and snowy Northeast Kingdom. 60 kilometers of groomed and marked trails pass through mixed maple, birch and evergreen forest and across gentle, open meadows. There are spectacular views of Hazen\u2019s Notch and numerous peaks over 3,000 in elevation in the Jay Range and Cold Hollow Range of the Green Mountains which completely encircle the trail system.\u00a025 trails for all abilities provide loops of different lengths for classical crosscountry skiing and or snowshoeing. Trail difficulty is evenly divided between",
+        "address_string": "1423 Hazen's Notch Road, P.O. Box 478, Montgomery Center, VT 05471",
+        "lat": 44.8701755,
+        "lon": -72.5822427
+    },
+    "Mount Snow Resort": {
+        "website": "http:\/\/www.mountsnow.com",
+        "stats": {
+            "Alpine": {
+                "Lessons": "Yes",
+                "Snowmaking": "80%",
+                "Total Lifts": [
+                    "5 Surface",
+                    "4 Double",
+                    "6 Triple",
+                    "1 Quad",
+                    "3 Hi-Speed Quad",
+                    "1 6-Person"
+                ],
+                "Average Annual Snowfall": "13 feet",
+                "Vertical Drop": "1700 feet",
+                "Terrain Parks": "10",
+                "Advanced\/Expert": "18%",
+                "Intermediate": "68%",
+                "Glades": "0",
+                "Total Trails": "80",
+                "Easy": "15%",
+                "Total Acreage": "588 skiable acres",
+                "Rentals": "Yes",
+                "Night Skiing": "No"
+            }
+        },
+        "name": "Mount Snow Resort",
+        "address": {
+            "town": "West Dover",
+            "state": "VT",
+            "street": "89 Grand Summit Way",
+            "zipcode": "05356"
+        },
+        "type": [
+            "Alpine"
+        ],
+        "email": "info@mountsnow.com",
+        "description": "\n\n\n\n\n\n\n\n\n\n\n",
+        "address_string": "89 Grand Summit Way, West Dover, VT 05356",
+        "lat": 42.9653751,
+        "lon": -72.8927871
+    },
+    "Smugglers' Notch Resort": {
+        "website": "http:\/\/www.smuggs.com\/skivtw",
+        "stats": {
+            "Nordic": {
+                "Lessons": "Yes",
+                "Snowshoeing": "Yes",
+                "Skating Terrain": "26 km",
+                "Total Terrain": "30 km",
+                "Rentals": "Yes",
+                "Night Skiing": "No",
+                "Tracked Terrain": "18 km"
+            },
+            "Alpine": {
+                "Lessons": "Yes",
+                "Snowmaking": "62%",
+                "Total Lifts": [
+                    "2 Surface",
+                    "6 Double"
+                ],
+                "Average Annual Snowfall": "25 feet",
+                "Vertical Drop": "2610 feet",
+                "Terrain Parks": "5",
+                "Advanced\/Expert": "32%",
+                "Intermediate": "51%",
+                "Glades": "14",
+                "Total Trails": "78",
+                "Easy": "17%",
+                "Total Acreage": "310 skiable acres",
+                "Rentals": "Yes",
+                "Night Skiing": "No"
+            }
+        },
+        "name": "Smugglers' Notch Resort",
+        "address": {
+            "town": "Smugglers' Notch",
+            "state": "VT",
+            "street": "4323 Vermont Route 108 South",
+            "zipcode": "05464"
+        },
+        "type": [
+            "Nordic",
+            "Alpine"
+        ],
+        "email": "smuggs@smuggs.com",
+        "description": "Smugglers' Notch Resort is famous for providing families with special vacation memories year round in Vermont's beautiful Green Mountains. Winter means skiing and riding on three interconnected mountains on northern Vermont's biggest vertical rise at 2,610 feet and 78 trails offering fun and excitement to all ability levels. Expert instruction for children and adults is provided by the Resort's Snow Sport University in skiing, snowboarding, cross country skiing and snowshoeing. Full-day instruction for children in skiing and snowboarding begins at age 3.\nOff the slopes, Winter activities include snow tubing; zip lining\u00a0through a series of tree platforms on an exciting canopy tour; airboarding; snowmobiling; swimming in the indoor pool and enjoying the hot tub; craft and health and wellness classes; ice skating;\nThe self-contained condominium Village offers slopeside accommodations ranging in size from studios to five bedroom townhouses as well as services including a\u00a0convenience grocery store, restaurants,\u00a0sport shop, and equipment rental and repair shop. Smugglers' commitment to service and a Family Fun Guarantee make it America's Family Resort. Smugglers' is located 35 miles east of Burlington.",
+        "address_string": "4323 Vermont Route 108 South, Smugglers' Notch, VT 05464",
+        "lat": 44.554511,
+        "lon": -72.7955525
+    },
+    "Burke Mountain Ski Area": {
+        "website": "http:\/\/www.skiburke.com\/",
+        "stats": {
+            "Alpine": {
+                "Lessons": "Yes",
+                "Snowmaking": "80%",
+                "Total Lifts": [
+                    "3 Surface",
+                    "3 Quad",
+                    "2 Hi-Speed Quad"
+                ],
+                "Average Annual Snowfall": "18 feet",
+                "Vertical Drop": "2011 feet",
+                "Terrain Parks": "3",
+                "Advanced\/Expert": "41%",
+                "Intermediate": "48%",
+                "Glades": "15",
+                "Total Trails": "54",
+                "Easy": "11%",
+                "Total Acreage": "270 skiable acres",
+                "Rentals": "Yes",
+                "Night Skiing": "No"
+            }
+        },
+        "name": "Burke Mountain Ski Area",
+        "address": {
+            "town": "East Burke",
+            "state": "VT",
+            "street": "223 Sherburne Lodge Road",
+            "zipcode": "05832"
+        },
+        "type": [
+            "Alpine"
+        ],
+        "email": "info@skiburke.com",
+        "description": "With every inch of its 2011\u2019 of vertical, Burke Mountain believes in all that made Vermont skiing famous. So we\u2019ve foregone wider, flatter trails, and the wider, flatter skiers they cater to, for trails and glades that respect the mountain\u2019s natural contours. And we don\u2019t rate tough blues as blacks or anything close to a green as a blue. Up North, you earn it. Not everybody gets a trophy, a mentality we observed watching more than 50 Olympians learn to be great at the world-renowned Burke Mountain Academy. But we want to exclude no one. So if you can\u2019t ski or ride any of our 50 trails or 100+ acres of glades, we\u2019ll teach you. After all, we believe everyone should, at least once, experience what Vermont skiing and riding\u2013the True North experience\u2013was all about. And, in one place, at least, still is. Join us at skiBurke.com.\n",
+        "address_string": "223 Sherburne Lodge Road, East Burke, VT 05832",
+        "lat": 44.5878859,
+        "lon": -71.9161441
+    },
+    "Mountain Top Inn and Resort": {
+        "website": "http:\/\/www.mountaintopinn.com",
+        "stats": {
+            "Nordic": {
+                "Lessons": "Yes",
+                "Snowshoeing": "Yes",
+                "Skating Terrain": "40 km",
+                "Total Terrain": "60 km",
+                "Rentals": "Yes",
+                "Night Skiing": "No",
+                "Tracked Terrain": "40 km"
+            }
+        },
+        "name": "Mountain Top Inn and Resort",
+        "address": {
+            "town": "Chittenden",
+            "state": "VT",
+            "street": "195 Mountain Top Rd.",
+            "zipcode": "05737"
+        },
+        "type": [
+            "Nordic"
+        ],
+        "email": "stay@mountaintopinn.com",
+        "description": "Cross country ski\u00a0or snowshoe\u00a0over\u00a0white glistening meadows and\u00a0along wooded trails; explore challenges for\u00a0all skill levels. With 60 kilometers of trails, (40km groomed), the views vary from majestic mountains to the ice covered lake. Enjoy solitude and breathtaking natural beauty of the Green Mountains. Daily grooming to maintain a well manicured trail system with tracks and skating lanes. Our snowmaking covers a\u00a01km loop ensuring\u00a0optimal conditions, regardless of \u201cmother nature.\u201d The Nordic Ski & Snowshoe Center offers lessons for all levels, equipment rentals, and a menu of sandwiches, soups,\u00a0snacks, home baked cookies and drinks.\u00a0 Dining\u00a0options in the Lodge range from casual Tavern fare to fireside dining. While at the Resort enjoy a horse drawn sleigh ride, snowmobiling, ice skating and\u00a0our old-fashioned sledding hill.\u00a0Dining and activities are open to the public. Just a short drive from Killington. \u00a0Please call in advance to reserve.",
+        "address_string": "195 Mountain Top Rd., Chittenden, VT 05737",
+        "lat": 43.7298568,
+        "lon": -72.9375306
+    },
+    "Killington Resort": {
+        "website": "http:\/\/www.Killington.com",
+        "stats": {
+            "Alpine": {
+                "Lessons": "Yes",
+                "Snowmaking": "80%",
+                "Total Lifts": [
+                    "6 Surface",
+                    "2 Double",
+                    "3 Triple",
+                    "4 Quad",
+                    "5 Hi-Speed Quad",
+                    "2 Gondolas"
+                ],
+                "Average Annual Snowfall": "21 feet",
+                "Vertical Drop": "3050 feet",
+                "Terrain Parks": "6",
+                "Advanced\/Expert": "39%",
+                "Intermediate": "33%",
+                "Glades": "16",
+                "Total Trails": "140",
+                "Easy": "28%",
+                "Total Acreage": "752 skiable acres",
+                "Rentals": "Yes",
+                "Night Skiing": "No"
+            }
+        },
+        "name": "Killington Resort",
+        "address": {
+            "town": "Killington",
+            "state": "VT",
+            "street": "4763 Killington Road",
+            "zipcode": "05751"
+        },
+        "type": [
+            "Alpine"
+        ],
+        "email": "info@killington.com",
+        "description": "",
+        "address_string": "4763 Killington Road, Killington, VT 05751",
+        "lat": 43.619801,
+        "lon": -72.80271
+    },
+    "Kingdom Trails": {
+        "website": "http:\/\/www.kingdomtrails.com\/",
+        "stats": [
+
+        ],
+        "name": "Kingdom Trails",
+        "address": {
+            "town": "East Burke",
+            "state": "VT",
+            "street": "830 Dashney Road, P.O. Box 204",
+            "zipcode": "05832"
+        },
+        "type": [
+
+        ],
+        "email": "info@kingdomtrails.org",
+        "description": "Kingdom Trails Association was established in 1994 by a group of visionary residents and business leaders in the area. Their goal is to encourage recreational use of the Northeast Kingdom that\nWe maintain 110 miles of trails for mountain biking in the spring, summer and fall but also",
+        "address_string": "830 Dashney Road, P.O. Box 204, East Burke, VT 05832",
+        "lat": 44.5983126,
+        "lon": -71.9027895
+    },
+    "Jay Peak Resort": {
+        "website": "http:\/\/www.jaypeakresort.com",
+        "stats": {
+            "Alpine": {
+                "Lessons": "Yes",
+                "Snowmaking": "75%",
+                "Total Lifts": [
+                    "2 Surface",
+                    "1 Double",
+                    "1 Triple",
+                    "3 Quad",
+                    "1 Hi-Speed Quad",
+                    "1 Trams"
+                ],
+                "Average Annual Snowfall": "31 feet",
+                "Vertical Drop": "2153 feet",
+                "Terrain Parks": "4",
+                "Advanced\/Expert": "41%",
+                "Intermediate": "39%",
+                "Glades": "24",
+                "Total Trails": "76",
+                "Easy": "20%",
+                "Total Acreage": "385 skiable acres",
+                "Rentals": "Yes",
+                "Night Skiing": "No"
+            }
+        },
+        "name": "Jay Peak Resort",
+        "address": {
+            "town": "Jay",
+            "state": "VT",
+            "street": "4850 VT Route 242",
+            "zipcode": "05859"
+        },
+        "type": [
+            "Alpine"
+        ],
+        "email": "info@jaypeakresort.com",
+        "description": "This is a sport where many resorts throw impressive numbers, statistics and \u2018est\u2019s\u2019 at you (longest, deepest, bestest\u2026) and while we certainly have our fair share of numbers and accolades, about-Jay Peak is definitely something that can be difficult to quantify within the world of numbers.\nOur approach to skiing and riding is pretty simple; approach the business of skiing and riding from the perspective of the skier and rider.\u00a0 That is, make big mountain skiing and riding affordable (and that market share will always trump yield).\u00a0 Have enough in the way of bell and whistle to compliment the skiing and riding, not replace and detract from it.\u00a0 That commitment should be rewarded.\u00a0 Early openings and late closings are important.\u00a0 And that first Tram always trumps last call.",
+        "address_string": "4850 VT Route 242, Jay, VT 05859",
+        "lat": 44.9284155,
+        "lon": -72.501435
+    },
+    "Morse Farm Ski Touring Center": {
+        "website": "http:\/\/www.skimorsefarm.com",
+        "stats": [
+
+        ],
+        "name": "Morse Farm Ski Touring Center",
+        "address": {
+            "town": "Montpelier",
+            "state": "VT",
+            "street": "1168 Country Road, P.O. Box 1200",
+            "zipcode": "05601"
+        },
+        "type": [
+
+        ],
+        "email": "ski@morsefarm.com",
+        "description": "Visit Vermont\u2019s family friendly cross-country touring center, with views of Camel\u2019s Hump and the Hunger Mountain range. Professionally designed scenic trails off er a diverse choice of terrain,",
+        "address_string": "1168 Country Road, P.O. Box 1200, Montpelier, VT 05601",
+        "lat": 44.286552,
+        "lon": -72.543297
+    },
+    "Craftsbury Outdoor Center": {
+        "website": "http:\/\/www.craftsbury.com",
+        "stats": {
+            "Nordic": {
+                "Lessons": "Yes",
+                "Snowshoeing": "Yes",
+                "Skating Terrain": "85 km",
+                "Total Terrain": "135 km",
+                "Rentals": "Yes",
+                "Night Skiing": "Yes",
+                "Tracked Terrain": "85 km"
+            }
+        },
+        "name": "Craftsbury Outdoor Center",
+        "address": {
+            "town": "Craftsbury Common",
+            "state": "VT",
+            "street": "535 Lost Nation Road",
+            "zipcode": "05827"
+        },
+        "type": [
+            "Nordic"
+        ],
+        "email": "stay@craftsbury.com",
+        "description": "The Craftsbury Outdoor Center is an inspiring place to experience the great outdoors. A year-round destination on 400 acres, this non-profit specializes in exciting outdoor activities for the whole family. The winter season is magical in Craftsbury, and we offer our guests more than just world-class cross-country skiing. Choose from snowshoeing, orienteering, iceskating, backcountry tours, animal tracking, nature studies, yoga and more. We also have certified massage therapists, a sauna and a fitness room. Accommodations for 90 guests in private cottages and comfortable lodges. Babysitting can be arranged with advance notice.",
+        "address_string": "535 Lost Nation Road, Craftsbury Common, VT 05827",
+        "lat": 44.680359,
+        "lon": -72.36351
+    },
+    "Sugarbush Resort": {
+        "website": "http:\/\/www.sugarbush.com",
+        "stats": {
+            "Alpine": {
+                "Lessons": "Yes",
+                "Snowmaking": "70%",
+                "Total Lifts": [
+                    "3 Surface",
+                    "4 Double",
+                    "2 Triple",
+                    "7 Quad",
+                    "5 Hi-Speed Quad"
+                ],
+                "Average Annual Snowfall": "22 feet",
+                "Vertical Drop": "2600 feet",
+                "Terrain Parks": "3",
+                "Advanced\/Expert": "32%",
+                "Intermediate": "46%",
+                "Glades": "21",
+                "Total Trails": "111",
+                "Easy": "22%",
+                "Total Acreage": "578 skiable acres",
+                "Rentals": "Yes",
+                "Night Skiing": "No"
+            }
+        },
+        "name": "Sugarbush Resort",
+        "address": {
+            "town": "Warren",
+            "state": "VT",
+            "street": "1840 Sugarbush Access Rd.",
+            "zipcode": "05674"
+        },
+        "type": [
+            "Alpine"
+        ],
+        "email": "info@sugarbush.com",
+        "description": "Six distinct peaks of unleashed potential. Two uncrowded mountain areas. And 2,000 acres of backcountry in the Slide Brook Basin. It\u2019s no surprise Sugarbush was recently named \u201cBest Ski Town in the East\u201d by Outside Magazine.\nAt the heart of Sugarbush is Lincoln Peak\u2014think quintessential Vermont meets modern slopeside living. Here you\u2019ll find the majority of Sugarbush terrain with classic New England trails leading to the nascent Lincoln Peak Village which includes\nFive miles north Sugarbush\u2019s Mt. Ellen boasts a more casual feel speaks to the ski bum in all of us\u2014but don\u2019t let that fool you. Mt. Ellen is home to Vermont\u2019s highest chairlift, a rippin\u2019 terrain park, and a variety of woods and bump terrain. We think of it as our \u201chidden gem.\u201d",
+        "address_string": "1840 Sugarbush Access Rd., Warren, VT 05674",
+        "lat": 44.145608,
+        "lon": -72.879305
+    }
+}
