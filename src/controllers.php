@@ -48,7 +48,8 @@ $app->get('/user/{id}', function(Request $request, $id) use ($app) {
     if ($request->isXmlHttpRequest()) {
         return (string)$user;
     } else {
-        return $app['twig']->render('user.html.twig', array($user->toArray()));
+        $badges = AdventureCriteria::where('completed_at', '<>', 'NULL')->get();
+        return $app['twig']->render('user.html.twig', array('user' => $user->toArray(), 'badges' => $badges));
     }
 })
 ->bind('user_badges');
