@@ -283,10 +283,6 @@ $app->get('/preference/{id}', function(Request $request, $id) use ($app) {
 ->bind('preferences')
 ;
 
-$app->get('/help', function() use ($app) {
-    return $app['twig']->render('help.html.twig', array());
-});
-
 $app->get('/badge/complete/{criteriaId}', function($criteriaId) use ($app) {
     $criteria = AdventureCriteria::find($criteriaId);
     $criteria->completed_at = new \DateTime();
