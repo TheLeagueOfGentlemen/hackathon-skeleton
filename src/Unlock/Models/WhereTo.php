@@ -86,7 +86,7 @@ class WhereTo
             return $attractions[$attractions->count() - 1];
 
         } else if (!empty($crit->city)) {//If has City
-            $attractions = City::find($crit->city->id)->getAttractions();
+            $attractions = City::find($crit->city->id)->attractions;
 
             $query = $attractions->orderBy($this->DB->connection()->raw('RAND()'));
             if ($skipIDs) {
@@ -96,7 +96,7 @@ class WhereTo
             return $attractions->take(1)->get();
 
         } else if (!empty($crit->county)) {//If has County
-            $attractions = County::find($crit->county)->getCities()->getAttractions();
+            $attractions = County::find($crit->county)->getCities()->attractions;
 
             $query = $attractions->orderBy($this->DB->connection()->raw('RAND()'));
             if ($skipIDs) {
