@@ -115,7 +115,7 @@ $app->get('/testcriteria/{id}', function($id) use ($app) {
 
 $app->post('/criteria', function(Request $request) use ($app) {
     $data = array_merge($request->request->all(), array('user_id' => $app['UserID']));
-    $data['attractions'] = array($data['attraction_id']);
+    $data['attractions'] = isset($data['attraction_id']) ? array($data['attraction_id']) : array();
     unset($data['attraction_id']);
 
     $criteria = $app['adventure_manager']->persistAdventureCriteria($data);
