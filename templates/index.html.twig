@@ -3,27 +3,27 @@
 {% set _body_classes = ['home'] %}
 
 {% block styles %}
+<link rel="stylesheet" href="/css/select2.css">
 {{ parent() }}
-<link rel="stylesheet" href="/js/select2/select2.css" type="text/css" />
 {% endblock %}
 
 {% block content %}
 <div class="landing screen">
     <div class="adventure topFadeIn">
-        <input class="activity-input" type="text" placeholder="Activity" autofocus>
-        <input class="location-input" type="text" placeholder="Location">
+        <!-- <input class="activity-input" type="text" placeholder="Activity" autofocus> -->
+        <!-- <input class="location-input" type="text" placeholder="Location"> -->
 
         <form action="{{ app.request.baseUrl }}/criteria" method="POST" accept-charset="utf-8">
             <!--
             <input type="hidden" name="category" id="category" placeholder="Hike, eat, drink, etc." value="" style="width: 200px;" />
             -->
-            <select name="verb" id="verb" style="width: 200px;">
+            <select name="verb" id="verb">
                 <option></option>
                 {% for verb in verbs %}
                 <option value="{{ verb.id }}">{{ verb.name }}</option>
                 {% endfor %}
             </select>
-            <input type="hidden" name="location" id="location" value="" style="width: 200px;" />
+            <input type="hidden" name="location" id="location" value="" />
             <input type="hidden" name="city_id" id="city_id" data-provides="location-field" data-location-type="city" />
             <input type="hidden" name="county_id" id="county_id" data-provides="location-field" data-location-type="county" />
             <input type="hidden" name="attraction_id" id="attraction_id" data-provides="location-field" data-location-type="attraction" />
@@ -52,10 +52,12 @@ var unlock = unlock || {
         });
 
         $('#verb').select2({
-            placeholder: 'Eat, hike, drink, etc.'
+            placeholder: 'Eat, hike, drink, etc.',
+            containerCssClass: 'activity-select'
         });
 
         $('#location').select2({
+            containerCssClass: 'location-select',
             ajax: {
                 url: function(term, page, context) {
                     return [

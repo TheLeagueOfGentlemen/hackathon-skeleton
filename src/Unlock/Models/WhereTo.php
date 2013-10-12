@@ -23,13 +23,16 @@ class WhereTo
         $defaultDistance = $distance = 1;
         $crit = $this->criteria;
         $attractions = $crit->getAttractions();
-
+        $flunkedIDs = null;
         while($attractions->count() < 3) {
+
             unset($newAttraction);
             $attraction = $this->getTailAttraction($attractions);
 
             //Based on previous/first attractions category
-            $flunkedIDs = self::flunkCategory(iterator_to_array($attractions));
+            if ($attractions->count() > 0) {
+                $flunkedIDs = self::flunkCategory(iterator_to_array($attractions));
+            }
 
             //Geo based radius for next attraction
             $lat = $attraction->lat;
@@ -53,7 +56,8 @@ class WhereTo
     }
 
     private function distanceQuery($attractions, $distance, $lat, $lon) {
-        return Attraction::join('attraction_category', 'attraction_category.attraction_id', '=', 'attraction.id')
+        $skipIDs = $this->notAttractionIDs($attractions);
+        $query = Attraction::join('attraction_category', 'attraction_category.attraction_id', '=', 'attraction.id')
                     ->join('category', 'category.id', '=', 'attraction_category.category_id')
                     ->select($this->DB->connection()->raw("(
                         (ACOS(
@@ -67,28 +71,39 @@ class WhereTo
                           * 60 * 1.1515
                       ) AS distance, attraction.*"))
                     ->having('distance', '<=', $distance)
-                    ->orderBy($this->DB->connection()->raw('RAND()'))
-                    ->whereNotIn('attraction.id', $this->notAttractionIDs($attractions));
+                    ->orderBy($this->DB->connection()->raw('RAND()'));
+        if ($skipIDs) {
+            $query->whereNotIn('attraction.id', $this->notAttractionIDs($attractions));
+        }
+        return $query;
     }
 
     public function getTailAttraction ($attractions) {
         $crit = $this->criteria;
+        $skipIDs = $this->notAttractionIDs($attractions);
 
         if (!empty($attractions[$attractions->count() - 1])) {//If has attraction
             return $attractions[$attractions->count() - 1];
 
         } else if (!empty($crit->city)) {//If has City
-            return City::find($crit->city->id)
-                    ->getAttractions()
-                    ->whereNotIn('id', $this->notAttractionIDs())
-                    ->orderBy($this->DB->connection()->raw('RAND()'))->take(1)->get();
+            $attractions = City::find($crit->city->id)->attractions;
+
+            $query = $attractions->orderBy($this->DB->connection()->raw('RAND()'));
+            if ($skipIDs) {
+                $query->whereNotIn('id', $skipIDs);
+            }
+
+            return $query->take(1)->get();
 
         } else if (!empty($crit->county)) {//If has County
-            return County::find($crit->county)
-                    ->getCities()
-                    ->getAttractions()
-                    ->whereNotIn('id', $this->notAttractionIDs())
-                    ->orderBy($this->DB->connection()->raw('RAND()'))->take(1)->get();
+            $attractions = County::find($crit->county)->getCities()->attractions;
+
+            $query = $attractions->orderBy($this->DB->connection()->raw('RAND()'));
+            if ($skipIDs) {
+                $query->whereNotIn('id', $skipIDs);
+            }
+
+            return $query->take(1)->get();
 
         } else if (!empty($crit->geolocation)) {//Do some random shit with the geolocation
             //Get attractions within a radius of their geolocation
@@ -96,8 +111,11 @@ class WhereTo
             return $query->first();
 
         } else {//Else do some even more random shit
-            return Attraction::whereNotIn('id',  $this->notAttractionIDs())
-                    ->orderBy($this->DB->connection()->raw('RAND()'))->take(1)->get();
+            $query = Attraction::orderBy($this->DB->connection()->raw('RAND()'));
+            if ($skipIDs) {
+                $query->whereNotIn('id', $this->notAttractionIDs($attractions));
+            }
+            return $query->take(1)->get()->first();
         }
         return $attraction;
     }

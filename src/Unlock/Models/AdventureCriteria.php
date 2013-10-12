@@ -35,8 +35,16 @@ class AdventureCriteria extends Model
         return $this->belongsToMany('\Unlock\Models\Attraction', 'adventurecritera_attractions', 'adventurecriteria_id', 'attraction_id');
     }
 
+    public function attractions() {
+        return $this->belongsToMany('\Unlock\Models\Attraction', 'adventurecritera_attractions', 'adventurecriteria_id', 'attraction_id');
+    }
+
     public function getRejectedAttractions() {
         return $this->belongsToMany('\Unlock\Models\Attraction', 'adventurecriteria_rejectedattractions', 'adventurecriteria_id', 'attraction_id')->getResults();
+    }
+
+    public function rejected_attractions() {
+        return $this->belongsToMany('\Unlock\Models\Attraction', 'adventurecriteria_rejectedattractions', 'adventurecriteria_id', 'attraction_id');
     }
 
     public function getRejectAttractionCollection() {

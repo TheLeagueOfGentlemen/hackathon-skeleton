@@ -91,7 +91,7 @@ class AdventureManager
         $criteria->user_id = $data['user_id'];
         $criteria->save();
 
-        if ( ! empty($data['attractions'])) {
+        if (!empty($data['attractions'])) {
             $this->DB->connection()->delete(
                 'DELETE FROM adventurecritera_attractions WHERE adventurecriteria_id = ' . $criteria->id
             );
@@ -102,7 +102,7 @@ class AdventureManager
             }
         }
 
-        if ( ! empty(isset($data['rejectedAttractions']))) {
+        if (!empty($data['rejectedAttractions'])) {
             $this->DB->connection()->delete(
                 'DELETE FROM adventurecriteria_rejectedattractions WHERE adventurecriteria_id = ' . $criteria->id
             );
