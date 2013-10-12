@@ -40,3 +40,24 @@ R::exec("CREATE TABLE adventurecriteria_rejectedattractions (
     `attraction_id` int not null,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB");
+
+R::exec("
+    INSERT INTO adventurecriteria
+        (user_id, city_id, county_id, verb_id, lat, lon)
+    VALUES
+        (1, 243, 13, 1, 44.490239, -73.18479)
+");
+
+R::exec("
+    INSERT INTO adventurecritera_attractions
+        (adventurecriteria_id, attraction_id)
+    VALUES
+        (1, 270)
+");
+
+R::exec("
+    INSERT INTO adventurecriteria_rejectedattractions
+        (adventurecriteria_id, attraction_id)
+    VALUES
+        (1, 434)
+");
