@@ -48,9 +48,11 @@ $app->get('/user/{id}', function(Request $request, $id) use ($app) {
     if ($request->isXmlHttpRequest()) {
         return (string)$user;
     } else {
-        return $app['twig']->render('user.html.twig', array($user->toArray()));
+        $badges = AdventureCriteria::where('completed_at', '<>', 'NULL')->get();
+        return $app['twig']->render('user.html.twig', array('user' => $user->toArray(), 'badges' => $badges));
     }
-});
+})
+->bind('user_badges');
 
 
 /* ------------------------------------------------*/
@@ -280,6 +282,15 @@ $app->get('/preference/{id}', function(Request $request, $id) use ($app) {
 ->method('GET|POST')
 ->bind('preferences')
 ;
+
+$app->get('/badge/complete/{criteriaId}', function($criteriaId) use ($app) {
+    $criteria = AdventureCriteria::find($criteriaId);
+    $criteria->completed_at = new \DateTime();
+    $criteria->save();
+
+    return new JsonResponse(array('ok' => 1));
+})
+->bind('badge_complete');
 
 /* ------------------------------------------------*/
 /* App
