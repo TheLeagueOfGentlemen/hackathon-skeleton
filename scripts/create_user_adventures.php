@@ -22,7 +22,6 @@ $users = array(
         'last_name' => 'Smith',
         'email' => 'jsmith@leagueofgentleman.com',
         'password' => '1234',
-        'preferred_categories' => '1,2,3',
         'num_completed_adventures' => 2
     )
 );

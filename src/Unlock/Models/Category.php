@@ -14,3 +14,9 @@ class Category extends Model
         return $this->belongsTo('\Unlock\Models\Verb');
     }
 }
+
+    public function users() {
+        return $this->belongsToMany('\Unlock\Models\User');
+    }
+}
+

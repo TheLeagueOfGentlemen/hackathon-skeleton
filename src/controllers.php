@@ -239,6 +239,31 @@ $app->get('/criteria/{criteriaId}/attraction/replace/{attractionId}', function($
     return new JsonResponse($new_attraction->toArray());
 });
 
+$app->get('/preference/{id}', function(Request $request, $id) use ($app) {
+    $user = User::find($id);
+
+    if ($request->isMethod('POST')) {
+        $app['user_manager']->setPreferences($id, $request->request->all());
+    }
+    $prefs = $app['user_manager']->getPreferences($id)->get()->toArray();
+    $newprefs = array();
+    foreach ($prefs as $k => $v) {
+        $newprefs[$k] = $v['name']; // id -> name
+    }
+
+    $all_categories = Category::all()->toArray();
+    return $app['twig']->render('user_prefs.html.twig',
+                                array('user' => $user->toArray(),
+                                      'prefs' => $newprefs,
+                                      'categories' => $all_categories,
+                                      )
+                                );
+})
+->method('GET|POST')
+->bind('preferences')
+;
+
+
 
 /* ------------------------------------------------*/
 /* App
