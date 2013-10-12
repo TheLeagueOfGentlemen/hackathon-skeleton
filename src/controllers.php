@@ -120,8 +120,9 @@ $app->get('/verb/{id}', function($id) use ($app) {
 });
 
 // WhereTo
-$app->get('/whereto', function() use ($app) {
-    return new JsonResponse($app['where_to']->getAttractions());
+$app->get('/whereto/{id}', function($id) use ($app) {
+    $crit = AdventureCriteria::find($id);
+    return new JsonResponse($app['where_to']->setAdventureCriteria($crit)->getAttractions());
 });
 
 /* ------------------------------------------------*/
