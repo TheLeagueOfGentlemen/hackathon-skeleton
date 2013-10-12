@@ -21,7 +21,7 @@ var unlock = unlock || {
 
 $('#action').select2({
     ajax: {
-        url: '/data/activities.json',
+        url: '/category',
         dataType: 'json',
         results: function(data, page) {
             return data;
@@ -41,7 +41,7 @@ $('#location').select2({
     ajax: {
         url: function(term, page, context) {
             return [
-                '/the/json/endpoint?category_id=',
+                '/adventure?category_id=',
                 unlock.current_category,
                 '&term=',
                 term
