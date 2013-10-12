@@ -166,7 +166,6 @@
                 $.getJSON(_this.getReplaceUrl($btn.data('attraction')), function(data) {
                     var $new_attraction = $($.trim(_this.result_tpl(data)));
                     $old_attraction.replaceWith($new_attraction);
-                    refreshPosition();
                 });
             });
         }
