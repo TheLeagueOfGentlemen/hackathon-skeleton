@@ -1,6 +1,93 @@
 {% extends "layout.html.twig" %}
 
+{% block styles %}
+{{ parent() }}
+<link rel="stylesheet" href="/js/select2/select2.css" type="text/css" />
+{% endblock %}
+
 {% block content %}
-<h1>Some unimpressive home page</h1>
-<p>Doesnt do much.</p>
+
+<form action="" method="get" accept-charset="utf-8">
+    I want to 
+    <!--
+    <input type="hidden" name="category" id="category" placeholder="Hike, eat, drink, etc." value="" style="width: 200px;" />
+    -->
+    <select name="verb" id="verb" style="width: 200px;">
+        <option></option>
+        {% for verb in verbs %}
+        <option value="{{ verb.id }}">{{ verb.name }}</option>
+        {% endfor %}
+    </select>
+    at <input type="hidden" name="location" id="location" value="" style="width: 200px;" />
+    <input type="hidden" name="city_id" id="city_id" data-provides="location-field" data-location-type="city" />
+    <input type="hidden" name="county_id" id="county_id" data-provides="location-field" data-location-type="county" />
+    <input type="hidden" name="attraction_id" id="attraction_id" data-provides="location-field" data-location-type="attraction" />
+    <input type="submit" value="Go" />
+</form>
+{% endblock %}
+
+{% block scripts %}
+{{ parent() }}
+<script type="text/javascript" src="/js/select2/select2.js"></script>
+<script type="text/javascript">
+
+var unlock = unlock || {
+    location_fields: {},
+    verb_field: null,
+    init: function() {
+        var _this = this;
+        this.verb_field = $('#verb');
+        $('[data-provides="location-field"]').each(function(i, elem) {
+            var $elem = $(elem);
+            _this.location_fields[$elem.data('location-type')] = $elem;
+        });
+
+        $('#verb').select2({
+            placeholder: 'Eat, hike, drink, etc.'
+        });
+
+        $('#location').select2({
+            ajax: {
+                url: function(term, page, context) {
+                    return [
+                        '/index_dev.php/adventure?verb=',
+                        unlock.getVerb(),
+                        '&term=',
+                        term
+                    ].join('');
+                },
+                dataType: 'json',
+                results: function(data, page) {
+                    return { results: data };
+                }
+            },
+            minimumInputLength: 3,
+            formatResult: function(object) {
+                return object.name;
+            },
+            formatSelection: function(object) {
+                return object.name;
+            }
+        }).on('change', function(e) {
+            unlock.setLocationFieldValue(e.added.type, e.added.object_id);
+        });
+    },
+    getVerb: function() {
+        return this.verb_field.select2('val');
+    },
+    setLocationFieldValue: function(type, value) {
+        for (x in this.location_fields) {
+            if (x === type) {
+                this.location_fields[x].val(value);
+                continue;
+            }
+            this.location_fields[x].val('');
+        }
+    }
+};
+
+unlock.init();
+
+</script>
+
 {% endblock %}

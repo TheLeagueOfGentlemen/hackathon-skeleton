@@ -3,8 +3,9 @@
     <head>
         <title>Foo Bar Layout</title>
 
+        {% block styles %}
         <link href="{{ app.request.basepath }}/css/main.css" rel="stylesheet" type="text/css" />
-
+        {% endblock %}
     </head>
     <body>
         {% block flash %}

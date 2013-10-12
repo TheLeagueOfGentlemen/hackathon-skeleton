@@ -7,7 +7,8 @@ use Symfony\Component\HttpKernel\HttpKernelInterface,
     Unlock\Models\User,
     Unlock\Models\Adventure,
     Unlock\Models\Attraction,
-    Unlock\Models\Category;
+    Unlock\Models\Category,
+    Unlock\Models\Verb;
 
 /* ------------------------------------------------*/
 /* Static
@@ -20,7 +21,10 @@ $app->before(function (Request $request) use ($app) {
 });
 
 $app->get('/', function () use ($app) {
-    return $app['twig']->render('index.html.twig', array());
+    $data = array(
+        'verbs' => Verb::all()
+    );
+    return $app['twig']->render('index.html.twig', $data);
 })
 ->bind('home')
 ;
@@ -45,8 +49,8 @@ $app->get('/user/{id}', function(Request $request, $id) use ($app) {
 // Display new adventure
 $app->get('/adventure', function(Request $request) use ($app) {
     // Term Search
-    if ($request->get('category') && $request->get('term')) {
-        return new JsonResponse($app['adventure_manager']->findLocationsByTerm($request->get('category'), $request->get('term')));
+    if ($request->get('verb') && $request->get('term')) {
+        return new JsonResponse($app['adventure_manager']->findLocationsByTerm($request->get('verb'), $request->get('term')));
     }
 
     $categories = $app['adventure_manager']->getCategories();
@@ -90,6 +94,11 @@ $app->get('/attraction/{id}', function($id) use ($app) {
     return new JsonResponse($app['adventure_manager']->getAttraction($id)->toArray());
 });
 
+$app->get('/verb/{id}', function($id) use ($app) {
+    $verb = Verb::find($id);
+    $cats = $verb->getCategories()->get();
+    return new JsonResponse($cats->toArray());
+});
 
 /* ------------------------------------------------*/
 /* App
