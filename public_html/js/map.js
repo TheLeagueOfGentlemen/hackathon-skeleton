@@ -1,13 +1,33 @@
-var map  = (function (window, undefined) {
-    var gMap = google.maps,
-        options = {
+gMap = google.maps;
+mapUtils = {
+    toLatLng: function (array) {
+        if (array instanceof gMap.LatLng) {
+            return array;
+        } else if (_.isObject(array) && array.latitude !== undefined) {
+            return new gMap.LatLng(array.latitude, array.longitude);
+        } else if (_.isArray(array)) {
+            return new gMap.LatLng(array[0], array[1]);
+        }
+        return new gMap.LatLng(1, 1);
+    }
+};
+map = (function (window, undefined) {
+    var options = {
             map: {
                 center: new gMap.LatLng(-34.397, 150.644),
                 zoom: 8,
+                mapTypeControl: false,
+                scaleControl: false,
+                rotateControl: false,
+                streetViewControl: false,
+                zoomControl: false,
+                mapOverviewControl: false,
+                panControl: false,
                 mapTypeId: gMap.MapTypeId.ROADMAP
             },
             id: '',
         },
+        vermont = [[-71.503554,45.013027],[-71.4926,44.914442],[-71.629524,44.750133],[-71.536416,44.585825],[-71.700724,44.41604],[-72.034817,44.322932],[-72.02934,44.07647],[-72.116971,43.994316],[-72.204602,43.769761],[-72.379864,43.572591],[-72.456542,43.150867],[-72.445588,43.008466],[-72.533219,42.953697],[-72.544173,42.80582],[-72.456542,42.729142],[-73.267129,42.745573],[-73.278083,42.833204],[-73.245221,43.523299],[-73.404052,43.687607],[-73.349283,43.769761],[-73.436914,44.043608],[-73.321898,44.246255],[-73.294514,44.437948],[-73.387622,44.618687],[-73.332852,44.804903],[-73.343806,45.013027],[-72.308664,45.002073],[-71.503554,45.013027]].map(_.compose(mapUtils.toLatLng, function (a) {return a.reverse()})),
         map = null,
         markers = [],
         polylines = [],
@@ -15,18 +35,20 @@ var map  = (function (window, undefined) {
 
     function config (o) {
         options = _.merge(options, o);
-        options.map.center = arrayToLatLng(options.map.center);
+        options.map.center = mapUtils.toLatLng(options.map.center);
     }
 
     function init (id) {
         map = new google.maps.Map(document.getElementById(options.id), options.map);
+        var vt = new gMap.Polygon({path: vermont});
+        map.fitBounds(vt.getBounds());
         blackout();
         return public;
     }
 
     //Method adds a marker to the map
     function addMarker (options) {
-        var position = arrayToLatLng(options.position),
+        var position = mapUtils.toLatLng(options.position),
             marker = new gMap.Marker({map: map}),
             //icon = this.getIcon(options.propertyType),
             markerOptions = {
@@ -54,15 +76,23 @@ var map  = (function (window, undefined) {
 
     //Delete Marker
     function deleteMarker (id) {
-        var i = _.findIndex(markers, {_id: id});
-        markers[i] && markers[i].setOptions({map: null});
+        getMarkerByID(id).setOptions({map: null});
         markers.splice(i, 1);
+        return public;
+    }
+
+    function getMarkerByID (id) {
+        return markers[_.findIndex(markers, {_id: id})];
+    }
+
+    function updateMarker (id, pos) {
+        getMarkerByID(id).setOptions({position: mapUtils.toLatLng(pos)});
         return public;
     }
     
     //Add Polyline
     function addPolyline (o) {
-        var path = o.path.map(arrayToLatLng),
+        var path = o.path.map(mapUtils.toLatLng),
             options = {
                map: map,
                path: path,
@@ -75,13 +105,6 @@ var map  = (function (window, undefined) {
         return polyline._id;
     }
 
-    function arrayToLatLng (array) {
-        if (array instanceof gMap.LatLng) {
-            return array;
-        }
-        return new gMap.LatLng(array[0], array[1]);
-    }
-
     //Delete Polyline
     function deletePolyline (id) {
         var i = _.findIndex(polylines, {_id: id});
@@ -91,8 +114,7 @@ var map  = (function (window, undefined) {
     }
 
     function blackout () {
-        var everything = [[0, -90],[0, 90],[90, -90],[90, 90]].map(arrayToLatLng),
-            vermont = [[-71.503554,45.013027],[-71.4926,44.914442],[-71.629524,44.750133],[-71.536416,44.585825],[-71.700724,44.41604],[-72.034817,44.322932],[-72.02934,44.07647],[-72.116971,43.994316],[-72.204602,43.769761],[-72.379864,43.572591],[-72.456542,43.150867],[-72.445588,43.008466],[-72.533219,42.953697],[-72.544173,42.80582],[-72.456542,42.729142],[-73.267129,42.745573],[-73.278083,42.833204],[-73.245221,43.523299],[-73.404052,43.687607],[-73.349283,43.769761],[-73.436914,44.043608],[-73.321898,44.246255],[-73.294514,44.437948],[-73.387622,44.618687],[-73.332852,44.804903],[-73.343806,45.013027],[-72.308664,45.002073],[-71.503554,45.013027]].map(_.compose(arrayToLatLng, function (a) {return a.reverse()}));
+        var everything = [[0, -90],[0, 90],[90, -90],[90, 90]].map(mapUtils.toLatLng);
         return new gMap.Polygon({
             paths: [everything, vermont],
             strokeColor: "#bbb",
@@ -109,6 +131,7 @@ var map  = (function (window, undefined) {
         config: config,
         addMarker: addMarker,
         deleteMarker: deleteMarker,
+        updateMarker: updateMarker,
         addPolyline: addPolyline,
         deletePolyline: deletePolyline,
         getCenter: function () {
@@ -118,6 +141,72 @@ var map  = (function (window, undefined) {
             return s.split(' ').map(function (s) {
                 return s.split(',');
             });
-        }
+        },
+        getMap: function () {
+            return map;
+        },
     }, public;
+}(window));
+
+directions = (function (window, undefined) {
+    var d = window.document;
+    function directions (/*start, ...positions*/) {
+        var all = _.map(_.toArray(arguments), mapUtils.toLatLng),
+            start = _.head(all),
+            destination = _.last(all),
+            waypoints = _.map(_.head(_.rest(all), all.length - 2), toWaypoint),
+            request = {
+                origin: start,
+                destination: destination,
+                waypoints: waypoints,
+                travelMode: gMap.TravelMode.DRIVING
+            },
+            directionsService = new google.maps.DirectionsService();
+
+        directionsService.route(request, function (result, status) {
+            if (status == gMap.DirectionsStatus.OK) {
+                var turnBy = _.flatten(drawDirections(result), true),
+                    watch = function (position) {
+                        var current = _.head(turnBy);
+                        if (nextDirection || false/*met next point*/) {
+                            turnBy = _.rest(turnBy);
+                            nextDirection = false;
+                            console.log(current[1]);
+                        } else {
+                            d.getElementById('directions').innerHTML = current[2];
+                            map.updateMarker(car, current[1]);
+                        }
+                    },
+                    car = map.addMarker({position: turnBy[0][1]});
+                setInterval(watch, 10);
+                window.navigator.geolocation.watchPosition(watch, null, {enableHighAccuracy: true});
+            }
+        });
+    }
+
+    function drawDirections (result) {
+        directions = map.addPolyline({path: result.routes[0].overview_path});
+        return _.map(result.routes[0].legs, parseLeg);
+    }
+
+    function parseLeg (leg) {
+        return _.map(leg.steps, parseStep);
+    }
+
+    var stepTemplate = _.template('<var><%= distance.text %></var><strong><%= duration.text %></strong><blockquote><%= instructions %></blockquote>');
+
+    function parseStep (step) {
+        return [step.end_point, step.start_point, stepTemplate(step)];
+    }
+
+    function toWaypoint (w) {
+        return {
+            location: mapUtils.toLatLng(w),
+            stopover: true
+        };
+    }
+
+    return  {
+        get: directions
+    }
 }(window));
