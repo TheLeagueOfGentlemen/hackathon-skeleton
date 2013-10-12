@@ -13,4 +13,5 @@ R::exec('SET FOREIGN_KEY_CHECKS = 0');
 R::exec('DROP TABLE attraction');
 R::exec('DROP TABLE attraction_category');
 R::exec('DROP TABLE category');
+R::exec('DROP TABLE verb');
 R::exec('SET FOREIGN_KEY_CHECKS = 1');

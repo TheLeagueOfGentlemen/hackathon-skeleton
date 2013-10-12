@@ -9,6 +9,5 @@ class Verb extends Model
     public function getCategories()
     {
         return $this->hasMany('\Unlock\Models\Category');
-//         return $this->ownCategory;
     }
 }
