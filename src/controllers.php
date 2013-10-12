@@ -94,10 +94,13 @@ $app->get('/attraction/{id}', function($id) use ($app) {
     return new JsonResponse($app['adventure_manager']->getAttraction($id)->toArray());
 });
 
+$app->get('/verb', function() use ($app) {
+    return new JsonResponse(Verb::all()->toArray());
+});
+
 $app->get('/verb/{id}', function($id) use ($app) {
     $verb = Verb::find($id);
-    $cats = $verb->getCategories()->get();
-    return new JsonResponse($cats->toArray());
+    return new JsonResponse($verb->getCategories()->get()->toArray());
 });
 
 /* ------------------------------------------------*/
