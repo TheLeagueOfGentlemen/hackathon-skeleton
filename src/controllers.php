@@ -224,19 +224,27 @@ $app->get('/criteria/{criteriaId}/attraction/replace/{attractionId}', function($
     foreach ($attractions as $key => $a) {
         if ($a->id == $attractionId) {
             $foundRemove = true;
-            $crit->getAttractionCollection()->detach($a);
+            $crit->attractions()->detach($a);
+            $crit->rejected_attractions()->attach($a);
         }
-    }
-    if (!$foundRemove) {
-        die('Could not find attraction to remove');
     }
 
     $attractions = $app['where_to']->setAdventureCriteria($crit)->getAttractions();
     $new_attraction = $attractions->last();
-    $crit->getAttractionCollection()->attach($new_attraction);
+    $crit->attractions()->attach($new_attraction);
     $crit->save();
 
-    return new JsonResponse($new_attraction->toArray());
+    $data = array(
+        'id' => $new_attraction->id,
+        'name' => $new_attraction->name,
+        'lat' => $new_attraction->lat,
+        'lon' => $new_attraction->lon,
+        'teaser' => $new_attraction->getTeaser(),
+        'city' => array(
+            'name' => $new_attraction->city()->first() ? $new_attraction->city->name : ''
+        )
+    );
+    return new JsonResponse($data);
 });
 
 $app->get('/preference/{id}', function(Request $request, $id) use ($app) {
