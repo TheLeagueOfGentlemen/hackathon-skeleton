@@ -285,11 +285,11 @@ ul.fancy-list{
 	padding: 0;
 	float: left;
 	width: 100%;
+	background: #06610D;
 }
 ul.fancy-list li{
 	list-style: none;
 	float: left;
-	background: #06610D;
 	color: white;
 	width: 190%;
 	position: relative;
@@ -353,7 +353,7 @@ ul.fancy-list li div:last-child span{
 }
 ul.fancy-list li.open{
 	margin-left: -90%;
-	background-color: #0A500F;
+	background-color: rgba(160, 160, 160, 0.1);
 }
 ul.fancy-list li.open:before{
 	border-right: 15px solid #FFF;
@@ -399,12 +399,10 @@ ul.adventure-list li:nth-child(3n+0) div:first-child span:after{
 .profile h3{
 	text-align: center;
 }
-ul.badge-list li{
+ul.badge-list{
 	background-color: #EEA303;
 }
-ul.badge-list li.open{
-	background-color: #C48705;
-}
+
 ul.badge-list li div.toggle{
 	width: 75%;
 }
@@ -414,14 +412,11 @@ ul.badge-list li div.toggle p:first-child{
 ul.badge-list li div.toggle p:last-child{
 	float: right;
 }
-ul.progress-list li{
+ul.progress-list{
 	background: #555;
 }
 ul.progress-list li div.toggle{
 	width: 75%;
-}
-ul.proress-list li.open{
-	background: #444;
 }
 
 /* # - Animation */
