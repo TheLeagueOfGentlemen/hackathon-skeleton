@@ -278,7 +278,7 @@ directions = (function (window, undefined) {
 
     function zoom () {
         map.getMap().panTo(mapUtils.toLatLng(map.getMarkerPosition(car)));
-        map.getMap().setZoom(10);
+        map.getMap().setZoom(11);
     }
 
     return  {

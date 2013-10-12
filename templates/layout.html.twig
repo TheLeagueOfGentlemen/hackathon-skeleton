@@ -5,6 +5,7 @@
         <title>Foo Bar Layout</title>
 
         {% block styles %}
+        <link href="{{ app.request.basepath }}/css/select2.css" rel="stylesheet" type="text/css" />
         <link href="{{ app.request.basepath }}/css/app.css" rel="stylesheet" type="text/css" />
         {% endblock %}
     </head>
