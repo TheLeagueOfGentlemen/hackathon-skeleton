@@ -10,8 +10,7 @@ class Category extends Model
         return $this->belongsToMany('\Unlock\Models\Attraction');
     }
 
-    public function getVerb()
-    {
+    public function getVerbs () {
         return $this->belongsTo('\Unlock\Models\Verb');
     }
 }
