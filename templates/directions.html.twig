@@ -138,6 +138,8 @@
             }
         }
         navigator.geolocation.getCurrentPosition(function (pos) {
+            //pos = {lat: {{criteria.lat}}, lon: {{criteria.lon}}};
+            console.log(pos);
             foo(pos);
             map.getMap().setZoom(map.getMap().getZoom() + 1);
             refreshPosition = foo.bind(null, pos);

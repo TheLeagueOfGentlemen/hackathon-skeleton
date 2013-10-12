@@ -30,9 +30,8 @@ class WhereTo
             $attraction = $this->getTailAttraction($attractions);
 
             //Based on previous/first attractions category
-            if ($attractions->count() > 0) {
-                $flunkedCatIDs = self::flunkCategory(iterator_to_array($attractions));
-            } else {
+                $flunkedCatIDs = self::flunkCategory(iterator_to_array($attractions), $this);
+            if ($attractions->count() <= 0) {
                 $attractions->put($attractions->count(), $attraction);
             }
 
@@ -75,10 +74,10 @@ class WhereTo
                           * 60 * 1.1515
                       ) AS distance, attraction.*"));
         if ($skipIDs) {
-            $query->whereNotIn('attraction.id', $skipIDs);
+            $query = $query->whereNotIn('attraction.id', $skipIDs);
         }
-        if ($flunkedCatIDs) {
-            $query->WhereNotIn('category.id', $flunkedCatIDs);
+        if (!empty($flunkedCatIDs)) {
+            $query = $query->whereNotIn('category.id', $flunkedCatIDs);
         }
         $query->having('distance', '<=', $distance)
               ->orderBy('distance')
@@ -191,17 +190,20 @@ class WhereTo
     }
 
     //Fulunks categories to determine which ones not to include
-    private static function flunkCategory (Array $attractions) {
+    private static function flunkCategory (Array $attractions, $that) {
         //Get all categories that exist in used attractions
-        $verbs = array_unique(call_user_func_array('array_merge', array_map(function ($a) {
-            return array_map(function ($c) {
-                return Verb::find($c->verb_id)->name;
-            }, iterator_to_array($a->getCategories()->getResults()));
-        }, $attractions)));
-        //var_dump($verbs);
+        if (!empty($attractions)) {
+            $verbs = array_unique(call_user_func_array('array_merge', array_map(function ($a) {
+                return array_map(function ($c) {
+                    return Verb::find($c->verb_id)->name;
+                }, iterator_to_array($a->getCategories()->getResults()));
+            }, $attractions)));
+        } else {
+            $verbs = array();
+        }
 
         //Flunk categories that shouldn't show up in multiples
-        $flunk = array();
+        $flunk = array('Sleep', 'Learn');
         if (array_intersect(array('Hike', 'Trails', 'Alpine Skiing', 'Nordic Skiing'), $verbs)) {
             $flunk = array_merge($flunk, array('Hike', 'Trails', 'Alpine Skiing', 'Nordic Skiing'));
         }
@@ -210,10 +212,12 @@ class WhereTo
         }
 
         if (!empty($flunk)) {
-            $categories = Category::whereIn('name', $flunk)->get();
+            $categories = call_user_func_array('array_merge', array_map(function ($v) {
+                return iterator_to_array($v->categories);
+            }, iterator_to_array(Verb::whereIn('name', $flunk)->with(array('categories'))->get())));
             return array_map(function ($c) {
                     return $c->id;
-                },  iterator_to_array($categories));
+                },  $categories);
         } else {
             return array();
         }
