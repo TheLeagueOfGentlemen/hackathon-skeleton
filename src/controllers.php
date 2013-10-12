@@ -1,6 +1,7 @@
 <?php
 
 use Symfony\Component\HttpKernel\HttpKernelInterface,
+    Symfony\Component\HttpFoundation\JsonResponse,
     Symfony\Component\HttpFoundation\Response,
     Symfony\Component\HttpFoundation\Request,
     Unlock\Models\User,
@@ -45,19 +46,13 @@ $app->get('/user/{id}', function(Request $request, $id) use ($app) {
 $app->get('/adventure', function(Request $request) use ($app) {
     // Term Search
     if ($request->get('category') && $request->get('term')) {
-        var_dump($request->get('category'));
-        var_dump($catID);
-        var_dump($term);
-        return;
-        $result = $app['adventure_manager']->findLocationsByTerm($request->get('category'), $term);
-        var_dump($result);
-        return;
+        return new JsonResponse($app['adventure_manager']->findLocationsByTerm($request->get('category'), $request->get('term')));
     }
 
     $categories = $app['adventure_manager']->getCategories();
     $user = $app['user_manager']->getUser($app['UserID']);
 
-    return json_encode(array('User' => $user->toArray(), 'Categories' => $categories->toArray()));
+    return new JsonResponse(array('User' => $user->toArray(), 'Categories' => $categories->toArray()));
 });
 
 // Adventures
@@ -78,21 +73,21 @@ $app->put('/adventure/{id}', function($id) use ($app) {
 
 // Categories
 $app->get('/category', function() use ($app) {
-    return (string)$app['adventure_manager']->getCategories();
+    return new JsonResponse($app['adventure_manager']->getCategories()->toArray());
 });
 
 // Get all attractions from specific category
 $app->get('/category/{id}/attractions', function($id) use ($app) {
-    return (string)$app['adventure_manager']->getCategoryAttractions($id);
+    return new JsonResponse($app['adventure_manager']->getCategoryAttractions($id)->toArray());
 });
 
 $app->get('/category/{id}', function($id) use ($app) {
-    return (string)$app['adventure_manager']->getCategory($id);
+    return new JsonResponse($app['adventure_manager']->getCategory($id)->toArray());
 });
 
 // Attractions
 $app->get('/attraction/{id}', function($id) use ($app) {
-    return (string)$app['adventure_manager']->getAttraction($id);
+    return new JsonResponse($app['adventure_manager']->getAttraction($id)->toArray());
 });
 
 

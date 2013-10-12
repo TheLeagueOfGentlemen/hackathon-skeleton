@@ -32,7 +32,7 @@ $app->register(new Unlock\ServiceProviders\EloquentServiceProvider());
 
 // Model quick access
 $app['adventure_manager'] = function () use ($app) {
-    return new Unlock\Models\AdventureManager();
+    return new Unlock\Models\AdventureManager($app['db']);
 };
 
 $app['user_manager'] = function () use ($app) {

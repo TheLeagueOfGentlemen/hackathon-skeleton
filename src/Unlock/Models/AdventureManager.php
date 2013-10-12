@@ -2,8 +2,16 @@
 
 namespace Unlock\Models;
 
+use \Silex\Application,
+    \Illuminate\Database\Capsule\Manager as Capsule;
+
 class AdventureManager
 {
+    protected $DB;
+
+    public function __construct(Capsule $db) {
+        $this->DB = $db;
+    }
     public function getAttraction($id) {
         return Attraction::find($id);
     }
@@ -25,13 +33,24 @@ class AdventureManager
     }
 
     public function findLocationsByTerm($catID, $term) {
-        // Match City
-        $cities = City::where('name', 'LIKE', $term);
-        // Match County
-        $counties = County::where('name', 'LIKE', $term);
-        // Match Attraction
-        $attractions = Attraction::where('name', 'LIKE', $term);
+        $cities = City::where('name', 'LIKE', '%' . $term . '%')->get();
+        $counties = County::where('name', 'LIKE', '%' . $term . '%')->get();
+        $attractions = Attraction::where('name', 'LIKE', '%' . $term . '%')->get();
 
-        return array('cities' => $cities, 'counties' => $counties, 'attractions' => $attractions);
+        // Match City
+        $results = array_merge(
+            $cities ? iterator_to_array($cities) : array(),
+            $counties ? iterator_to_array($counties) : array(),
+            $attractions ? iterator_to_array($attractions) : array()
+        );
+
+        return array_map(function($result) {
+            $class = explode('\\', get_class($result));
+            return array(
+                'ID' => $result->id,
+                'Type' => strtolower(array_pop($class)),
+                'Name' => $result->name
+            );
+        }, $results);
     }
 }
