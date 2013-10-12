@@ -21,7 +21,10 @@ $app->before(function (Request $request) use ($app) {
 });
 
 $app->get('/', function () use ($app) {
-    return $app['twig']->render('index.html.twig', array());
+    $data = array(
+        'verbs' => Verb::all()
+    );
+    return $app['twig']->render('index.html.twig', $data);
 })
 ->bind('home')
 ;
@@ -46,8 +49,8 @@ $app->get('/user/{id}', function(Request $request, $id) use ($app) {
 // Display new adventure
 $app->get('/adventure', function(Request $request) use ($app) {
     // Term Search
-    if ($request->get('category') && $request->get('term')) {
-        return new JsonResponse($app['adventure_manager']->findLocationsByTerm($request->get('category'), $request->get('term')));
+    if ($request->get('verb') && $request->get('term')) {
+        return new JsonResponse($app['adventure_manager']->findLocationsByTerm($request->get('verb'), $request->get('term')));
     }
 
     $categories = $app['adventure_manager']->getCategories();

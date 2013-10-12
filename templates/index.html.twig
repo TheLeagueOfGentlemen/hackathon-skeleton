@@ -6,13 +6,22 @@
 {% endblock %}
 
 {% block content %}
+
 <form action="" method="get" accept-charset="utf-8">
-    I want to <input type="hidden" name="category" id="category" placeholder="Hike, eat, drink, etc." value="" style="width: 200px;" />
+    I want to 
+    <!--
+    <input type="hidden" name="category" id="category" placeholder="Hike, eat, drink, etc." value="" style="width: 200px;" />
+    -->
+    <select name="verb" id="verb" style="width: 200px;">
+        <option></option>
+        {% for verb in verbs %}
+        <option value="{{ verb.id }}">{{ verb.name }}</option>
+        {% endfor %}
+    </select>
     at <input type="hidden" name="location" id="location" value="" style="width: 200px;" />
     <input type="hidden" name="city_id" id="city_id" data-provides="location-field" data-location-type="city" />
     <input type="hidden" name="county_id" id="county_id" data-provides="location-field" data-location-type="county" />
     <input type="hidden" name="attraction_id" id="attraction_id" data-provides="location-field" data-location-type="attraction" />
-    <input type="hidden" name="category_id" id="category_id" />
     <input type="submit" value="Go" />
 </form>
 {% endblock %}
@@ -24,22 +33,47 @@
 
 var unlock = unlock || {
     location_fields: {},
-    category_field: null,
-    category: null,
+    verb_field: null,
     init: function() {
         var _this = this;
-        this.category_field = $('#category');
+        this.verb_field = $('#verb');
         $('[data-provides="location-field"]').each(function(i, elem) {
             var $elem = $(elem);
             _this.location_fields[$elem.data('location-type')] = $elem;
         });
+
+        $('#verb').select2({
+            placeholder: 'Eat, hike, drink, etc.'
+        });
+
+        $('#location').select2({
+            ajax: {
+                url: function(term, page, context) {
+                    return [
+                        '/index_dev.php/adventure?verb=',
+                        unlock.getVerb(),
+                        '&term=',
+                        term
+                    ].join('');
+                },
+                dataType: 'json',
+                results: function(data, page) {
+                    return { results: data };
+                }
+            },
+            minimumInputLength: 3,
+            formatResult: function(object) {
+                return object.name;
+            },
+            formatSelection: function(object) {
+                return object.name;
+            }
+        }).on('change', function(e) {
+            unlock.setLocationFieldValue(e.added.type, e.added.object_id);
+        });
     },
-    setCategory: function(category) {
-        this.category = category;
-        this.category_field.val(category);
-    },
-    getCategory: function(category) {
-        return this.category;
+    getVerb: function() {
+        return this.verb_field.select2('val');
     },
     setLocationFieldValue: function(type, value) {
         for (x in this.location_fields) {
@@ -53,50 +87,6 @@ var unlock = unlock || {
 };
 
 unlock.init();
-
-$('#category').select2({
-    ajax: {
-        url: '/index_dev.php/category',
-        dataType: 'json',
-        results: function(data, page) {
-            return { results: data };
-        }
-    },
-    formatResult: function(object) {
-        return object.name;
-    },
-    formatSelection: function(object) {
-        return object.name;
-    }
-}).on('change', function(e) {
-    unlock.setCategory(e.added.id);
-});
-
-$('#location').select2({
-    ajax: {
-        url: function(term, page, context) {
-            return [
-                '/index_dev.php/adventure?category=',
-                unlock.getCategory(),
-                '&term=',
-                term
-            ].join('');
-        },
-        dataType: 'json',
-        minimumInputLength: 3,
-        results: function(data, page) {
-            return { results: data };
-        }
-    },
-    formatResult: function(object) {
-        return object.name;
-    },
-    formatSelection: function(object) {
-        return object.name;
-    }
-}).on('change', function(e) {
-    unlock.setLocationFieldValue(e.added.type, e.added.object_id);
-});
 
 </script>
 
