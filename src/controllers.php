@@ -50,7 +50,8 @@ $app->get('/user/{id}', function(Request $request, $id) use ($app) {
     } else {
         return $app['twig']->render('user.html.twig', array($user->toArray()));
     }
-});
+})
+->bind('user_badges');
 
 
 /* ------------------------------------------------*/

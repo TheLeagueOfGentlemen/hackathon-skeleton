@@ -90,8 +90,9 @@
     }
 
     function complete () {
-        $.getJSON({{ path('badge_complete', { criteriaId: criteria.id }) }});
-        // location.href = '/badges';
+        $.getJSON("{{ path('badge_complete', { criteriaId: criteria.id }) }}", function() {
+            window.location.href = "{{ path('user_badges', { id: 1 }) }}";
+        });
     }
 
 
