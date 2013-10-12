@@ -3,6 +3,7 @@
 namespace Unlock\Models;
 
 use \Silex\Application,
+    \Symfony\Component\HttpFoundation\Request,
     \Illuminate\Database\Capsule\Manager as Capsule;
 
 class AdventureManager
@@ -73,5 +74,41 @@ class AdventureManager
                 'name' => $result instanceof County ? sprintf('%s County', $result->name) : $result->name
             );
         }, $results);
+    }
+
+    public function persistAdventureCriteria(array $data) {
+        if (isset($data['criteria'])) {
+            $criteria = AdventureCriteria::find($data['criteria']);
+        } else {
+            $criteria = new AdventureCriteria();
+        }
+
+        $criteria->verb_id = $data['verb'];
+        $criteria->city_id = $data['city_id'];
+        $criteria->county_id = $data['county_id'];
+        $criteria->lat = $data['lat'];
+        $criteria->lon = $data['lon'];
+        $criteria->user_id = $data['user_id'];
+        $criteria->save();
+
+        if (isset($data['attractions'])) {
+            $this->DB->connection()->delete(
+                'DELETE FROM adventurecritera_attractions WHERE adventurecriteria_id = ' . $criteria->id
+            );
+            foreach ($data['attractions'] as $id) {
+                $criteria->getAttractionCollection()->attach($data['attraction_id']);
+            }
+        }
+
+        if (isset($data['rejectedAttractions'])) {
+            $this->DB->connection()->delete(
+                'DELETE FROM adventurecriteria_rejectedattractions WHERE adventurecriteria_id = ' . $criteria->id
+            );
+            foreach ($data['rejectedAttractions'] as $id) {
+                $criteria->getRejectedAttractionCollection()->attach($data['attraction_id']);
+            }
+        }
+
+        return $criteria;
     }
 }

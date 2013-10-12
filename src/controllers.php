@@ -30,7 +30,9 @@ $app->get('/', function () use ($app) {
 ->bind('home')
 ;
 
-// Users
+/* ------------------------------------------------*/
+/* Users
+/*-------------------------------------------------*/
 // Dump users
 $app->get('/user', function(Request $request) use ($app) {
     return (string)$app['user_manager']->getUsers();
@@ -46,6 +48,9 @@ $app->get('/user/{id}', function(Request $request, $id) use ($app) {
     }
 });
 
+/* ------------------------------------------------*/
+/* Adventures
+/*-------------------------------------------------*/
 
 // Display new adventure
 $app->get('/adventure', function(Request $request) use ($app) {
@@ -61,25 +66,23 @@ $app->get('/adventure', function(Request $request) use ($app) {
     return new JsonResponse(array('User' => $user->toArray(), 'Categories' => $categories->toArray()));
 });
 
-// Adventures
-// Display adventure
-$app->get('/adventure/{id}', function($id) use ($app) {
-    $adventure = adventure::find($id);
-    if ($app['isAjax']) {
-        return (string)$adventure;
-    } else {
-        return $app['twig']->render('user.html.twig', array($adventure->toArray()));
+$app->get('/adventure/results', function(Request $request) use ($app) {
+    $critID = $request->get('criteria');
+    if (!$critID) {
+        die('where my criteria at?');
     }
+
+    $criteria = AdventureCriteria::find($critID);
+    var_dump($critID);
 });
 
-// Update adventure
 $app->put('/adventure/{id}', function($id) use ($app) {
 
 });
 
-// ===========================
-// ==== Adventure Criteria ===
-// ===========================
+/* ------------------------------------------------*/
+/* Adventure Criteria
+/*-------------------------------------------------*/
 
 $app->get('/testcriteria/{id}', function($id) use ($app) {
     $advCrit = AdventureCriteria::find($id);
@@ -94,13 +97,20 @@ $app->get('/testcriteria/{id}', function($id) use ($app) {
     echo '<pre>' . var_dump($advCrit->getRejectedAttractions()->toArray()) . '</pre>';
     return ob_get_clean();
 });
-// ===============================
-// ==== END Adventure Criteria ===
-// ===============================
 
-// ================
-// === Category ===
-// ================
+$app->post('/criteria', function(Request $request) use ($app) {
+    $data = array_merge($request->request->all(), array('user_id' => $app['UserID']));
+    $data['attractions'] = array($data['attraction_id']);
+    unset($data['attraction_id']);
+
+    $criteria = $app['adventure_manager']->persistAdventureCriteria($data);
+
+    return $app->redirect('/adventure?criteria=' . $criteria->id);
+});
+
+/* ------------------------------------------------*/
+/* Categories
+/*-------------------------------------------------*/
 $app->get('/category', function() use ($app) {
     return new JsonResponse($app['adventure_manager']->getCategories()->toArray());
 });
@@ -113,11 +123,10 @@ $app->get('/category/{id}/attractions', function($id) use ($app) {
 $app->get('/category/{id}', function($id) use ($app) {
     return new JsonResponse($app['adventure_manager']->getCategory($id)->toArray());
 });
-// ====================
-// === END Category ===
-//=====================
 
-// Attractions
+/* ------------------------------------------------*/
+/* Attractions
+/*-------------------------------------------------*/
 $app->get('/attraction/{id}', function($id) use ($app) {
     return new JsonResponse($app['adventure_manager']->getAttraction($id)->toArray());
 });

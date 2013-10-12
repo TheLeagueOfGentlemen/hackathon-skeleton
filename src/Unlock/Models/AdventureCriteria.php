@@ -5,6 +5,7 @@ namespace Unlock\Models;
 class AdventureCriteria extends Model
 {
     protected $table = 'adventurecriteria';
+    public $timestamps = false;
 
     public function user() {
         return $this->belongsTo('\Unlock\Models\User');
@@ -30,7 +31,15 @@ class AdventureCriteria extends Model
         return $this->belongsToMany('\Unlock\Models\Attraction', 'adventurecritera_attractions', 'adventurecriteria_id', 'attraction_id')->getResults();
     }
 
+    public function getAttractionCollection() {
+        return $this->belongsToMany('\Unlock\Models\Attraction', 'adventurecritera_attractions', 'adventurecriteria_id', 'attraction_id');
+    }
+
     public function getRejectedAttractions() {
         return $this->belongsToMany('\Unlock\Models\Attraction', 'adventurecriteria_rejectedattractions', 'adventurecriteria_id', 'attraction_id')->getResults();
+    }
+
+    public function getRejectAttractionCollection() {
+        return $this->belongsToMany('\Unlock\Models\Attraction', 'adventurecriteria_rejectedattractions', 'adventurecriteria_id', 'attraction_id');
     }
 }

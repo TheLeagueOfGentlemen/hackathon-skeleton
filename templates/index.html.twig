@@ -7,7 +7,7 @@
 
 {% block content %}
 
-<form action="" method="get" accept-charset="utf-8">
+<form action="/criteria" method="POST" accept-charset="utf-8">
     I want to 
     <!--
     <input type="hidden" name="category" id="category" placeholder="Hike, eat, drink, etc." value="" style="width: 200px;" />
@@ -22,6 +22,8 @@
     <input type="hidden" name="city_id" id="city_id" data-provides="location-field" data-location-type="city" />
     <input type="hidden" name="county_id" id="county_id" data-provides="location-field" data-location-type="county" />
     <input type="hidden" name="attraction_id" id="attraction_id" data-provides="location-field" data-location-type="attraction" />
+    <input type="hidden" name="lat" id="lat"/>
+    <input type="hidden" name="lon" id="lon" />
     <input type="submit" value="Go" />
 </form>
 {% endblock %}
