@@ -17,7 +17,7 @@
 window.localStorage.clear();
 
 var unlock = unlock || {
-    current_action: null,
+    current_category: null,
 };
 
 $('#action').typeahead({
@@ -28,7 +28,7 @@ $('#action').typeahead({
     },
 }).on('typeahead:selected typeahead:autocompleted', function(e, TypeaheadEvent) {
     console.log(TypeaheadEvent.id);
-    unlock.current_action = TypeaheadEvent.id;
+    unlock.current_category = TypeaheadEvent.id;
 });
 
 $('#location').typeahead([
@@ -51,7 +51,7 @@ $('#location').typeahead([
     remote: {
         url: '/the/json/endpoint',
         replace: function(url, uriEncodedQuery) {
-            var endpoint = [url, '?action=', unlock.current_action, '&query=', uriEncodedQuery].join('');
+            var endpoint = [url, '?category=', unlock.current_category, '&query=', uriEncodedQuery].join('');
             return endpoint;
         }
     },
