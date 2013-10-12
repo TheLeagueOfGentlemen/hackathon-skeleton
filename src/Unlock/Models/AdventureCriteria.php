@@ -18,19 +18,19 @@ class AdventureCriteria extends Model
         return $this->belongsTo('\Unlock\Models\County');
     }
 
-    public function Verb() {
+    public function verb() {
         return $this->belongsTo('\Unlock\Models\Verb');
     }
 
-    public function categories() {
-        return $this->verb->getCategories();
+    public function getCategories() {
+        return $this->verb->getCategories()->get();
     }
 
     public function getAttractions() {
-        return $this->belongsToMany('\Unlock\Models\Attraction', 'attraction_category')->getResults();
+        return $this->belongsToMany('\Unlock\Models\Attraction', 'adventurecritera_attractions', 'adventurecriteria_id', 'attraction_id')->getResults();
     }
 
     public function getRejectedAttractions() {
-        return $this->belongsToMany('\Unlock\Models\Attraction', 'attraction_category')->getResults();
+        return $this->belongsToMany('\Unlock\Models\Attraction', 'adventurecriteria_rejectedattractions', 'adventurecriteria_id', 'attraction_id')->getResults();
     }
 }
