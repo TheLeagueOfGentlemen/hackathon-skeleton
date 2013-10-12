@@ -16,15 +16,17 @@ class WhereTo
 
     public function setAdventureCriteria ($crit) {
         $this->criteria = $crit;
+        return $this;
     }
 
     public function getAttractions () {
         $defaultDistance = $distance = 5;
-        while($this->crit->attractions < 3) {
+        $crit = $this->criteria;
+        while($crit->attractions < 3) {
             $attraction = $this->getTailAttraction();
 
             //Based on previous/first attractions category
-            $flunkedIDs = self::flunkCategory($this->crit->attractions);
+            $flunkedIDs = self::flunkCategory(iterator_to_array($crit->getAttractions()));
 
             //Geo based radius for next attraction
             $lat = $attraction->lat();
@@ -60,8 +62,8 @@ class WhereTo
     public function getTailAttraction () {
         $crit = $this->criteria;
 
-        if (!empty($crit->attractions[count($crit->attractions - 1)])) {//If has attraction
-            return $crit->attractions[count($crit->attractions - 1)];
+        if (!empty($crit->getAttractions()[$crit->getAttractions()->count() - 1])) {//If has attraction
+            return $crit->getAttractions()[$crit->getAttractions()->count() - 1];
 
         } else if (!empty($crit->city)) {//If has City
             return City::find($crit->city->id)
@@ -80,8 +82,7 @@ class WhereTo
             //Get attractions within a radius of their geolocation
 
         } else {//Else do some even more random shit
-            return Attraction::find()
-                    ->whereNotIn('id',  $this->notAttractionIDs())
+            return Attraction::whereNotIn('id',  $this->notAttractionIDs())
                     ->orderBy('RAND()')->take(1)->get();
         }
         return $attraction;
@@ -92,14 +93,14 @@ class WhereTo
     }
 
     private function notAttractionIDs () {
-        return arra_merge($this->criteria->attractions, $this->criteria->rejectedAtrractions);
+        return array_merge(iterator_to_array($this->criteria->getAttractions()), iterator_to_array($this->criteria->getRejectedAttractions()));
     }
 
     //Fulunks categories to determine which ones not to include
     private static function flunkCategory (Array $attractions) {
         //Get all categories that exist in used attractions
         $categories = array_unique(call_user_func_array('array_merge', array_map(function ($a) {
-            return $a->category;
+            return $a->getCategories();
         }, $attractions)));
 
         //Flunk categories that shouldn't show up in multiples
