@@ -50,6 +50,7 @@ $app->get('/user/{id}', function(Request $request, $id) use ($app) {
 $app->get('/adventure', function(Request $request) use ($app) {
     // Term Search
     if ($request->get('verb') && $request->get('term')) {
+        $verb = Verb::find($request->get('verb'));
         return new JsonResponse($app['adventure_manager']->findLocationsByTerm($request->get('verb'), $request->get('term')));
     }
 
