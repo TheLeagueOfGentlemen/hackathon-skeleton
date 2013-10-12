@@ -57,7 +57,7 @@ def parse_contact(lh):
     ret['website'] = div.find_class('resort-website')[0].get('href')
     return ret
 
-def parse_stats(lh):
+def parse_stats(lh, type_):
     def parse_section(node):
         return node.find('h2').text_content().strip()
 
@@ -81,41 +81,54 @@ def parse_stats(lh):
                 ret.update(l_to_d(stats))
         return ret
 
-    sections = lh.find_class('heading-wrapper')
+    sections = type_ #lh.find_class('heading-wrapper')
     stats = lh.find_class('mountain stats')
     sections = zip(*[sections, stats])
 
     ret = []
     for section, stats in sections:
-        ret.append((parse_section(section), parse_stats(stats)))
+        ret.append((section, parse_stats(stats)))
     return dict(ret)
 
-def parse_ski_resort(html):
+def parse_ski_resort(html, type_):
     lh = LH.document_fromstring(html)
     ret = parse_contact(lh)
     if not ret:
         return ret
-    ret['stats'] = parse_stats(lh)
-    ret['type'] = ret['stats'].keys()
+    ret['stats'] = parse_stats(lh, type_)
+    ret['type'] = type_
     ret['description'] = '\n'.join(
         [x.text.strip() for x in lh.find_class('description')[0].findall('p')])
     return ret
 
-def parse_ski_resorts():
+def parse_ski_resorts(url_index):
     ret = []
+    types = {'alpine': ['Alpine'],
+             'nordic': ['Nordic'],
+             'both': ['Alpine', 'Nordic']}
+    
+    def fname_url(fname):
+        return 'http://www.skivermont.com/resorts/resort-info/' + fname[:fname.rfind('.')]
+
     for fname in os.listdir(DATA_DIR):
         fpath = os.path.join(DATA_DIR, fname)
         if os.path.isfile(fpath) and fpath.endswith('.html'):
             with open(fpath, 'r') as f:
                 html = f.read()
-            resort = parse_ski_resort(html)
+            url = fname_url(fname)
+            for k, urls in url_index.items():
+                if url in urls:
+                    type_ = types[k]
+            resort = parse_ski_resort(html, type_)
             if 'name' in resort:
                 ret.append((resort['name'], resort))
     return dict(ret)
 
 
 if __name__ == '__main__':
-    resorts = parse_ski_resorts()
+    urls = get_resort_links(requests.get('http://www.skivermont.com/resorts').text)
+    
+    resorts = parse_ski_resorts(urls)
     with open(os.path.join(DATA_DIR, 'ski_resorts.json'), 'w') as f:
         f.write(json.dumps(resorts, indent=2))
 
