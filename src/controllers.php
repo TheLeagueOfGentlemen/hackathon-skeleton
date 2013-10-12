@@ -115,6 +115,11 @@ $app->get('/verb/{id}', function($id) use ($app) {
     return new JsonResponse($verb->getCategories()->get()->toArray());
 });
 
+// WhereTo
+$app->get('/whereto', function() use ($app) {
+    return new JsonResponse($app['where_to']->getAttractions());
+});
+
 /* ------------------------------------------------*/
 /* App
 /*-------------------------------------------------*/
