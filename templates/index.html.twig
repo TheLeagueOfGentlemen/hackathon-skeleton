@@ -7,7 +7,7 @@
 
 {% block content %}
 <form action="" method="get" accept-charset="utf-8">
-    I want to <input type="hidden" name="action" id="action" placeholder="Hike, eat, drink, etc." value="" style="width: 200px;" />
+    I want to <input type="hidden" name="category" id="category" placeholder="Hike, eat, drink, etc." value="" style="width: 200px;" />
     at <input type="hidden" name="location" id="location" value="" style="width: 200px;" />
     <input type="hidden" name="city_id" id="city_id" data-provides="location-field" data-location-type="city" />
     <input type="hidden" name="county_id" id="county_id" data-provides="location-field" data-location-type="county" />
@@ -23,14 +23,23 @@
 <script type="text/javascript">
 
 var unlock = unlock || {
-    current_category: null,
     location_fields: {},
+    category_field: null,
+    category: null,
     init: function() {
         var _this = this;
+        this.category_field = $('#category');
         $('[data-provides="location-field"]').each(function(i, elem) {
             var $elem = $(elem);
             _this.location_fields[$elem.data('location-type')] = $elem;
         });
+    },
+    setCategory: function(category) {
+        this.category = category;
+        this.category_field.val(category);
+    },
+    getCategory: function(category) {
+        return this.category;
     },
     setLocationFieldValue: function(type, value) {
         for (x in this.location_fields) {
@@ -45,7 +54,7 @@ var unlock = unlock || {
 
 unlock.init();
 
-$('#action').select2({
+$('#category').select2({
     ajax: {
         url: '/index_dev.php/category',
         dataType: 'json',
@@ -60,7 +69,7 @@ $('#action').select2({
         return object.name;
     }
 }).on('change', function(e) {
-    unlock.current_category = e.added.id;
+    unlock.setCategory(e.added.id);
 });
 
 $('#location').select2({
@@ -68,7 +77,7 @@ $('#location').select2({
         url: function(term, page, context) {
             return [
                 '/index_dev.php/adventure?category=',
-                unlock.current_category,
+                unlock.getCategory(),
                 '&term=',
                 term
             ].join('');
