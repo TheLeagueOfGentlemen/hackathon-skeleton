@@ -279,6 +279,15 @@ $app->get('/help', function() use ($app) {
     return $app['twig']->render('help.html.twig', array());
 });
 
+$app->get('/badge/complete/{criteriaId}', function($criteriaId) use ($app) {
+    $criteria = AdventureCriteria::find($criteriaId);
+    $criteria->completed_at = new \DateTime();
+    $criteria->save();
+
+    return new JsonResponse(array('ok' => 1));
+})
+->bind('badge_complete');
+
 /* ------------------------------------------------*/
 /* App
 /*-------------------------------------------------*/

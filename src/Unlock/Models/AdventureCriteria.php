@@ -7,6 +7,11 @@ class AdventureCriteria extends Model
     protected $table = 'adventurecriteria';
     public $timestamps = false;
 
+    public function getDates()
+    {
+        return array('completed_at');
+    }
+
     public function user() {
         return $this->belongsTo('\Unlock\Models\User');
     }
