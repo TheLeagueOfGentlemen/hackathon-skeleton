@@ -8,7 +8,8 @@ use Symfony\Component\HttpKernel\HttpKernelInterface,
     Unlock\Models\Adventure,
     Unlock\Models\Attraction,
     Unlock\Models\Category,
-    Unlock\Models\Verb;
+    Unlock\Models\Verb,
+    Unlock\Models\AdventureCriteria;
 
 /* ------------------------------------------------*/
 /* Static
@@ -74,6 +75,20 @@ $app->get('/adventure/{id}', function($id) use ($app) {
 // Update adventure
 $app->put('/adventure/{id}', function($id) use ($app) {
 
+});
+
+$app->get('/testcriteria/{id}', function($id) use ($app) {
+    $advCrit = AdventureCriteria::find($id);
+    ob_start();
+    echo '<pre>' . var_dump($advCrit->toArray()) . '</pre>';
+    echo '<pre>' . var_dump($advCrit->user->toArray()) . '</pre>';
+    echo '<pre>' . var_dump($advCrit->city->toArray()) . '</pre>';
+    echo '<pre>' . var_dump($advCrit->county->toArray()) . '</pre>';
+    echo '<pre>' . var_dump($advCrit->verb->toArray()) . '</pre>';
+    echo '<pre>' . var_dump($advCrit->getCategories()->toArray()) . '</pre>';
+    echo '<pre>' . var_dump($advCrit->getAttractions()->toArray()) . '</pre>';
+    echo '<pre>' . var_dump($advCrit->getRejectedAttractions()->toArray()) . '</pre>';
+    return ob_get_clean();
 });
 
 // Categories
