@@ -5,10 +5,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Unlock Vermont</title>
-<link rel="stylesheet" href="css/app.css">
 <link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/app.css">
 <link rel="shortcut icon" href="favicon.ico">
 <script src="js/jquery.js"></script>
+<script src="js/select2.js"></script>
 </head>
 <body class="home">
 	<div class="device">
@@ -26,8 +28,16 @@
 
 		<div class="landing screen">
 			<div class="adventure topFadeIn">
-				<input class="activity-input" type="text" placeholder="Activity" autofocus>
-				<input class="location-input" type="text" placeholder="Location">
+				<select class="activity-select" type="text" placeholder="Activity" autofocus>
+					<option value="hiking">Hiking</option>
+					<option value="drinking">Drinking</option>
+					<option value="eating">Eating</option>
+				</select>
+				<select class="location-select" type="text" placeholder="Location">
+					<option value="Burlington, VT">Burlington, VT</option>
+					<option value="Williston, VT">Williston, VT</option>
+					<option value="Winooski, VT">Winooski, VT</option>
+				</select>
 			</div>
 		</div>
 		
@@ -36,6 +46,7 @@
 $(".menu, .overlay").click(function() {
   $("nav").toggleClass( "open" );
 });
+$(".activity-select, .location-select").select2();
 </script>
 </body>
 </html>

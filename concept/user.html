@@ -27,14 +27,18 @@
 		<div class="user screen">
 			<div class="profile adventure">
 				<img class="topFadeIn" src="http://placehold.it/175x175">
-			</div>
-			<div class="section">
 				<h3>Welcome Back, User!</h3>
-
-				<h3>Adventures in Progress</h3>
-
-				<h3>Badges Unlocked</h3>
 			</div>
+				<h3 class="user-progress">Adventures in Progress</h3>
+				<ul class="fancy-list progress-list">
+					<li>
+						<div class="map-badge"><span></span></div>
+						<div class="toggle">
+							<p><strong>Adventure 1</strong></p>
+						</div>
+					</li>
+				</ul>
+			<h3 class="user-badges">Badges Unlocked</h3>
 			<div class="badges">
 				<ul class="fancy-list badge-list">
 					<li>
@@ -74,7 +78,7 @@
 $(".menu, .overlay").click(function() {
     $("nav").toggleClass( "open" );
 });
-$(".badge-list li").click(function() {
+$(".fancy-list li").click(function() {
 	$(this).toggleClass( "open" );
 });
 </script>
