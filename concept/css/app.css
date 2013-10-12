@@ -41,7 +41,7 @@ body.home .device{
 	position: relative;
 }
 .adventure{
-	padding: 30px 30px 20px;
+	padding: 30px 30px 55px;
 	background: #06610D;
 	position: relative;
 	z-index: 2;
@@ -61,6 +61,21 @@ body.home .device{
 	padding: 0;
 	list-style: none;
 }
+h1 {
+	text-align: center;
+	letter-spacing: 7px;
+	font-size: 2.6em;
+	font-weight: bold;
+	margin: 0;
+	line-height: 0.9em;
+	text-transform: uppercase;
+	background: #1A1919;
+	padding: 20px 0;
+}
+h1 span{
+	letter-spacing: 0;
+	font-weight: normal;
+}
 h3 {
 	padding: 10px 0;
 	text-align: center;
@@ -73,6 +88,19 @@ h3.user-badges{
 h3.user-progress{
 	background: #333;
 }
+input[type="button"], input[type="submit"]{
+	border: none;
+	padding: 10px 20px;
+	float: right;
+	border-radius: 2px;
+	box-shadow: 0px 2px 3px rgba(1, 1, 1, 0.5);
+	-webkit-transition: all .3s;
+}
+input[type="button"]:hover,
+input[type="submit"]:hover{
+ 	background: #aaa;
+ }
+
 /* Menu */
 
 .menu{
@@ -243,7 +271,6 @@ select:focus{
 	background-position: 10px 30%;
 }
 
-
 /* Badges */
 
 .badge span{
@@ -276,16 +303,14 @@ select:focus{
 .skiing span{
 	background-image: url('../img/skiing-badge.png');
 }
-
+.shopping span{
+	background-image: url('../img/shopping-badge.png');
+}
 /* 1 - Landing Page */
 
 .home .screen{
-	padding-top: 140px;
+	padding-top: 50px;
 }
-
-/* 2 - Map Page */
-
-
 
 /* 3 - Activity List Page */
 
@@ -511,12 +536,31 @@ ul.progress-list li div.toggle{
 	100% { -webkit-transform: translateX(  0px);}
 }
 
-/* # - Responsive */
+/* # - Select2 Overrides */
 
-@media only screen and (max-width: 768px){
-
+.select2-search{
+    width: 80%;
+    float: left;
+    position: absolute;
+    top: -46px;
+    right: 0;
+ }
+ .select2-search > input{
+    border: none;
+    box-shadow: none;
+    background: white;
 }
-
-@media only screen and (max-width: 480px){
-
+.select2-drop-active {
+	border: none;
+	border-top: none;
+	padding: 0 10px 10px 50px;
+	padding-bottom: 7px;
+}
+.select2-results li{
+	-webkit-transition: padding .4s;
+}
+.select2-results .select2-highlighted {
+	background: #067E0F;
+	color: #FFF;
+	padding-left: 10px;
 }
