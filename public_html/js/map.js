@@ -62,6 +62,7 @@ map = (function (window, undefined) {
         map = new google.maps.Map(document.getElementById(options.id), options.map);
         var vt = new gMap.Polygon({path: vermont});
         map.fitBounds(vt.getBounds());
+        map.setZoom(map.getZoom() + 1);
         blackout();
         return public;
     }
