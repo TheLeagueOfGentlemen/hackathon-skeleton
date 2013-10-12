@@ -409,21 +409,23 @@ input[type="text"]:focus{
 /* 3 - Activity List Page */
 
 ul.fancy-list{
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 100%;
+    background: #06610D;
 }
 ul.fancy-list li{
 	list-style: none;
 	float: left;
-	background: #06610D;
 	color: white;
 	width: 190%;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	position: relative;
-	border-bottom: 2px solid #013C0A;
-	-webkit-transition: margin-left .3s,
-						background .2s;
+	-webkit-transition: all .3s;
+    box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.15), 
+                inset 0 -2px 2px rgba(0, 0, 0, 0.15);
 }
 ul.fancy-list li.complete {
     background: #000;
@@ -450,6 +452,9 @@ ul.fancy-list li div{
 	width: 70%;
 	float: left;
 	padding: 20px 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 ul.fancy-list li div:first-child,
 ul.fancy-list li div:last-child{
@@ -458,7 +463,8 @@ ul.fancy-list li div:last-child{
 }
 
 
-ul.fancy-list li div.toggle p {
+ul.fancy-list li div.toggle p,
+ul.fancy-list li div p{
     margin: 0;
     color: #DDD;
     max-width: 185px;
@@ -477,17 +483,18 @@ ul.fancy-list li div span{
 	display: block;
 	margin: 0 auto;
 	text-align: center;
-	border: 3px solid #0C4607;
-	border-radius: 10px;
-	box-shadow: 0 5px #0A361D;
+	border: 3px solid rgba(34, 34, 34, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 5px rgba(17, 17, 17, 0.2);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: 80%;
+    position: relative;
 }
 ul.fancy-list li div:last-child span{
 	background: #C22727;
 	color: #FFF;
-	top: 7px;
+	top: -3px;
 	right: 10px;
 	line-height: 3.1em;
 	font-weight: 700;
@@ -516,8 +523,8 @@ ul.attraction-list li div:first-child span:after {
 	background: #111;
 	display: block;
 	position: absolute;
-	top: 29px;
-	left: 4px;
+	top: 9px;
+	left: -20px;
 	border-radius: 20px;
 	color: #FFF;
 	line-height: 1.8em;
@@ -627,13 +634,67 @@ ul.attraction-list li:nth-child(3n+0) div:first-child span:after{
 
 /* 5 - User Pref Page, Uses List View Styles*/
 
-.user.screen .profile img:first-child{
-	border: 5px solid #FFF;
-	margin: 20px auto 30px;
-	display: block;
-	box-shadow: 0px 10px #AAA;
-	border-radius: 5px;
+/* 5 - User Pref Page, Uses List View Styles*/
+
+.profile img:first-child{
+    border: 5px solid #FFF;
+    margin: 20px auto 30px;
+    display: block;
+    box-shadow: 0px 10px #AAA;
+    border-radius: 5px;
+}           
+.profile h3{
+    text-align: center;
 }
+
+.user.screen .adventure{
+    padding: 30px;
+}
+ul.badge-list{
+    background-color: #EEA303;
+}
+ul.badge-list li,
+ul.progress-list li{
+    width: 100%;
+}
+ul.badge-list li:before,
+ul.progress-list li:before{
+    border: none;
+}
+ul.fancy-list.badge-list li div,
+ul.fancy-list.progress-list li div{
+    width: 75%;
+}   
+ul.badge-list li div:first-child,
+ul.progress-list li div:first-child{
+    width: 25%;
+}
+ul.badge-list li div p:first-child,
+ul.badge-list li div p{
+    margin: 0 0 5px;
+    color: white;
+}
+.badge-list h2{
+    margin: 0 auto;
+    width: 90px;
+}
+.user-badges-progress{
+    background: #7C6017;
+}
+.user-badges-unlocked{
+    background: transparent;
+}
+ul.badge-list.success{
+    background-color: #0B6312;
+}
+ul.progress-list{
+    background: #555;
+}
+ul.special-offer li div span{
+    background-color: #56629C;
+}
+
+/*
 ul.badge-list li{
 	background-color: #EEA303;
 	border-bottom: 2px solid #CF8D12;
@@ -661,7 +722,7 @@ ul.badge-list li:before{
 	border-bottom: 1px solid darkgreen;
 	padding-bottom: 10px;
 }
-
+*/
 /* # - Animation */
 
 .topFadeIn{

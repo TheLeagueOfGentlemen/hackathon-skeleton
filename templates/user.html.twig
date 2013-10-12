@@ -1,9 +1,66 @@
 {% extends "layout.html.twig" %}
 {% block content %}
 <div class="user screen badge-manager">
-    <div class="section">
-        <h3>Welcome Back, Evan!</h3>
-    </div>
+        <div class="profile adventure">
+                <img class="topFadeIn" src="http://placekitten.com/100/100">
+                <h3>Welcome Back, Evan!</h3>
+            </div>
+    
+    <h3 class="user-progress">Special Badge Offer</h3>
+    <ul class="fancy-list progress-list special-offer">
+        <li>
+            <div class="white-badge"><span></span></div>
+            <div class="toggle">
+                <p><strong>Burlington Hipster</strong></p>
+                <p>Burlington, VT</p>
+            </div>
+        </li>
+    </ul>
+   
+    <h3 class="user-badges-progress">Badges in Progress</h3>
+    <ul class="fancy-list badge-list">
+        <li>
+            <div class="white-badge"><span></span></div>
+            <div class="toggle"t
+                <p><strong>Local Patron</strong> Badge</p>
+                <p>Visited <strong>5</strong> Restaurants</p>
+            </div>
+        </li>
+        <li>
+            <div class="white-badge"><span></span></div>
+            <div class="toggle">
+                <p><strong>Local Patron</strong> Badge</p>
+                <p>Visited <strong>5</strong> Restaurants</p>
+            </div>
+        </li>
+        <li>
+            <div class="white-badge"><span></span></div>
+            <div class="toggle">
+                <p><strong>Local Patron</strong> Badge</p>
+                <p>Visited <strong>5</strong> Restaurants</p>
+            </div>
+        </li>
+    </ul>
+     <h3 class="user-badges-unlocked">Badges Unlocked</h3>
+    <ul class="fancy-list badge-list success">
+    {% for badge in badges %}
+        <li>
+            <div class="gold-   badge"><span></span></div>
+            <div>
+                <p style="font-style: italic; font-size: 12px">
+                    {{ badge.completed_at | date('F jS \\a\\t g:ia') }}
+                </p>
+                {% for attraction in badge.attractions().get() %}
+                {% set verb = attraction.firstVerb() %}
+                <p>
+                    <i><strong>{{ verb ? verb.gerund : 'Exploring' }}</strong></i>@<br />{{ attraction.name }}
+                </p>
+                {% endfor %}
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+    <!--
     <div class="badges">
         <ul class="fancy-list badge-list">
             {% for badge in badges %}
@@ -23,6 +80,6 @@
             </li>
             {% endfor %}
         </ul>
-    </div>
+    </div> -->
 </div>
 {% endblock %}
