@@ -7,7 +7,7 @@
 
 {% block content %}
 
-<form action="/criteria" method="POST" accept-charset="utf-8">
+<form action="{{ app.request.baseUrl }}/criteria" method="POST" accept-charset="utf-8">
     I want to 
     <!--
     <input type="hidden" name="category" id="category" placeholder="Hike, eat, drink, etc." value="" style="width: 200px;" />
