@@ -10,4 +10,9 @@ class City extends Model
     {
         return $this->hasOne('\Unlock\Models\County');
     }
+
+    public function attractions()
+    {
+        return $this->hasMany('\Unlock\Models\Attraction');
+    }
 }

@@ -10,8 +10,8 @@ class Attraction extends Model
         return $this->belongsToMany('\Unlock\Models\Category');
     }
 
-    public function getCities () {
-        return $this->hasOne('\Unlock\Models\City');
+    public function city() {
+        return $this->belongsTo('\Unlock\Models\City');
     }
 
     public function getTeaser($words = 50)
