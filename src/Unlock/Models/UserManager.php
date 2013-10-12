@@ -19,9 +19,9 @@ class UserManager
     public function setPreferences($id, $categories) {
         $user = User::find($id);
         $user->categories()->detach();
-        
-        foreach (explode(',', $categories) as $cat) {
-            $user->categories()->attach(Category::find($cat));
+
+        foreach ($categories as $cid => $checkbox_state) {
+            $user->categories()->attach(Category::find($cid));
         }
         $user->save();
     }

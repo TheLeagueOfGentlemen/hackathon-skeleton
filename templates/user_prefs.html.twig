@@ -1,0 +1,19 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+<h1>Hi, {{ user.first_name }}</h1>
+
+<h3>Change your preferences:</h3>
+
+<form name="prefs_form" action="{{ path('preferences', {id: user.id}) }}" method="POST">
+{% for cat in categories %}
+    {% if cat.name in prefs %}
+        <input type="checkbox" checked name="{{ cat.id }}">{{ cat.name }}<br>
+    {% else %}
+        <input type="checkbox" name="{{ cat.id }}">{{ cat.name }}<br>
+    {% endif %}
+{% endfor %}
+    <input type="submit" value="Update Prefs">
+</form>
+
+{% endblock %}
