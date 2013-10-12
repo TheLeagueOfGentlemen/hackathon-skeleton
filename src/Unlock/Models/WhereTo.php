@@ -109,21 +109,33 @@ class WhereTo
     //Fulunks categories to determine which ones not to include
     private static function flunkCategory (Array $attractions) {
         //Get all categories that exist in used attractions
-        $categories = array_unique(call_user_func_array('array_merge', array_map(function ($a) {
-            return iterator_to_array($a->getCategories()->getResults());
+        $verbs = array_unique(call_user_func_array('array_merge', array_map(function ($a) {
+            return array_map(function ($c) {
+                return Verb::find($c->verb_id)->name;
+            }, iterator_to_array($a->getCategories()->getResults()));
         }, $attractions)));
+        var_dump($verbs);
 
         //Flunk categories that shouldn't show up in multiples
         $flunk = array();
-        if (in_array(array('hike', 'ski'), $categories)) {
-            $flunk = array_merge($flunk, array('hike', 'ski'));
+        if (in_array(array('Hike', 'Trails', 'Alpine Skiing', 'Nordic Skiing'), $verbs)) {
+            var_dump('asdf');
+            $flunk = array_merge($flunk, array('Hike', 'Trails', 'Alpine Skiing', 'Nordic Skiing'));
         }
-        if (in_array(array('eat'), $categories)) {
-            $flunk = array_merge($flunk, array('eat'));
+        if (in_array(array('Eat'), $verbs)) {
+            $flunk = array_merge($flunk, array('Eat'));
         }
 
-        return array_map(function ($f) {
-                return $f->id;
-            },  $flunk);
+        if (!empty($flunk)) {
+            var_dump($flunk);
+            $categories = Category::whereIn('name', $flunk)->get();
+            return array_map(function ($c) {
+                    var_dump($c);
+                    return $c->id;
+                },  $categories);
+        } else {
+            return array();
+        }
+
     }
 }
