@@ -73,7 +73,9 @@ map = (function (window, undefined) {
             marker = new gMap.Marker({map: map}),
             markerOptions = {
                 position: position,
-                icon: options.icon || undefined
+                icon: {
+                    url: options.icon || undefined
+                }
             };
 
         marker.setOptions(markerOptions);
@@ -92,6 +94,13 @@ map = (function (window, undefined) {
 
         markers.push(marker);
         return marker._id;
+    }
+
+    function updateIcons (icon) {
+        markers.forEach(function (m) {
+            m.setOptions({icon: icon});
+        });
+        return public
     }
 
     //Delete Marker
@@ -120,8 +129,8 @@ map = (function (window, undefined) {
             options = {
                map: map,
                path: path,
-               strokeWeight: 2,
-               strokeColor: '#000'
+               strokeWeight: 5,
+               strokeColor: 'green'
             },
             polyline = new gMap.Polyline(options);
         polylines.push(polyline);
@@ -177,7 +186,8 @@ map = (function (window, undefined) {
         getMap: function () {
             return map;
         },
-        resize: resize
+        resize: resize,
+        updateIcons: updateIcons
     }, public;
 }(window));
 
@@ -211,8 +221,8 @@ directions = (function (window, undefined) {
 
     function directionEvent (result, onMove, onComplete) {
         var turnBy = _.flatten(drawDirections(result), true),
-            start = true,
             animating = false,
+            move = false,
             watch = function (position) {
                 var current = _.head(turnBy);
                 if (nextDirection || false/*met next point*/) {
@@ -224,19 +234,19 @@ directions = (function (window, undefined) {
                         return;
                     }
                     nextDirection = false;
+                    move = true;
                     onMove(map.getMarkerPosition(car));
                 } else {
                     d.getElementById('directions').innerHTML = current[2];
                     map.updateMarker(car, current[1]);
-                    if (start) {
-                        start = false;
-                    } else {
+                    if (move) {
                         map.getMap().panTo(mapUtils.toLatLng(current[1]));
+                        move = false;
                     }
                 }
             },
             watchID,
-            intervalID = setInterval(watch, 10);
+            intervalID = setInterval(watch, 10, false);
         car = map.addMarker({position: turnBy[0][1], icon: 'http://fc09.deviantart.net/fs70/f/2011/237/8/c/free_cow_icon_by_cg_icons-d47tjp7.gif'});
         watchID = geo.watchPosition(watch, null, {enableHighAccuracy: true});
     }

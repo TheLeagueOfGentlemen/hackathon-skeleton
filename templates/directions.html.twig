@@ -7,7 +7,7 @@
 
 {% block content %}
 <div class="list screen">
-    <ul class="fancy-list attraction-list">
+    <ul class="reveal-list fancy-list attraction-list">
     {% for attraction in attractions %}
         {% set verb = attraction.firstVerb() %}
         <li class="attraction" data-geolocation="[{{ attraction.lat }}, {{ attraction.lon }}]">
@@ -16,10 +16,12 @@
             </div>
             <div class="toggle">
                 <p>
+                    <strong>{{ attraction.name }}</strong><br />
                     {% if verb %}
-                    {{ verb.gerund }}@<br />
+                    {{ verb.gerund }} @
                     {% endif %}
-                    <strong>{{ attraction.name }}</strong><br />{{ attraction.city().first() ? attraction.city().first().name : '' }}</p>
+                    {{ attraction.city().first() ? attraction.city().first().name : '' }}
+                    </p>
             </div>
             <div>
                 <span data-provides="attraction-replace" data-attraction="{{ attraction.id }}">X</span>
@@ -27,7 +29,7 @@
         </li>
     {% endfor %}
     </ul>
-    <div id="map-canvas" class="google-map" style="height: 200px; width: 100%;"><img src="/img/map.png" /></div>
+    <div id="map-canvas" class="google-map" style="height: 169px; width: 100%;"><img src="/img/map.png" /></div>
     <button class="congrats-button">
         Congratulations
         <small>View Your Badges</small>
@@ -47,8 +49,7 @@
     </div>
     <div class="toggle">
         <p>
-        <% print(verb.gerund) %>@<br />
-        <strong><%- name %></strong><br /><% print(city.name) %></p>
+        <strong><%- name %></strong><br /><% print(verb.gerund) %> @ <% print(city.name) %></p>
     </div>
     <div>
         <span data-provides="attraction-replace" data-attraction="<%- id %>">X</span>
@@ -64,7 +65,8 @@
     //Hack to demo
     nextDirection = false;//Global for demo
     document.addEventListener('keyup', function (e) {
-        if (e.keyCode = 71) {
+        if (e.keyCode == 71) {
+            confirm();
             nextDirection = true;
         }
     });
@@ -82,6 +84,7 @@
     function confirm () {
         $(this).remove();
         $('.screen').removeClass('list').addClass('directions');
+        $('.reveal-list').removeClass('reveal-list');
         map.resize('100%', '354px');
         directions.zoom();
     }
@@ -115,6 +118,7 @@
                     });
             }
 
+
             function updateDirections (pos, locations) {
                 var ids = locationMarkers(locations); 
                 directions.get(pos.coords, locations[0], locations[1], locations[2], function (pos) {
@@ -128,12 +132,14 @@
                 }, function (pos) {
                     $('.fancy-list li:last-child').addClass('complete');
                     $('button.congrats-button').addClass('show').on('click', complete);
+                    $('#directions').remove();
                 });
                 return ids;
             }
         }
         navigator.geolocation.getCurrentPosition(function (pos) {
             foo(pos);
+            map.getMap().setZoom(map.getMap().getZoom() + 1);
             refreshPosition = foo.bind(null, pos);
         });
     }
@@ -166,6 +172,9 @@
 </script>
 <script>
     $('.attraction-list').on('click', '.toggle', function(e) {
+        if ($('.screen').hasClass('directions')) {
+            return false;
+        }
 		$(e.currentTarget).closest("li").toggleClass( "open" );
 	});
 </script>
