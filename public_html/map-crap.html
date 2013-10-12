@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        *{box-sizing: border-box;}
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+      #directions{padding: 1em; position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255, 255, 255, .4);}
+    </style>
+    <script type="text/javascript">
+    </script>
+</head>
+<body>
+    <div id="map-canvas"></div>
+    <div id="directions"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=geometry"></script>
+    <script src="./js/lodash.js"></script>
+    <script src="./js/gmap-extend.js"></script>
+    <script src="./js/map.js"></script>
+    <script>
+        nextDirection = false;//Global for demo
+        treasure = 'http://images2.wikia.nocookie.net/__cb20130626170632/nitrome/images/c/cb/Treasure_chest.png';
+        map.config({
+            id: 'map-canvas',
+            map: {center: [43.83130289858731, -72.0268984375]}
+        });
+        google.maps.event.addDomListener(window, 'load', function () {
+            map.init();
+            setTimeout(function () {
+                var id1 = map.addMarker({position: [43.48156941314745, -71.8950625], icon: treasure}),
+                    id2 = map.addMarker({position: [43.89863026081283, -71.6918154296875], icon: treasure}),
+                    id3 = map.addMarker({position: [44.22231761201409, -72.1752138671875], icon: treasure});
+                //setTimeout(map.deleteMarker, 1000, id1);
+                //setTimeout(map.deletePolyline, 1000, id4);
+
+                locations = [[43.48156941314745, -71.8950625], [43.89863026081283, -71.6918154296875], [44.22231761201409, -72.1752138671875]];
+                navigator.geolocation.getCurrentPosition(function (pos) {
+                    directions.get(pos.coords, locations[0], locations[1], locations[2], function (pos) {
+                        var pos = mapUtils.latLngToArray(pos),
+                            proximity = _.filter(locations, function (p) {
+                                return mapUtils.inRadius(pos, 0.002, p);
+                            });
+                        if (proximity.length) {
+                            console.log('on target');
+                        }
+                    });
+                });
+            }, 1000);
+        });
+
+        document.addEventListener('keyup', function (e) {
+            if (e.keyCode = 71) {
+                nextDirection = true;
+            }
+        });
+    </script>
+</body>
+</html>
