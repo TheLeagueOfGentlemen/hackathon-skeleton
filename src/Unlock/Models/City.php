@@ -8,6 +8,6 @@ class City extends Model
 
     public function getCounty()
     {
-        return $this->hasOne('\User\County');
+        return $this->hasOne('\Unlock\Models\County');
     }
 }

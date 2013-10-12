@@ -9,4 +9,8 @@ class Attraction extends Model
     public function getCategories() {
         return $this->belongsToMany('\Unlock\Models\Category');
     }
+
+    public function getCities () {
+        return $this->hasOne('\Unlock\Models\City');
+    }
 }

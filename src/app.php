@@ -39,6 +39,10 @@ $app['user_manager'] = function () use ($app) {
     return new Unlock\Models\UserManager();
 };
 
+$app['where_to'] = function () use ($app) {
+    return new Unlock\Models\WhereTo($app['db']);
+};
+
 /*$app['foo.controller'] = $app->share(function() use ($app) {
     return new Foo\Controller\FooController($app);
 });
