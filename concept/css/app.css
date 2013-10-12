@@ -256,7 +256,7 @@ nav.open h5{
 	-webkit-appearance: none;
 }
 .select2-container > a:first-child{
-	padding: 20px 30px 20px 60px;
+	padding: 20px 30px 20px 60px;[type="button"]
 }
 .select2-container.activity-select{
 	background: white url('../img/activity-input.png') 10px center no-repeat;
@@ -483,28 +483,56 @@ ul.attraction-list li.complete div:first-child span {
 	display: block;
 	box-shadow: 0px 10px #AAA;
 	border-radius: 5px;
-}
+}			
 .profile h3{
 	text-align: center;
+}
+
+.user.screen .adventure{
+	padding: 30px;
 }
 ul.badge-list{
 	background-color: #EEA303;
 }
-
-ul.badge-list li div.toggle{
+ul.badge-list li,
+ul.progress-list li{
+	width: 100%;
+}
+ul.badge-list li:before,
+ul.progress-list li:before{
+	border: none;
+}
+ul.fancy-list.badge-list li div,
+ul.fancy-list.progress-list li div{
 	width: 75%;
+}	
+ul.badge-list li div:first-child,
+ul.progress-list li div:first-child{
+	width: 25%;
 }
-ul.badge-list li div.toggle p:first-child{
-	float: left;
+ul.badge-list li div p:first-child,
+ul.badge-list li div p{
+	margin: 0 0 5px;
+	color: white;
 }
-ul.badge-list li div.toggle p:last-child{
-	float: right;
+.badge-list h2{
+	margin: 0 auto;
+	width: 90px;
+}
+.user-badges-progress{
+	background: #7C6017;
+}
+.user-badges-unlocked{
+	background: transparent;
+}
+ul.badge-list.success{
+	background-color: #0B6312;
 }
 ul.progress-list{
 	background: #555;
 }
-ul.progress-list li div.toggle{
-	width: 75%;
+ul.special-offer li div span{
+	background-color: #56629C;
 }
 
 /* # - Animation */

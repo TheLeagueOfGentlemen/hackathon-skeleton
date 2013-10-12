@@ -26,60 +26,62 @@
 
 		<div class="user screen">
 			<div class="profile adventure">
-				<img class="topFadeIn" src="http://placehold.it/175x175">
+				<img class="topFadeIn" src="http://placehold.it/100x100">
 				<h3>Welcome Back, User!</h3>
 			</div>
-				<h3 class="user-progress">Adventures in Progress</h3>
-				<ul class="fancy-list progress-list">
+				<h3 class="user-progress">Special Badge Offer</h3>
+				<ul class="fancy-list progress-list special-offer">
 					<li>
-						<div class="map-badge"><span></span></div>
+						<div class="white-badge"><span></span></div>
 						<div class="toggle">
 							<p><strong>Adventure 1</strong></p>
+							<p>Burlington, VT</p>
 						</div>
 					</li>
 				</ul>
-			<h3 class="user-badges">Badges Unlocked</h3>
-			<div class="badges">
+				<h3 class="user-badges-progress">Badges In Progress</h3>
 				<ul class="fancy-list badge-list">
 					<li>
 						<div class="white-badge"><span></span></div>
+						<div>
+							<p><strong>Local Patron</strong> Badge</p>
+							<p>Visited <strong>2</strong> Restaurants</p>
+							<h2>+</h2>
+							<p><strong>Mountaineer</strong> Badge</p>
+							<p>Hiked <strong>1</strong> Trail</p>
+						</div>
+					</li>
+				</ul>
+				<h3 class="user-badges-unlocked">Badges Unlocked</h3>
+				<ul class="fancy-list badge-list success">
+					<li>
+						<div class="gold-badge"><span></span></div>
 						<div class="toggle">
 							<p><strong>Local Patron</strong> Badge</p>
 							<p>Visited <strong>5</strong> Restaurants</p>
 						</div>
 					</li>
 					<li>
-						<div class="white-badge"><span></span></div>
+						<div class="gold-badge"><span></span></div>
 						<div class="toggle">
 							<p><strong>Local Patron</strong> Badge</p>
 							<p>Visited <strong>5</strong> Restaurants</p>
 						</div>
 					</li>
 					<li>
-						<div class="white-badge"><span></span></div>
-						<div class="toggle">
-							<p><strong>Local Patron</strong> Badge</p>
-							<p>Visited <strong>5</strong> Restaurants</p>
-						</div>
-					</li>
-					<li>
-						<div class="white-badge"><span></span></div>
+						<div class="gold-badge"><span></span></div>
 						<div class="toggle">
 							<p><strong>Local Patron</strong> Badge</p>
 							<p>Visited <strong>5</strong> Restaurants</p>
 						</div>
 					</li>
 				</ul>
-			</div>
 		</div>
 
 	</div>
 <script>
 $(".menu, .overlay").click(function() {
     $("nav").toggleClass( "open" );
-});
-$(".fancy-list li").click(function() {
-	$(this).toggleClass( "open" );
 });
 </script>
 </body>
