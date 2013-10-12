@@ -7,7 +7,8 @@ use Symfony\Component\HttpKernel\HttpKernelInterface,
     Unlock\Models\User,
     Unlock\Models\Adventure,
     Unlock\Models\Attraction,
-    Unlock\Models\Category;
+    Unlock\Models\Category,
+    Unlock\Models\Verb;
 
 /* ------------------------------------------------*/
 /* Static
@@ -90,6 +91,11 @@ $app->get('/attraction/{id}', function($id) use ($app) {
     return new JsonResponse($app['adventure_manager']->getAttraction($id)->toArray());
 });
 
+$app->get('/verb/{id}', function($id) use ($app) {
+    $verb = Verb::find($id);
+    $cats = $verb->getCategories()->get();
+    return new JsonResponse($cats->toArray());
+});
 
 /* ------------------------------------------------*/
 /* App
