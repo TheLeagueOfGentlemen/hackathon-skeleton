@@ -50,6 +50,7 @@
 <script src="/js/map.js"></script>
 <script>
     //Hack to demo
+    nextDirection = false;//Global for demo
     document.addEventListener('keyup', function (e) {
         if (e.keyCode = 71) {
             nextDirection = true;
@@ -64,44 +65,86 @@
     });
     map.init();
 
+    map.getMap().getDiv().addEventListener('click', confirm);
+
+    function confirm () {
+        $('.screen').removeClass('list').addClass('directions');
+        map.resize('100%', '508px');
+        directions.zoom();
+    }
+
 
     //Get location to kick things off
-    navigator.geolocation.getCurrentPosition(function (pos) {
-        nextDirection = false;//Global for demo
-        var locations = getLocations(),
-            ids = updateDirections(pos, locations);
-        function confirm () {
-            $('.screen').removeClass('list').addClass('directions');
-            map.resize('100%', '508px');
-        }
-    });
-
-    function getLocations () {
-        return [[43.48156941314745, -71.8950625], [43.89863026081283, -71.6918154296875], [44.22231761201409, -72.1752138671875]];
-        return $('.fancy-list li').map(function () {
-                return $(this).data('geolocation');
-            });
-    }
-
-    function locationMarkers (locations) {
-        return locations.map(function (p) {
-                return map.addMarker({position: p, icon: 'http://images2.wikia.nocookie.net/__cb20130626170632/nitrome/images/c/cb/Treasure_chest.png'});
-            });
-    }
-
-    function updateDirections (pos, locations) {
-        var ids = locationMarkers(locations); 
-        directions.get(pos.coords, locations[0], locations[1], locations[2], function (pos) {
-            var pos = mapUtils.latLngToArray(pos),
-                proximity = _.filter(locations, function (p) {
-                    return mapUtils.inRadius(pos, 0.002, p);
+    function refreshPosition () {
+        var ids;
+        function foo (pos) {
+            if (ids) {
+                ids.forEach(function (id) {
+                    console.log(id);
+                    map.deleteMarker(id);
                 });
-            if (proximity.length) {
-                console.log('on target');
             }
+            var locations = getLocations();
+            ids = updateDirections(pos, locations);
+
+            function getLocations () {
+                return $('.fancy-list li').toArray().map(function (el) {
+                        return $(el).data('geolocation');
+                    });
+            }
+
+            function locationMarkers (locations) {
+                return locations.map(function (p) {
+                        return map.addMarker({position: p, icon: 'http://images2.wikia.nocookie.net/__cb20130626170632/nitrome/images/c/cb/Treasure_chest.png'});
+                    });
+            }
+
+            function updateDirections (pos, locations) {
+                var ids = locationMarkers(locations); 
+                directions.get(pos.coords, locations[0], locations[1], locations[2], function (pos) {
+                    var pos = mapUtils.latLngToArray(pos),
+                        proximity = _.findIndex(locations, function (p) {
+                            return mapUtils.inRadius(pos, 0.002, p);
+                        });
+                    if (proximity !== -1) {
+                        $('.fancy-list li:eq(' + proximity + ')').addClass('complete');
+                    }
+                }, function (pos) {
+                    $('.fancy-list li:last-child').addClass('complete');
+                });
+                return ids;
+            }
+        }
+        navigator.geolocation.getCurrentPosition(function (pos) {
+            foo(pos);
+            refreshPosition = foo.bind(null, pos);
         });
-        return ids;
     }
+
+    refreshPosition();
+
+    var unlock = unlock || {};
+    unlock.results = {
+        criteria: {{ criteria.id }},
+        replace_url: '/index_dev.php/criteria/{{ criteria.id }}/attraction/replace/',
+        getReplaceUrl: function(attraction_id) {
+            return this.replace_url + attraction_id;
+        },
+        init: function() {
+            var _this = this;
+            this.result_tpl = _.template($('#attraction-tpl').text());
+            $('.attraction-list').on('click', '[data-provides="attraction-replace"]', function(e) {
+                var $btn = $(e.currentTarget),
+                    $old_attraction = $btn.parents('.attraction');
+                $.getJSON(_this.getReplaceUrl($btn.data('attraction')), function(data) {
+                    var $new_attraction = $($.trim(_this.result_tpl(data)));
+                    $old_attraction.replaceWith($new_attraction);
+                    refreshPosition();
+                });
+            });
+        }
+    };
+    unlock.results.init();
 
 </script>
 <script>
@@ -113,28 +156,5 @@
 	});
 </script>
 <script type="text/javascript" charset="utf-8">
-var unlock = unlock || {};
-
-unlock.results = {
-    criteria: {{ criteria.id }},
-    replace_url: '/index_dev.php/criteria/{{ criteria.id }}/attraction/replace/',
-    getReplaceUrl: function(attraction_id) {
-        return this.replace_url + attraction_id;
-    },
-    init: function() {
-        var _this = this;
-        this.result_tpl = _.template($('#attraction-tpl').text());
-        $('.attraction-list').on('click', '[data-provides="attraction-replace"]', function(e) {
-            var $btn = $(e.currentTarget),
-                $old_attraction = $btn.parents('.attraction');
-            $.getJSON(_this.getReplaceUrl($btn.data('attraction')), function(data) {
-                var $new_attraction = $($.trim(_this.result_tpl(data)));
-                $old_attraction.replaceWith($new_attraction);
-            });
-        });
-    }
-};
-
-unlock.results.init();
 </script>
 {% endblock %}

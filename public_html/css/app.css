@@ -47,6 +47,23 @@ body.home .device{
     bottom: 0;
     width: 100%;
 }
+.adventure div {
+    position:relative;
+}
+.adventure blockquote{
+    padding: 0;
+    margin: 0;
+}
+.adventure var,
+.adventure strong{
+    position: absolute;
+    top: 10px;
+    left: 30px;
+}
+.adventure strong {
+    right: 30px;
+    left: auto;
+}
 .section{
 	padding: 0 30px;
 	color: white;
@@ -290,6 +307,9 @@ ul.fancy-list li{
 	border-bottom: 2px solid #013C0A;
 	-webkit-transition: margin-left .3s,
 						background .2s;
+}
+ul.fancy-list li.complete {
+    background: #000;
 }
 ul.fancy-list li:before{
 	content: "";

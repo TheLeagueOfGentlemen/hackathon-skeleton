@@ -96,7 +96,7 @@ map = (function (window, undefined) {
     //Delete Marker
     function deleteMarker (id) {
         getMarkerByID(id).setOptions({map: null});
-        markers.splice(i, 1);
+        //console.log(markers.splice(, 1));
         return public;
     }
 
@@ -182,11 +182,14 @@ map = (function (window, undefined) {
 
 directions = (function (window, undefined) {
     var d = window.document,
-        geo = window.navigator.geolocation;
-    function directions (/*start, ...positions, onMove*/) {
+        geo = window.navigator.geolocation,
+        car,
+        line;
+    function directions (/*start, ...positions, onMove, onComplete*/) {
         var args = _.toArray(arguments),
-            onMove = _.last(args),
-            all = _.map(_.head(args, args.length - 1), mapUtils.toLatLng),
+            onComplete = _.last(args),
+            onMove = _.last(_.head(args, args.length - 1)),
+            all = _.map(_.head(args, args.length - 2), mapUtils.toLatLng),
             start = _.head(all),
             destination = _.last(all),
             waypoints = _.map(_.head(_.rest(all), all.length - 2), toWaypoint),
@@ -200,12 +203,12 @@ directions = (function (window, undefined) {
 
         directionsService.route(request, function (result, status) {
             if (status == gMap.DirectionsStatus.OK) {
-                directionEvent(result, onMove);
+                directionEvent(result, onMove, onComplete);
             }
         });
     }
 
-    function directionEvent (result, onMove) {
+    function directionEvent (result, onMove, onComplete) {
         var turnBy = _.flatten(drawDirections(result), true),
             start = true,
             animating = false,
@@ -216,6 +219,7 @@ directions = (function (window, undefined) {
                     if (!turnBy.length) {
                         geo.clearWatch(watchID);
                         clearInterval(intervalID);
+                        onComplete(position);
                         return;
                     }
                     nextDirection = false;
@@ -224,24 +228,23 @@ directions = (function (window, undefined) {
                     d.getElementById('directions').innerHTML = current[2];
                     map.updateMarker(car, current[1]);
                     if (start) {
-                        setTimeout(function () {
-                            map.getMap().panTo(mapUtils.toLatLng(current[1]));
-                            map.getMap().setZoom(10);
-                            start = false;
-                        }, 1000);
+                        start = false;
                     } else {
                         map.getMap().panTo(mapUtils.toLatLng(current[1]));
                     }
                 }
             },
             watchID,
-            car = map.addMarker({position: turnBy[0][1], icon: 'http://fc09.deviantart.net/fs70/f/2011/237/8/c/free_cow_icon_by_cg_icons-d47tjp7.gif'}),
             intervalID = setInterval(watch, 10);
+        car = map.addMarker({position: turnBy[0][1], icon: 'http://fc09.deviantart.net/fs70/f/2011/237/8/c/free_cow_icon_by_cg_icons-d47tjp7.gif'});
         watchID = geo.watchPosition(watch, null, {enableHighAccuracy: true});
     }
 
     function drawDirections (result) {
-        directions = map.addPolyline({path: result.routes[0].overview_path});
+        if (line) {
+            map.deletePolyline(line);
+        }
+        line = map.addPolyline({path: result.routes[0].overview_path});
         return _.map(result.routes[0].legs, parseLeg);
     }
 
@@ -262,7 +265,13 @@ directions = (function (window, undefined) {
         };
     }
 
+    function zoom () {
+        map.getMap().panTo(mapUtils.toLatLng(map.getMarkerPosition(car)));
+        map.getMap().setZoom(10);
+    }
+
     return  {
-        get: directions
+        get: directions,
+        zoom: zoom
     }
 }(window));
