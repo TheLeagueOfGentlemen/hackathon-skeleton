@@ -240,6 +240,10 @@ $app->get('/criteria/{criteriaId}/attraction/replace/{attractionId}', function($
         'lat' => $new_attraction->lat,
         'lon' => $new_attraction->lon,
         'teaser' => $new_attraction->getTeaser(),
+        'verb' => array(
+            'name' => $new_attraction->firstVerb() ? $new_attraction->firstVerb()->name : '',
+            'gerund' => $new_attraction->firstVerb() ? $new_attraction->firstVerb()->gerund : ''
+        ),
         'city' => array(
             'name' => $new_attraction->city()->first() ? $new_attraction->city->name : ''
         )

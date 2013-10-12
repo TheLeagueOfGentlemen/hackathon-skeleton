@@ -10,4 +10,9 @@ class Verb extends Model
     {
         return $this->hasMany('\Unlock\Models\Category');
     }
+
+    public function categories()
+    {
+        return $this->hasMany('\Unlock\Models\Category');
+    }
 }
