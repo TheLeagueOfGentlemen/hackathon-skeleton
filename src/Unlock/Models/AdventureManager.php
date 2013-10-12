@@ -32,16 +32,36 @@ class AdventureManager
         return Category::find($id)->getAttractions();
     }
 
-    public function findLocationsByTerm($catID, $term) {
+    public function findLocationsByTerm($verb, $term) {
         $cities = City::where('name', 'LIKE', '%' . $term . '%')->get();
         $counties = County::where('name', 'LIKE', '%' . $term . '%')->get();
-        $attractions = Attraction::where('name', 'LIKE', '%' . $term . '%')->get();
+        $attractions = Attraction::where('name', 'LIKE', '%' . $term . '%')
+            ->get();
+
+        $verbCatIds = array_map(function ($cat) {
+                return $cat['id'];
+            }, 
+            $verb->getCategories()->get()->toArray()
+        );
+
+        $attractions = array_filter(
+            iterator_to_array($attractions),
+            function ($a) use ($verbCatIds) {
+                $catIds = array_map(
+                    function ($cat) {
+                        return $cat['id'];
+                    },
+                    $a->getCategories()->get()->toArray()
+                );
+                return count(array_intersect($catIds, $verbCatIds)) > 0;
+            }
+        );
 
         // Match City
         $results = array_merge(
             $cities ? iterator_to_array($cities) : array(),
             $counties ? iterator_to_array($counties) : array(),
-            $attractions ? iterator_to_array($attractions) : array()
+            $attractions
         );
 
         return array_map(function($result) {
