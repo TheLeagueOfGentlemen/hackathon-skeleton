@@ -85,6 +85,34 @@ $app->get('/adventure/results', function(Request $request) use ($app) {
     var_dump($critID);
 });
 
+// Display new adventure
+$app->get('/adventure/results/{criteriaId}', function(Request $request, $criteriaId) use ($app) {
+    $criteria = AdventureCriteria::find($criteriaId);
+    if (!$criteria) die('Bad criteria id');
+
+    $whereTo = $app['where_to'];
+    $whereTo->setAdventureCriteria($criteria);
+    $attractions = $whereTo->getAttractions();
+
+    foreach ($attractions as $a) {
+        $isExisting = false;
+        foreach ($criteria->getAttractionCollection()->getResults() as $att) {
+            if ($att->id === $a->id) {
+                $isExisting = true;
+            }
+        }
+        if ( ! $isExisting) {
+            $criteria->getAttractionCollection()->attach($a['id']);
+        }
+    }
+    $criteria->save();
+
+    $data = compact('criteria', 'attractions');
+
+    return $app['twig']->render('search_results.html.twig', $data);
+})->bind('search_results');
+
+// Update adventure
 $app->put('/adventure/{id}', function($id) use ($app) {
 
 });
@@ -109,12 +137,16 @@ $app->get('/testcriteria/{id}', function($id) use ($app) {
 
 $app->post('/criteria', function(Request $request) use ($app) {
     $data = array_merge($request->request->all(), array('user_id' => $app['UserID']));
-    $data['attractions'] = array($data['attraction_id']);
+    $data['attractions'] = isset($data['attraction_id']) ? array($data['attraction_id']) : array();
     unset($data['attraction_id']);
 
     $criteria = $app['adventure_manager']->persistAdventureCriteria($data);
 
-    return $app->redirect('/adventure?criteria=' . $criteria->id);
+    return $app->redirect(
+        $app['url_generator']->generate('search_results', array(
+            'criteriaId' => $criteria->id
+        ))
+    );
 });
 
 /* ------------------------------------------------*/
@@ -156,6 +188,34 @@ $app->get('/whereto/{id}', function($id) use ($app) {
     var_dump(array_map(function ($a) {return $a->name;}, iterator_to_array($attractions)));
     return new JsonResponse($attractions);
 });
+
+
+
+// WhereTo
+$app->get('/criteria/{criteriaId}/attraction/replace/{attractionId}', function($criteriaId, $attractionId) use ($app) {
+    $crit = AdventureCriteria::find($criteriaId);
+
+    // Remove the attraction
+    $attractions = $crit->getAttractions();
+    $foundRemove = false;
+    foreach ($attractions as $key => $a) {
+        if ($a->id == $attractionId) {
+            $foundRemove = true;
+            $crit->getAttractionCollection()->detach($a);
+        }
+    }
+    if (!$foundRemove) {
+        die('Could not find attraction to remove');
+    }
+
+    $attractions = $app['where_to']->setAdventureCriteria($crit)->getAttractions();
+    $new_attraction = $attractions->last();
+    $crit->getAttractionCollection()->attach($new_attraction);
+    $crit->save();
+
+    return new JsonResponse($new_attraction->toArray());
+});
+
 
 /* ------------------------------------------------*/
 /* App

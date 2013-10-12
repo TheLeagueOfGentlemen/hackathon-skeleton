@@ -1,0 +1,48 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+<div class="attraction-list">
+    {% for attraction in attractions %}
+    <div class="attraction">
+        <h2>{{ attraction.name }} <button data-provides="attraction-replace" data-attraction="{{ attraction.id }}">X</button></h2>
+        <p>{{ attraction.teaser }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ parent() }}
+<script type="text/x-template" id="attraction-tpl">
+<div class="attraction">
+    <h2><%- name %> <button data-provides="attraction-replace" data-attraction="<%- id %>">X</button></h2>
+    <p><%- description %></p>
+</div>
+</script>
+<script type="text/javascript" src="/js/lodash.js"></script>
+<script type="text/javascript" charset="utf-8">
+var unlock = unlock || {};
+
+unlock.results = {
+    criteria: {{ criteria.id }},
+    replace_url: '/index_dev.php/criteria/{{ criteria.id }}/attraction/replace/',
+    getReplaceUrl: function(attraction_id) {
+        return this.replace_url + attraction_id;
+    },
+    init: function() {
+        var _this = this;
+        this.result_tpl = _.template($('#attraction-tpl').text());
+        $('.attraction-list').on('click', '[data-provides="attraction-replace"]', function(e) {
+            var $btn = $(e.currentTarget),
+                $old_attraction = $btn.parents('.attraction');
+            $.getJSON(_this.getReplaceUrl($btn.data('attraction')), function(data) {
+                var $new_attraction = $($.trim(_this.result_tpl(data)));
+                $old_attraction.replaceWith($new_attraction);
+            });
+        });
+    }
+};
+
+unlock.results.init();
+</script>
+{% endblock %}

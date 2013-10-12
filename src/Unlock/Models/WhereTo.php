@@ -23,6 +23,7 @@ class WhereTo
         $defaultDistance = $distance = 1;
         $crit = $this->criteria;
         $attractions = $crit->getAttractions();
+
         while($attractions->count() < 3) {
             unset($newAttraction);
             $attraction = $this->getTailAttraction($attractions);
@@ -36,7 +37,23 @@ class WhereTo
 
             //Loop until an attraction is found, expanding the radius each time.
             while (!isset($newAttraction) or empty($newAttraction)) {
-                $query = Attraction::join('attraction_category', 'attraction_category.attraction_id', '=', 'attraction.id')
+                $query = $this->distanceQuery($attractions, $distance, $lat, $lon);
+                if (!empty($flunkedIDs)) {
+                    $query = $query->whereNotIn('category.id', $flunkedIDs);//Not flunked
+                }
+                $newAttraction = $query->first();
+
+                $distance += 1;
+                if ($newAttraction) {
+                    $attractions->put($attractions->count(), $newAttraction);
+                }
+            }
+        }
+        return $attractions;
+    }
+
+    private function distanceQuery($attractions, $distance, $lat, $lon) {
+        return Attraction::join('attraction_category', 'attraction_category.attraction_id', '=', 'attraction.id')
                     ->join('category', 'category.id', '=', 'attraction_category.category_id')
                     ->select($this->DB->connection()->raw("(
                         (ACOS(
@@ -52,19 +69,6 @@ class WhereTo
                     ->having('distance', '<=', $distance)
                     ->orderBy($this->DB->connection()->raw('RAND()'))
                     ->whereNotIn('attraction.id', $this->notAttractionIDs($attractions));
-                if (!empty($flunkedIDs)) {
-                    $query = $query->whereNotIn('category.id', $flunkedIDs);//Not flunked
-                }
-                $newAttraction = $query->first();
-
-                $distance += 1;
-                if ($newAttraction) {
-                    $attractions->put($attractions->count(), $newAttraction);
-                }
-            }
-            $default = $defaultDistance;
-        }
-        return $attractions;
     }
 
     public function getTailAttraction ($attractions) {
@@ -88,6 +92,8 @@ class WhereTo
 
         } else if (!empty($crit->geolocation)) {//Do some random shit with the geolocation
             //Get attractions within a radius of their geolocation
+            $query = $this->distanceQuery($attractions, 10, $lat, $lon);
+            return $query->first();
 
         } else {//Else do some even more random shit
             return Attraction::whereNotIn('id',  $this->notAttractionIDs())
@@ -114,25 +120,21 @@ class WhereTo
                 return Verb::find($c->verb_id)->name;
             }, iterator_to_array($a->getCategories()->getResults()));
         }, $attractions)));
-        var_dump($verbs);
 
         //Flunk categories that shouldn't show up in multiples
         $flunk = array();
-        if (in_array(array('Hike', 'Trails', 'Alpine Skiing', 'Nordic Skiing'), $verbs)) {
-            var_dump('asdf');
+        if (array_intersect(array('Hike', 'Trails', 'Alpine Skiing', 'Nordic Skiing'), $verbs)) {
             $flunk = array_merge($flunk, array('Hike', 'Trails', 'Alpine Skiing', 'Nordic Skiing'));
         }
-        if (in_array(array('Eat'), $verbs)) {
+        if (array_intersect(array('Eat'), $verbs)) {
             $flunk = array_merge($flunk, array('Eat'));
         }
 
         if (!empty($flunk)) {
-            var_dump($flunk);
             $categories = Category::whereIn('name', $flunk)->get();
             return array_map(function ($c) {
-                    var_dump($c);
                     return $c->id;
-                },  $categories);
+                },  iterator_to_array($categories));
         } else {
             return array();
         }

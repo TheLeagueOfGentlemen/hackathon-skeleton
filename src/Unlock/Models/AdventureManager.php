@@ -91,21 +91,25 @@ class AdventureManager
         $criteria->user_id = $data['user_id'];
         $criteria->save();
 
-        if (isset($data['attractions'])) {
+        if ( ! empty($data['attractions'])) {
             $this->DB->connection()->delete(
                 'DELETE FROM adventurecritera_attractions WHERE adventurecriteria_id = ' . $criteria->id
             );
             foreach ($data['attractions'] as $id) {
-                $criteria->getAttractionCollection()->attach($data['attraction_id']);
+                if ($id) {
+                    $criteria->getAttractionCollection()->attach($id);
+                }
             }
         }
 
-        if (isset($data['rejectedAttractions'])) {
+        if ( ! empty(isset($data['rejectedAttractions']))) {
             $this->DB->connection()->delete(
                 'DELETE FROM adventurecriteria_rejectedattractions WHERE adventurecriteria_id = ' . $criteria->id
             );
             foreach ($data['rejectedAttractions'] as $id) {
-                $criteria->getRejectedAttractionCollection()->attach($data['attraction_id']);
+                if ($id) {
+                    $criteria->getRejectedAttractionCollection()->attach($id);
+                }
             }
         }
 
