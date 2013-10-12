@@ -7,8 +7,8 @@
 </head>
 <body>
 <form action="" method="get" accept-charset="utf-8">
-    I want to <input type="hidden" name="action" id="action" placeholder="Hike, eat, drink, etc." value="" />
-    at <input type="hidden" name="location" id="location" value="" />
+    I want to <input type="hidden" name="action" id="action" placeholder="Hike, eat, drink, etc." value="" style="width: 200px;" />
+    at <input type="hidden" name="location" id="location" value="" style="width: 200px;" />
 </form>
     
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -21,17 +21,17 @@ var unlock = unlock || {
 
 $('#action').select2({
     ajax: {
-        url: '/category',
+        url: '/index_dev.php/category',
         dataType: 'json',
         results: function(data, page) {
-            return data;
+            return { results: data };
         }
     },
     formatResult: function(object) {
-        return object.value;
+        return object.name;
     },
     formatSelection: function(object) {
-        return object.value;
+        return object.name;
     }
 }).on('change', function(e) {
     unlock.current_category = e.added.id;
@@ -41,23 +41,26 @@ $('#location').select2({
     ajax: {
         url: function(term, page, context) {
             return [
-                '/adventure?category_id=',
+                '/index_dev.php/adventure?category=',
                 unlock.current_category,
                 '&term=',
                 term
             ].join('');
         },
         dataType: 'json',
+        minimumInputLength: 3,
         results: function(data, page) {
-            return data;
+            return { results: data };
         }
     },
     formatResult: function(object) {
-        return object.value;
+        return object.name;
     },
     formatSelection: function(object) {
-        return object.value;
+        return object.name;
     }
+}).on('change', function(e) {
+    console.log(e.added.type, e.added.object_id);
 });
 
 </script>

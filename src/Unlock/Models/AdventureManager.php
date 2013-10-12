@@ -47,9 +47,10 @@ class AdventureManager
         return array_map(function($result) {
             $class = explode('\\', get_class($result));
             return array(
-                'ID' => $result->id,
-                'Type' => strtolower(array_pop($class)),
-                'Name' => $result->name
+                'id' => time(),
+                'object_id' => $result->id,
+                'type' => strtolower(array_pop($class)),
+                'name' => $result instanceof County ? sprintf('%s County', $result->name) : $result->name
             );
         }, $results);
     }
