@@ -16,10 +16,12 @@
             </div>
             <div class="toggle">
                 <p>
+                    <strong>{{ attraction.name }}</strong><br />
                     {% if verb %}
-                    {{ verb.gerund }}@<br />
+                    {{ verb.gerund }} @
                     {% endif %}
-                    <strong>{{ attraction.name }}</strong><br />{{ attraction.city().first() ? attraction.city().first().name : '' }}</p>
+                    {{ attraction.city().first() ? attraction.city().first().name : '' }}
+                    </p>
             </div>
             <div>
                 <span data-provides="attraction-replace" data-attraction="{{ attraction.id }}">X</span>
@@ -27,7 +29,7 @@
         </li>
     {% endfor %}
     </ul>
-    <div id="map-canvas" class="google-map" style="height: 200px; width: 100%;"><img src="/img/map.png" /></div>
+    <div id="map-canvas" class="google-map" style="height: 169px; width: 100%;"><img src="/img/map.png" /></div>
     <button class="congrats-button">
         Congratulations
         <small>View Your Badges</small>
@@ -114,6 +116,8 @@
                         return map.addMarker({position: p, icon: 'http://images2.wikia.nocookie.net/__cb20130626170632/nitrome/images/c/cb/Treasure_chest.png'});
                     });
             }
+
+            map.getMap().setZoom(map.getMap().getZoom() + 1);
 
             function updateDirections (pos, locations) {
                 var ids = locationMarkers(locations); 
