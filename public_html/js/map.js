@@ -9,6 +9,26 @@ mapUtils = {
             return new gMap.LatLng(array[0], array[1]);
         }
         return new gMap.LatLng(1, 1);
+    },
+    latLngToArray: function (latLng) {
+        if (_.isArray(latLng)) {
+            return latLng;
+        } else {
+            return [latLng.lat(), latLng.lng()];
+        }
+    },
+    inRadius: function (center, radius, point) {
+        var dist = Math.sqrt(Math.pow(center[0] - point[0], 2) + Math.pow(center[1] - point[1], 2));
+        return dist <= radius
+    },
+    zoomTo: function zoomTo(map, stop){
+        if (map.getZoom() == stop) {
+            return;
+        } else {
+            console.log(map.getZoom());
+            map.setZoom(map.getZoom() + 1);
+            setTimeout(mapUtils.zoomTo, 1000, map, stop);
+        }
     }
 };
 map = (function (window, undefined) {
@@ -50,10 +70,9 @@ map = (function (window, undefined) {
     function addMarker (options) {
         var position = mapUtils.toLatLng(options.position),
             marker = new gMap.Marker({map: map}),
-            //icon = this.getIcon(options.propertyType),
             markerOptions = {
-                position: position/*,
-                icon: icon.d*/
+                position: position,
+                icon: options.icon || undefined
             };
 
         marker.setOptions(markerOptions);
@@ -83,6 +102,10 @@ map = (function (window, undefined) {
 
     function getMarkerByID (id) {
         return markers[_.findIndex(markers, {_id: id})];
+    }
+
+    function getMarkerPosition (id) {
+        return getMarkerByID(id).getPosition();
     }
 
     function updateMarker (id, pos) {
@@ -132,6 +155,7 @@ map = (function (window, undefined) {
         addMarker: addMarker,
         deleteMarker: deleteMarker,
         updateMarker: updateMarker,
+        getMarkerPosition: getMarkerPosition,
         addPolyline: addPolyline,
         deletePolyline: deletePolyline,
         getCenter: function () {
@@ -150,8 +174,10 @@ map = (function (window, undefined) {
 
 directions = (function (window, undefined) {
     var d = window.document;
-    function directions (/*start, ...positions*/) {
-        var all = _.map(_.toArray(arguments), mapUtils.toLatLng),
+    function directions (/*start, ...positions, onMove*/) {
+        var args = _.toArray(arguments),
+            onMove = _.last(args),
+            all = _.map(_.head(args, args.length - 1), mapUtils.toLatLng),
             start = _.head(all),
             destination = _.last(all),
             waypoints = _.map(_.head(_.rest(all), all.length - 2), toWaypoint),
@@ -165,23 +191,38 @@ directions = (function (window, undefined) {
 
         directionsService.route(request, function (result, status) {
             if (status == gMap.DirectionsStatus.OK) {
-                var turnBy = _.flatten(drawDirections(result), true),
-                    watch = function (position) {
-                        var current = _.head(turnBy);
-                        if (nextDirection || false/*met next point*/) {
-                            turnBy = _.rest(turnBy);
-                            nextDirection = false;
-                            console.log(current[1]);
-                        } else {
-                            d.getElementById('directions').innerHTML = current[2];
-                            map.updateMarker(car, current[1]);
-                        }
-                    },
-                    car = map.addMarker({position: turnBy[0][1]});
-                setInterval(watch, 10);
-                window.navigator.geolocation.watchPosition(watch, null, {enableHighAccuracy: true});
+                directionEvent(result, onMove);
             }
         });
+    }
+
+    function directionEvent (result, onMove) {
+        var turnBy = _.flatten(drawDirections(result), true),
+            start = true,
+            animating = false,
+            watch = function (position) {
+                var current = _.head(turnBy);
+                if (nextDirection || false/*met next point*/) {
+                    turnBy = _.rest(turnBy);
+                    nextDirection = false;
+                    onMove(map.getMarkerPosition(car));
+                } else {
+                    d.getElementById('directions').innerHTML = current[2];
+                    map.updateMarker(car, current[1]);
+                    if (start) {
+                        setTimeout(function () {
+                            map.getMap().panTo(mapUtils.toLatLng(current[1]));
+                            map.getMap().setZoom(10);
+                            start = false;
+                        }, 1000);
+                    } else {
+                        map.getMap().panTo(mapUtils.toLatLng(current[1]));
+                    }
+                }
+            },
+            car = map.addMarker({position: turnBy[0][1], icon: 'http://fc09.deviantart.net/fs70/f/2011/237/8/c/free_cow_icon_by_cg_icons-d47tjp7.gif'});
+        setInterval(watch, 10);
+        window.navigator.geolocation.watchPosition(watch, null, {enableHighAccuracy: true});
     }
 
     function drawDirections (result) {
