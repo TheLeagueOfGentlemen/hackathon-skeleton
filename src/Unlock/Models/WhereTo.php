@@ -73,7 +73,7 @@ class WhereTo
                     ->having('distance', '<=', $distance)
                     ->orderBy($this->DB->connection()->raw('RAND()'));
         if ($skipIDs) {
-            $query->addWhereNotIn('attraction.id', $this->notAttractionIDs($attractions));
+            $query->whereNotIn('attraction.id', $this->notAttractionIDs($attractions));
         }
         return $query;
     }
@@ -90,20 +90,20 @@ class WhereTo
 
             $query = $attractions->orderBy($this->DB->connection()->raw('RAND()'));
             if ($skipIDs) {
-                $attractions->addWhereNotIn('id', $skipIDs);
+                $query->whereNotIn('id', $skipIDs);
             }
 
-            return $attractions->take(1)->get();
+            return $query->take(1)->get();
 
         } else if (!empty($crit->county)) {//If has County
             $attractions = County::find($crit->county)->getCities()->getAttractions();
 
             $query = $attractions->orderBy($this->DB->connection()->raw('RAND()'));
             if ($skipIDs) {
-                $attractions->addWhereNotIn('id', $skipIDs);
+                $query->whereNotIn('id', $skipIDs);
             }
 
-            return $attractions->take(1)->get();
+            return $query->take(1)->get();
 
         } else if (!empty($crit->geolocation)) {//Do some random shit with the geolocation
             //Get attractions within a radius of their geolocation
@@ -113,7 +113,7 @@ class WhereTo
         } else {//Else do some even more random shit
             $query = Attraction::orderBy($this->DB->connection()->raw('RAND()'));
             if ($skipIDs) {
-                $query->addWhereNotIn('id', $this->notAttractionIDs($attractions));
+                $query->whereNotIn('id', $this->notAttractionIDs($attractions));
             }
             return $query->take(1)->get()->first();
         }
@@ -125,7 +125,7 @@ class WhereTo
     }
 
     private function notAttractionIDs ($attractions) {
-        array_map(function ($a) {
+        return array_map(function ($a) {
             return $a->id;
         },array_merge(iterator_to_array($attractions), iterator_to_array($this->criteria->getRejectedAttractions())));
     }
