@@ -9,6 +9,11 @@
 <form action="" method="get" accept-charset="utf-8">
     I want to <input type="hidden" name="action" id="action" placeholder="Hike, eat, drink, etc." value="" style="width: 200px;" />
     at <input type="hidden" name="location" id="location" value="" style="width: 200px;" />
+    <input type="hidden" name="city_id" id="city_id" data-provides="location-field" data-location-type="city" />
+    <input type="hidden" name="county_id" id="county_id" data-provides="location-field" data-location-type="county" />
+    <input type="hidden" name="attraction_id" id="attraction_id" data-provides="location-field" data-location-type="attraction" />
+    <input type="hidden" name="category_id" id="category_id" />
+    <input type="submit" value="Go" />
 </form>
 {% endblock %}
 
@@ -19,7 +24,26 @@
 
 var unlock = unlock || {
     current_category: null,
+    location_fields: {},
+    init: function() {
+        var _this = this;
+        $('[data-provides="location-field"]').each(function(i, elem) {
+            var $elem = $(elem);
+            _this.location_fields[$elem.data('location-type')] = $elem;
+        });
+    },
+    setLocationFieldValue: function(type, value) {
+        for (x in this.location_fields) {
+            if (x === type) {
+                this.location_fields[x].val(value);
+                continue;
+            }
+            this.location_fields[x].val('');
+        }
+    }
 };
+
+unlock.init();
 
 $('#action').select2({
     ajax: {
@@ -62,7 +86,7 @@ $('#location').select2({
         return object.name;
     }
 }).on('change', function(e) {
-    console.log(e.added.type, e.added.object_id);
+    unlock.setLocationFieldValue(e.added.type, e.added.object_id);
 });
 
 </script>
