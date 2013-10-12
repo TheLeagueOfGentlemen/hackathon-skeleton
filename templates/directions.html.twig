@@ -84,6 +84,7 @@
     function confirm () {
         $(this).remove();
         $('.screen').removeClass('list').addClass('directions');
+        $('.reveal-list').removeClass('reveal-list');
         map.resize('100%', '354px');
         directions.zoom();
     }
@@ -170,6 +171,9 @@
 </script>
 <script>
     $('.attraction-list').on('click', '.toggle', function(e) {
+        if ($('.screen').hasClass('directions')) {
+            return false;
+        }
 		$(e.currentTarget).closest("li").toggleClass( "open" );
 	});
 </script>
