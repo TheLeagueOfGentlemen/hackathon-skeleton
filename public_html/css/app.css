@@ -69,6 +69,7 @@ body.home .device{
 	z-index: 2;
     bottom: 0;
     width: 100%;
+    color: #000;
 }
 #directions div {
     position:relative;
@@ -90,7 +91,7 @@ body.home .device{
 
 #preferences {
     padding: 15px 15px;
-    background-color: white;
+    background-color: #EEA303;
     color: #000;
 /*     float: left; */
 /*     width: 100%; */
@@ -492,6 +493,10 @@ ul.fancy-list li div:last-child span{
 	font-weight: 700;
 	border: 3px solid darkred;
 	box-shadow: 0px 5px #6D0A0A;
+    -webkit-transition: .4s all;  
+}:
+ul.fancy-list li div:last-child span:hover{
+    background: darkred;
 }
 ul.fancy-list li.open{
 	margin-left: -90%;
@@ -543,7 +548,7 @@ ul.attraction-list li:nth-child(3n+0) div:first-child span:after{
 }
 .directions ul.attraction-list li div p:first-child {
 	display: block;
-	margin: 7px 0 0 -7px;
+	margin: 0 0 0 -7px;
 	font-size: .8em;
 }
 .directions ul.attraction-list li div span{
@@ -564,7 +569,8 @@ ul.attraction-list li:nth-child(3n+0) div:first-child span:after{
 .directions ul.attraction-list li div:first-child span {
 	width: 30px;
 	height: 30px;
-	right: -6px;
+	right: -15px;
+    position: relative;   
 }
 
 
