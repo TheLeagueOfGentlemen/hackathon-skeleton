@@ -77,6 +77,10 @@ $app->put('/adventure/{id}', function($id) use ($app) {
 
 });
 
+// ===========================
+// ==== Adventure Criteria ===
+// ===========================
+
 $app->get('/testcriteria/{id}', function($id) use ($app) {
     $advCrit = AdventureCriteria::find($id);
     ob_start();
@@ -90,8 +94,13 @@ $app->get('/testcriteria/{id}', function($id) use ($app) {
     echo '<pre>' . var_dump($advCrit->getRejectedAttractions()->toArray()) . '</pre>';
     return ob_get_clean();
 });
+// ===============================
+// ==== END Adventure Criteria ===
+// ===============================
 
-// Categories
+// ================
+// === Category ===
+// ================
 $app->get('/category', function() use ($app) {
     return new JsonResponse($app['adventure_manager']->getCategories()->toArray());
 });
@@ -104,6 +113,9 @@ $app->get('/category/{id}/attractions', function($id) use ($app) {
 $app->get('/category/{id}', function($id) use ($app) {
     return new JsonResponse($app['adventure_manager']->getCategory($id)->toArray());
 });
+// ====================
+// === END Category ===
+//=====================
 
 // Attractions
 $app->get('/attraction/{id}', function($id) use ($app) {
