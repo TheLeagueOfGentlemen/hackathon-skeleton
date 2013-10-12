@@ -91,11 +91,10 @@ $app->get('/attraction/{id}', function($id) use ($app) {
     return new JsonResponse($app['adventure_manager']->getAttraction($id)->toArray());
 });
 
-
-
 $app->get('/verb/{id}', function($id) use ($app) {
-//     var_dump(Verb::find($id)->first()->getCategories()->get());
-    return new JsonResponse(Verb::find($id)->first()->getCategories()->get()->toArray());
+    $verb = Verb::find($id);
+    $cats = $verb->getCategories()->get();
+    return new JsonResponse($cats->toArray());
 });
 
 /* ------------------------------------------------*/
