@@ -1,0 +1,425 @@
+/*
+Unlock Vermont
+Authors: Evan Briggs;
+Updated: 10.11.13;
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,900);
+
+html, 
+body{
+	width: 100%;
+	height: 100%;	
+}
+body{
+	background: #333;
+	padding-top: 100px;
+	font-family: 'Lato', sans-serif;
+}
+*, 
+*:before, 
+*:after {
+	-webkit-box-sizing: border-box; 
+}
+
+/* Layout */
+
+body.home .device{
+	background: #013C0A url('../img/vermont.jpg') center center no-repeat;
+}
+.device{
+	background: #013C0A;
+	height: 100%;	
+	width: 320px;
+	max-height: 568px;
+	padding-top: 60px;
+	margin: 0 auto;
+	box-shadow: 0px 2px 3px rgba(1,1,1,.5);
+	overflow: hidden;
+	overflow-y: scroll;
+	position: relative;
+}
+.adventure{
+	padding: 30px 30px 20px;
+	background: #06610D;
+	position: relative;
+	z-index: 2;
+}
+.section{
+	padding: 0 30px;
+	color: white;
+}
+::-webkit-scrollbar {
+	width: 0;
+}
+.screen{
+	overflow: hidden;
+}
+.screen ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* Menu */
+
+.menu{
+	width: 50px;
+	height: 40px;
+	cursor: pointer;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	z-index: 10;
+}
+.menu:after {
+	content: "2";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background: #F00;
+	display: block;
+	bottom: -7px;
+	right: -6px;
+	color: #FFF;
+	z-index: 10;
+	text-align: center;
+	border-radius: 20px;
+	font-size: .8em;
+	line-height: 1.6em;
+}
+.menu span{
+	width: 40px;
+	height: 5px;
+	display: block;
+	background: white;
+	left: 5px;
+	top: 18px;
+	position: relative;
+	z-index: 10;
+}
+.menu span:before,
+.menu span:after{
+	content: " ";
+	width: 40px;
+	height: 5px;
+	display: block;
+	background: white;
+	position: absolute;
+	left: 0;
+}
+.menu span:before{
+	top: -10px;
+}
+.menu span:after{
+	bottom: -10px;
+}
+nav{
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	border-width: 0px;
+	border-style: solid;
+	border-color: #111;
+	background-color: rgba(0, 0, 0, 0);
+	-webkit-transition: border-width 0.3s, 
+						background-color 0.3s, 
+						height 0s 0.3s;
+}
+nav ul{
+	width: 70px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	left: -90px;
+	top: 70px;
+	text-align: center;
+	opacity: 0;
+	-webkit-transition: all .3s;
+}
+nav.open ul{
+	left: -70px;
+	opacity: 1;
+}
+nav ul li:first-child a{
+	border-top: 1px solid #222;
+}
+nav ul li a{
+	display: block;
+	border-bottom: 1px solid #222;
+	padding: 20px 0;
+	text-decoration: none;
+	color: black;
+	-webkit-transition: all .3s;
+}
+nav.open ul li a{
+	padding: 10px 0;
+	color: white;
+}
+nav.open ul li a:hover{
+	background: #222;
+}
+nav.open {
+	height: 625px;
+	border-width: 60px 0 0 70px;
+	background-color: rgba(0, 0, 0, 0.5);
+	-webkit-transition: border-width 0.3s, 
+						background-color 0.3s;
+}
+nav .overlay{
+	position: absolute;
+	width: 100%;
+	cursor: pointer;
+	z-index: 4;
+}
+nav.open .overlay{
+	height: 100%;
+}
+nav h5{
+	color: transparent;
+	text-align: center;
+	letter-spacing: 2.3px;
+	font-size: 1em;
+	font-weight: bold;
+	margin: 0;
+	position: absolute;
+	top: -45px;
+	right: 20px;
+	line-height: .9em;
+	text-transform: uppercase;
+	-webkit-transition: color .5s;
+}
+nav h5 span{
+	letter-spacing: 0;
+	font-weight: normal;
+}
+nav.open h5{
+	color: #ddd;
+}
+
+/* # - Inputs and Buttons */
+
+input[type="text"]{
+	width: 100%;
+	padding: 20px 30px 20px 60px;
+	border: none;
+	margin: 0 0 10px;
+	color: #999;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	-webkit-transition: box-shadow .2s ease,
+						background-position .3s ease;
+}
+input.activity-input{
+	background: white url('../img/activity-input.png') 10px center no-repeat;
+}
+input.location-input{
+	background: white url('../img/location-input.png') 10px center no-repeat;
+}
+input[type="text"]:focus{
+	background-color: #f5f5f5;
+	outline: none;
+	box-shadow: inset 0px 0px 0px 5px #FFF;
+	background-position: 10px 30%;
+}
+::-webkit-input-placeholder{
+	color: #999;
+}
+
+/* Badges */
+.badge span{
+	background-image: url('../img/badge.png');
+}
+.gold-badge span{
+	background-image: url('../img/badge-gold.png');
+}
+.white-badge span{
+	background-image: url('../img/badge-white.png');
+}
+.hiking span{
+	background-image: url('../img/hiking-badge.png');
+}
+.drinking span{
+	background-image: url('../img/drinking-badge.png');
+}
+.eating span{
+	background-image: url('../img/eating-badge.png');
+}
+
+/* 1 - Landing Page */
+
+.home .screen{
+	padding-top: 140px;
+}
+
+/* 2 - Map Page */
+
+
+
+/* 3 - Activity List Page */
+
+ul.fancy-list{
+	margin: 0;
+	padding: 0;
+}
+ul.fancy-list li{
+	list-style: none;
+	float: left;
+	background: #06610D;
+	color: white;
+	width: 190%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	position: relative;
+	border-bottom: 2px solid #013C0A;
+	-webkit-transition: margin-left .3s,
+						background .2s;
+}
+ul.fancy-list li:before{
+	content: "";
+	width: 0px;
+	height: 0px;
+	display: block;
+	position: absolute;
+	background: rgba(0, 0, 0, 0);
+	color: #FFF;
+	left: 48%;
+	top: 35%;
+	text-align: center;
+	line-height: 1.8em;
+	font-weight: 700;
+	border-left: 15px solid #013C0A;
+	border-top: 15px solid rgba(0, 0, 0, 0);
+	border-bottom: 15px solid rgba(0, 0, 0, 0);
+	-webkit-transition: border .2s;
+}
+ul.fancy-list li div{
+	width: 70%;
+	float: left;
+	padding: 20px 0;
+}
+ul.fancy-list li div:first-child,
+ul.fancy-list li div:last-child{
+	padding: 20px 15px;
+	width: 15%;
+}
+ul.fancy-list li div span{
+	width: 55px;
+	height: 55px;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	border: 3px solid #0C4607;
+	border-radius: 10px;
+	box-shadow: 0 5px #0A361D;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 80%;
+}
+ul.fancy-list li div:last-child span{
+	background: #C22727;
+	color: #FFF;
+	top: 7px;
+	right: 10px;
+	line-height: 3.1em;
+	font-weight: 700;
+	border: 3px solid darkred;
+	box-shadow: 0px 5px #6D0A0A;
+}
+ul.fancy-list li.open{
+	margin-left: -90%;
+	background-color: #0A500F;
+}
+ul.fancy-list li.open:before{
+	border-right: 15px solid #FFF;
+	border-top: 15px solid rgba(0, 0, 0, 0);
+	border-bottom: 15px solid rgba(0, 0, 0, 0);
+	border-left: none;
+	left: 50%;
+}
+
+/* 4 - Activity Detail Page */
+
+.detail.screen{
+
+}
+
+/* 5 - User Pref Page, Uses List View Styles*/
+
+.user.screen .profile img:first-child{
+	border: 5px solid #FFF;
+	margin: 20px auto 30px;
+	display: block;
+	box-shadow: 0px 10px #AAA;
+	border-radius: 5px;
+}
+ul.badge-list li{
+	background-color: #EEA303;
+	border-bottom: 2px solid #CF8D12;
+}
+ul.badge-list li.open{
+	background-color: #C48705;
+}
+ul.badge-list li div.toggle{
+	width: 75%;
+}
+ul.badge-list li div.toggle p:first-child{
+	float: left;
+}
+ul.badge-list li div.toggle p:last-child{
+	float: right;
+}
+ul.badge-list li span:first-child {
+	border: 3px solid #FFF;
+	box-shadow: 0 5px rgba(116, 111, 9, 0.5);
+}
+ul.badge-list li:before{
+	border-left: 15px solid rgba(116, 111, 9, .5);
+}
+.user.screen h3 {
+	border-bottom: 1px solid darkgreen;
+	padding-bottom: 10px;
+}
+
+/* # - Animation */
+
+.topFadeIn{
+    -webkit-animation: topFadeIn 1s;
+}
+
+@-webkit-keyframes topFadeIn {
+	0%	 { -webkit-transform: translateY( -20px); opacity: 0;}
+	100% { -webkit-transform: translateY(   0px); opacity: 1;}
+}
+
+.rightFadeIn{
+	-webkit-animation: rightFadeIn 1s;
+}
+
+@-webkit-keyframes rightFadeIn {
+	0%	 { -webkit-transform: translateX(100px); opacity: 0;}
+	100% { -webkit-transform: translateX(  0px); opacity: 1;}
+}
+
+.leftFadeIn{
+	-webkit-animation: leftFadeIn 1s;
+}
+
+@-webkit-keyframes leftFadeIn {
+	0%	 { -webkit-transform: translateX(-50px);}
+	100% { -webkit-transform: translateX(  0px);}
+}
+
+
+/* # - Responsive */
+
+@media only screen and (max-width: 768px){
+
+}
+
+@media only screen and (max-width: 480px){
+
+}
