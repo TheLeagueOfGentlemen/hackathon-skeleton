@@ -24,6 +24,7 @@ R::exec("CREATE TABLE adventurecriteria (
     `verb_id` int null,
     `lat` double not null,
     `lon` double not null,
+    `completed_at` DATETIME DEFAULT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB");
 

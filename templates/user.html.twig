@@ -1,28 +1,27 @@
 {% extends "layout.html.twig" %}
 {% block content %}
-<div class="user screen">
+<div class="user screen badge-manager">
     <div class="section">
         <h3>Welcome Back, Evan!</h3>
     </div>
     <div class="badges">
         <ul class="fancy-list badge-list">
+            {% for badge in badges %}
             <li>
                 <div class="badge"><span></span></div>
                 <div>
                     <p style="font-style: italic; font-size: 12px">
-                        {{ "now" | date('F jS \\a\\t g:ia') }}
+                        {{ badge.completed_at | date('F jS \\a\\t g:ia') }}
                     </p>
+                    {% for attraction in badge.attractions().get() %}
+                    {% set verb = attraction.firstVerb() %}
                     <p>
-                        <i><strong>Hiking</strong></i>@<br />Camel's Hump
+                        <i><strong>{{ verb ? verb.gerund : 'Exploring' }}</strong></i>@<br />{{ attraction.name }}
                     </p>
-                    <p>
-                        <i><strong>Eating</strong></i>@<br />The Prohibition Pig
-                    </p>
-                    <p>
-                        <i><strong>Shopping</strong></i>@<br />Stowe Craft Gallery
-                    </p>
+                    {% endfor %}
                 </div>
             </li>
+            {% endfor %}
         </ul>
     </div>
 </div>

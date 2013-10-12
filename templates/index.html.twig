@@ -30,7 +30,7 @@
             <input type="hidden" name="attraction_id" id="attraction_id" data-provides="location-field" data-location-type="attraction" />
             <input type="hidden" name="lat" id="lat"/>
             <input type="hidden" name="lon" id="lon" />
-            <input type="submit" class="button" value="Go!" />
+            <input type="submit" class="search-submit" class="button" value="Go!" />
         </form>
     </div>
 </div>
@@ -55,6 +55,8 @@ var unlock = unlock || {
         $('#verb').select2({
             placeholder: 'Eat, hike, drink, etc.',
             containerCssClass: 'activity-select'
+        }).on('change', function() {
+            $('#location').select2('open');
         });
 
         $('#location').select2({
@@ -82,6 +84,7 @@ var unlock = unlock || {
             }
         }).on('change', function(e) {
             unlock.setLocationFieldValue(e.added.type, e.added.object_id);
+            $('.search-submit').trigger('focus');
         });
     },
     getVerb: function() {
