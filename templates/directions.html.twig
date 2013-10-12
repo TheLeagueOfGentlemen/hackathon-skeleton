@@ -7,7 +7,7 @@
 
 {% block content %}
 <div class="list screen">
-    <ul class="fancy-list attraction-list">
+    <ul class="reveal-list fancy-list attraction-list">
     {% for attraction in attractions %}
         {% set verb = attraction.firstVerb() %}
         <li class="attraction" data-geolocation="[{{ attraction.lat }}, {{ attraction.lon }}]">
