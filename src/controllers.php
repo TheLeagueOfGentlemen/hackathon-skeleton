@@ -81,7 +81,7 @@ $app->get('/adventure/results/{criteriaId}', function(Request $request, $criteri
     $whereTo->setAdventureCriteria($criteria);
     $attractions = $whereTo->getAttractions();
 
-    $data = compact('attractions');
+    $data = compact('criteria', 'attractions');
 
     return $app['twig']->render('search_results.html.twig', $data);
 });
@@ -140,6 +140,20 @@ $app->get('/whereto/{id}', function($id) use ($app) {
     var_dump(array_map(function ($a) {return $a->name;}, iterator_to_array($attractions)));
     return new JsonResponse($attractions);
 });
+
+
+
+// WhereTo
+$app->get('/criteria/{criteriaId}/attraction/replace/{attractionId}', function($criteriaId, $attractionId) use ($app) {
+    $crit = AdventureCriteria::find($criteriaId);
+
+    $attractions = $crit->getAttractions();
+
+    $attractions = $app['where_to']->setAdventureCriteria($crit)->getAttractions();
+
+    return new JsonResponse($attractions);
+});
+
 
 /* ------------------------------------------------*/
 /* App

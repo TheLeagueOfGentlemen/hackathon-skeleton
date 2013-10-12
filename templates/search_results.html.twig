@@ -3,7 +3,7 @@
 {% block content %}
 {% for attraction in attractions %}
 <div class="attraction">
-    <h2>{{ attraction.name }}</h2>
+    <h2>{{ attraction.name }} <button data-provides="attraction-replace" data-attraction="{{ attraction.id }}">X</button></h2>
     <p>{{ attraction.teaser }}</p>
 </div>
 {% endfor %}
@@ -11,5 +11,26 @@
 
 {% block scripts %}
 {{ parent() }}
-{% endblock %}
+<script type="text/javascript" charset="utf-8">
+var unlock = unlock || {};
 
+unlock.results = {
+    criteria: {{ criteria.id }},
+    replace_url: '/index_dev.php/criteria/{{ criteria.id }}/attraction/replace/',
+    getReplaceUrl: function(attraction_id) {
+        return this.replace_url + attraction_id;
+    },
+    init: function() {
+        var _this = this;
+        $('[data-provides="attraction-replace"]').on('click', function(e) {
+            var $btn = $(e.target);
+            $.getJSON(_this.getReplaceUrl($btn.data('attraction')), function(data) {
+                console.log(data);
+            });
+        });
+    }
+};
+
+unlock.results.init();
+</script>
+{% endblock %}
