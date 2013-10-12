@@ -7,40 +7,20 @@
 
 {% block content %}
 <div class="list screen">
-    <ul class="fancy-list">
-        <li>
+    <ul class="fancy-list attraction-list">
+    {% for attraction in attractions %}
+        <li class="attraction" data-geolocation="[{{ attraction.lat }}, {{ attraction.lon }}]">
             <div class="hiking badge">
                 <span></span>
             </div>
             <div class="toggle">
-                <p>Hiking @ <strong>Mt Philo</strong></p>
+                <p><strong>{{ attraction.name }}</strong></p>
             </div>
             <div>
-                <span>X</span>
+                <span data-provides="attraction-replace" data-attraction="{{ attraction.id }}">X</span>
             </div>
         </li>
-        <li>
-            <div class="drinking badge">
-                <span></span>
-            </div>
-            <div class="toggle">
-                <p>Drinking @ <strong>Fiddlehead</strong></p>
-            </div>
-            <div>
-                <span>X</span>
-            </div>
-        </li>
-        <li>
-            <div class="eating badge">
-                <span></span>
-            </div>
-            <div class="toggle">
-                <p>Dinner @ <strong>Shelburne Farms</strong></p>
-            </div>
-            <div>
-                <span>X</span>
-            </div>
-        </li>
+    {% endfor %}
     </ul>
     <div id="map-canvas" class="google-map" style="height: 200px; width: 100%;"><img src="/img/map.png" /></div>
     <div id="directions" class="adventure">
@@ -50,6 +30,20 @@
 {% endblock %}
 
 {% block scripts %}
+<script type="text/x-template" id="attraction-tpl">
+<li class="attraction" data-geolocation="[<%- lat %>, <%- lon %>]">
+    <div class="hiking badge">
+        <span></span>
+    </div>
+    <div class="toggle">
+        <p><strong><%- name %></strong></p>
+    </div>
+    <div>
+        <span data-provides="attraction-replace" data-attraction="<%- id %>">X</span>
+    </div>
+</li>
+</script>
+
 {{ parent() }}
 <script src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=geometry"></script>
 <script src="/js/gmap-extend.js"></script>
@@ -94,8 +88,33 @@
 	$(".menu, .overlay").click(function() {
 		$("nav").toggleClass( "open" );
 	});
-	$(".toggle").click(function() {
-		$(this).closest("li").toggleClass( "open" );
+    $('.attraction-list').on('click', '.toggle', function(e) {
+		$(e.currentTarget).closest("li").toggleClass( "open" );
 	});
+</script>
+<script type="text/javascript" charset="utf-8">
+var unlock = unlock || {};
+
+unlock.results = {
+    criteria: {{ criteria.id }},
+    replace_url: '/index_dev.php/criteria/{{ criteria.id }}/attraction/replace/',
+    getReplaceUrl: function(attraction_id) {
+        return this.replace_url + attraction_id;
+    },
+    init: function() {
+        var _this = this;
+        this.result_tpl = _.template($('#attraction-tpl').text());
+        $('.attraction-list').on('click', '[data-provides="attraction-replace"]', function(e) {
+            var $btn = $(e.currentTarget),
+                $old_attraction = $btn.parents('.attraction');
+            $.getJSON(_this.getReplaceUrl($btn.data('attraction')), function(data) {
+                var $new_attraction = $($.trim(_this.result_tpl(data)));
+                $old_attraction.replaceWith($new_attraction);
+            });
+        });
+    }
+};
+
+unlock.results.init();
 </script>
 {% endblock %}

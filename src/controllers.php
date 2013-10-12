@@ -53,9 +53,32 @@ $app->get('/user/{id}', function(Request $request, $id) use ($app) {
 /* Templates
 /*-------------------------------------------------*/
 // Display user profile
-$app->get('/directions', function(Request $request) use ($app) {
-    return $app['twig']->render('directions.html.twig', array());
-});
+$app->get('/directions/{criteriaId}', function(Request $request, $criteriaId) use ($app) {
+    $criteria = AdventureCriteria::find($criteriaId);
+    if (!$criteria) die('Bad criteria id');
+
+    $whereTo = $app['where_to'];
+    $whereTo->setAdventureCriteria($criteria);
+    $attractions = $whereTo->getAttractions();
+
+    foreach ($attractions as $a) {
+        $isExisting = false;
+        foreach ($criteria->getAttractionCollection()->getResults() as $att) {
+            if ($att->id === $a->id) {
+                $isExisting = true;
+            }
+        }
+        if ( ! $isExisting) {
+            $criteria->getAttractionCollection()->attach($a['id']);
+        }
+    }
+    $criteria->save();
+
+    $data = compact('criteria', 'attractions');
+    return $app['twig']->render('directions.html.twig', $data);
+})
+->bind('directions')
+;
 
 /* ------------------------------------------------*/
 /* Adventures
@@ -143,7 +166,7 @@ $app->post('/criteria', function(Request $request) use ($app) {
     $criteria = $app['adventure_manager']->persistAdventureCriteria($data);
 
     return $app->redirect(
-        $app['url_generator']->generate('search_results', array(
+        $app['url_generator']->generate('directions', array(
             'criteriaId' => $criteria->id
         ))
     );
