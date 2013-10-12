@@ -1,25 +1,44 @@
+{% set _body_classes = _body_classes|default([]) %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>Foo Bar Layout</title>
 
         {% block styles %}
+        <link href="{{ app.request.basepath }}/css/app.css" rel="stylesheet" type="text/css" />
         <link href="{{ app.request.basepath }}/css/main.css" rel="stylesheet" type="text/css" />
         {% endblock %}
     </head>
-    <body>
-        {% block flash %}
-        {% if flash is defined %}
-        <div class="alert alert-{{ flash.type }}">
-            {{ flash.message }}
+    <body class="{{ _body_classes | join(' ') }}">
+        <div class="device">
+            <a class="menu"><span></span></a>
+            <nav>
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Badges</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+                <div class="overlay"></div>
+                <h5>Unlock<br><span>Vermont</span></h5>
+            </nav>
+            {% block flash %}
+            {% if flash is defined %}
+            <div class="alert alert-{{ flash.type }}">
+                {{ flash.message }}
+            </div>
+            {% endif %}
+            {% endblock flash %}
+            {% block content %}{% endblock %}
         </div>
-        {% endif %}
-        {% endblock flash %}
-
-        {% block content %}{% endblock %}
-
         {% block scripts %}
-		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="/js/jquery.js"></script>
+        <script src="/js/lodash.js"></script>
+        <script>
+        $(".menu, .overlay").click(function() {
+          $("nav").toggleClass("open");
+        });
+        </script>
         {% endblock %}
     </body>
 </html>

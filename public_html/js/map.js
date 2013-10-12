@@ -135,6 +135,13 @@ map = (function (window, undefined) {
         polylines.splice(i, 1);
         return public;
     }
+    
+    function resize (width, height) {
+        map.getDiv().style.width = width;
+        map.getDiv().style.height = height;
+        gMap.event.trigger(map, 'resize');
+        return public;
+    }
 
     function blackout () {
         var everything = [[0, -90],[0, 90],[90, -90],[90, 90]].map(mapUtils.toLatLng);
@@ -169,6 +176,7 @@ map = (function (window, undefined) {
         getMap: function () {
             return map;
         },
+        resize: resize
     }, public;
 }(window));
 

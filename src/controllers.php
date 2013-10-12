@@ -48,6 +48,15 @@ $app->get('/user/{id}', function(Request $request, $id) use ($app) {
     }
 });
 
+
+/* ------------------------------------------------*/
+/* Templates
+/*-------------------------------------------------*/
+// Display user profile
+$app->get('/directions', function(Request $request) use ($app) {
+    return $app['twig']->render('directions.html.twig', array());
+});
+
 /* ------------------------------------------------*/
 /* Adventures
 /*-------------------------------------------------*/
