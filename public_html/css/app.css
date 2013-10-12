@@ -303,6 +303,9 @@ input[type="text"]:focus{
 .alpine-skiing span, .nordic-skiing span{
 	background-image: url('../img/skiing-badge.png');
 }
+.shopping span{
+	background-image: url('../img/shopping-badge.png');
+}
 
 /* 1 - Landing Page */
 
@@ -344,7 +347,7 @@ ul.fancy-list li{
 ul.fancy-list li.complete {
     background: #000;
 }
-ul.fancy-list li:before{
+ul.reveal-list li:before{
 	content: "";
 	width: 0px;
 	height: 0px;
