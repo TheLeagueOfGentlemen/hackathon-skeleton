@@ -23,7 +23,7 @@ class WhereTo
         $defaultDistance = $distance = 5;
         $crit = $this->criteria;
         $attractions = $crit->getAttractions();
-        $flunkedIDs = array();
+        $flunkedCatIDs = array();
         while($attractions->count() < 3) {
 
             unset($newAttraction);
@@ -31,7 +31,7 @@ class WhereTo
 
             //Based on previous/first attractions category
             if ($attractions->count() > 0) {
-                $flunkedIDs = self::flunkCategory(iterator_to_array($attractions));
+                $flunkedCatIDs = self::flunkCategory(iterator_to_array($attractions));
             } else {
                 $attractions->put($attractions->count(), $attraction);
             }
@@ -42,7 +42,7 @@ class WhereTo
 
             //Loop until an attraction is found, expanding the radius each time.
             while (!isset($newAttraction) or empty($newAttraction)) {
-                $query = $this->distanceQuery($attractions, $distance, $lat, $lon, $flunkedIDs);
+                $query = $this->distanceQuery($attractions, $distance, $lat, $lon, $flunkedCatIDs);
 
                 $newAttractions = $query->get();
 
@@ -59,8 +59,8 @@ class WhereTo
         return $attractions;
     }
 
-    private function distanceQuery($attractions, $distance, $lat, $lon, $flunked) {
-        $skipIDs = array_merge($flunked, $this->notAttractionIDs($attractions));
+    private function distanceQuery($attractions, $distance, $lat, $lon, $flunkedCatIDs) {
+        $skipIDs = $this->notAttractionIDs($attractions);
         $query = Attraction::join('attraction_category', 'attraction_category.attraction_id', '=', 'attraction.id')
                     ->join('category', 'category.id', '=', 'attraction_category.category_id')
                     ->select($this->DB->connection()->raw("(
@@ -76,6 +76,9 @@ class WhereTo
                       ) AS distance, attraction.*"));
         if ($skipIDs) {
             $query->whereNotIn('attraction.id', $skipIDs);
+        }
+        if ($flunkedCatIDs) {
+            $query->WhereNotIn('category.id', $flunkedCatIDs);
         }
         $query->having('distance', '<=', $distance)
               ->orderBy('distance')
@@ -195,6 +198,7 @@ class WhereTo
                 return Verb::find($c->verb_id)->name;
             }, iterator_to_array($a->getCategories()->getResults()));
         }, $attractions)));
+        //var_dump($verbs);
 
         //Flunk categories that shouldn't show up in multiples
         $flunk = array();
