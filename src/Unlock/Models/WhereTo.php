@@ -20,10 +20,10 @@ class WhereTo
     }
 
     public function getAttractions () {
-        $defaultDistance = $distance = .2;
+        $defaultDistance = $distance = 5;
         $crit = $this->criteria;
         $attractions = $crit->getAttractions();
-        $flunkedIDs = null;
+        $flunkedIDs = array();
         while($attractions->count() < 3) {
 
             unset($newAttraction);
@@ -42,13 +42,15 @@ class WhereTo
 
             //Loop until an attraction is found, expanding the radius each time.
             while (!isset($newAttraction) or empty($newAttraction)) {
-                $query = $this->distanceQuery($attractions, $distance, $lat, $lon);
-                if (!empty($flunkedIDs)) {
-                    $query = $query->whereNotIn('category.id', $flunkedIDs);//Not flunked
-                }
-                $newAttraction = $query->first();
+                $query = $this->distanceQuery($attractions, $distance, $lat, $lon, $flunkedIDs);
 
-                $distance += .2;
+                $newAttractions = $query->get();
+
+                $newAttractions = iterator_to_array($newAttractions);
+                shuffle($newAttractions);
+                $newAttraction = array_pop($newAttractions);
+
+                $distance += 1;
                 if ($newAttraction) {
                     $attractions->put($attractions->count(), $newAttraction);
                 }
@@ -57,8 +59,8 @@ class WhereTo
         return $attractions;
     }
 
-    private function distanceQuery($attractions, $distance, $lat, $lon) {
-        $skipIDs = $this->notAttractionIDs($attractions);
+    private function distanceQuery($attractions, $distance, $lat, $lon, $flunked) {
+        $skipIDs = array_merge($flunked, $this->notAttractionIDs($attractions));
         $query = Attraction::join('attraction_category', 'attraction_category.attraction_id', '=', 'attraction.id')
                     ->join('category', 'category.id', '=', 'attraction_category.category_id')
                     ->select($this->DB->connection()->raw("(
@@ -71,12 +73,14 @@ class WhereTo
                             * PI() / 180)
                         ) * 180 / PI())
                           * 60 * 1.1515
-                      ) AS distance, attraction.*"))
-                    ->having('distance', '<=', $distance)
-                    ->orderBy($this->DB->connection()->raw('RAND()'));
+                      ) AS distance, attraction.*"));
         if ($skipIDs) {
             $query->whereNotIn('attraction.id', $skipIDs);
         }
+        $query->having('distance', '<=', $distance)
+              ->orderBy('distance')
+              ->take(10);
+
         return $query;
     }
 
@@ -166,7 +170,7 @@ class WhereTo
         else {
             $query = Attraction::orderBy($this->DB->connection()->raw('RAND()'));
             if ($skipIDs) {
-                $query->whereNotIn('id', $this->notAttractionIDs($attractions));
+                $query->whereNotIn('id', $skipIDs);
             }
             return $query->take(1)->get()->first();
         }
