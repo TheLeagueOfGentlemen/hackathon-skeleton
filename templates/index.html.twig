@@ -1,6 +1,70 @@
 {% extends "layout.html.twig" %}
 
+{% block styles %}
+{{ parent() }}
+<link rel="stylesheet" href="/js/select2/select2.css" type="text/css" />
+{% endblock %}
+
 {% block content %}
-<h1>Some unimpressive home page</h1>
-<p>Doesnt do much.</p>
+<form action="" method="get" accept-charset="utf-8">
+    I want to <input type="hidden" name="action" id="action" placeholder="Hike, eat, drink, etc." value="" style="width: 200px;" />
+    at <input type="hidden" name="location" id="location" value="" style="width: 200px;" />
+</form>
+{% endblock %}
+
+{% block scripts %}
+{{ parent() }}
+<script type="text/javascript" src="/js/select2/select2.js"></script>
+<script type="text/javascript">
+
+var unlock = unlock || {
+    current_category: null,
+};
+
+$('#action').select2({
+    ajax: {
+        url: '/index_dev.php/category',
+        dataType: 'json',
+        results: function(data, page) {
+            return { results: data };
+        }
+    },
+    formatResult: function(object) {
+        return object.name;
+    },
+    formatSelection: function(object) {
+        return object.name;
+    }
+}).on('change', function(e) {
+    unlock.current_category = e.added.id;
+});
+
+$('#location').select2({
+    ajax: {
+        url: function(term, page, context) {
+            return [
+                '/index_dev.php/adventure?category=',
+                unlock.current_category,
+                '&term=',
+                term
+            ].join('');
+        },
+        dataType: 'json',
+        minimumInputLength: 3,
+        results: function(data, page) {
+            return { results: data };
+        }
+    },
+    formatResult: function(object) {
+        return object.name;
+    },
+    formatSelection: function(object) {
+        return object.name;
+    }
+}).on('change', function(e) {
+    console.log(e.added.type, e.added.object_id);
+});
+
+</script>
+
 {% endblock %}
