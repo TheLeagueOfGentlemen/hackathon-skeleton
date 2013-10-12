@@ -1,12 +1,20 @@
 <?php
 
-use Silex\Application,
-    Silex\Provider;
-
-use Foo\Controller;
-use Foo\Model\User;
+use Symfony\Component\HttpFoundation\Request,
+    Silex\Application,
+    Silex\Provider,
+    Unlock\Models\User,
+    Unlock\Models\Adventure,
+    Unlock\Models\Attraction,
+    Unlock\Models\Category;
 
 $app = new Application();
+
+$app['debug'] = true;
+
+// Enabled put/delete/option
+Request::enableHttpMethodParameterOverride();
+
 $app->register(new Provider\UrlGeneratorServiceProvider());
 $app->register(new Provider\ValidatorServiceProvider());
 $app->register(new Provider\ServiceControllerServiceProvider());
@@ -15,13 +23,23 @@ $app->register(new Provider\TwigServiceProvider(), array(
     'twig.options' => array('cache' => __DIR__.'/../cache/twig'),
 ));
 
+
 // Session
 $app->register(new Provider\SessionServiceProvider());
 
 // Database
-$app->register(new Foo\ServiceProvider\EloquentServiceProvider());
+$app->register(new Unlock\ServiceProviders\EloquentServiceProvider());
 
-$app['foo.controller'] = $app->share(function() use ($app) {
+// Model quick access
+$app['adventure_manager'] = function () use ($app) {
+    return new Unlock\Models\AdventureManager($app['db']);
+};
+
+$app['user_manager'] = function () use ($app) {
+    return new Unlock\Models\UserManager();
+};
+
+/*$app['foo.controller'] = $app->share(function() use ($app) {
     return new Foo\Controller\FooController($app);
 });
 
@@ -42,13 +60,13 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
 /**
  * Before Filters
  */
-$app->before( function() use ( $app ) {
+/*$app->before( function() use ( $app ) {
     $flash = $app[ 'session' ]->get( 'flash' );
     $app[ 'session' ]->set( 'flash', null );
 
     if ( !empty( $flash ) ) {
         $app[ 'twig' ]->addGlobal( 'flash', $flash );
     }
-});
+});*/
 
 return $app;
