@@ -267,6 +267,15 @@ select:focus{
 .eating span{
 	background-image: url('../img/eating-badge.png');
 }
+.learning span{
+	background-image: url('../img/learning-badge.png');
+}
+.sleeping span{
+	background-image: url('../img/sleeping-badge.png');
+}
+.skiing span{
+	background-image: url('../img/skiing-badge.png');
+}
 
 /* 1 - Landing Page */
 
