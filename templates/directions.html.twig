@@ -14,7 +14,7 @@
                 <span></span>
             </div>
             <div class="toggle">
-                <p><strong>{{ attraction.name }}</strong></p>
+                <p><strong>{{ attraction.name }}</strong><br />{{ attraction.city().first() ? attraction.city().first().name : '' }}</p>
             </div>
             <div>
                 <span data-provides="attraction-replace" data-attraction="{{ attraction.id }}">X</span>
