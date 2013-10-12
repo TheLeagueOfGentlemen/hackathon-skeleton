@@ -46,12 +46,12 @@ class WhereTo
                         ) * 180 / PI())
                           * 60 * 1.1515
                       ) AS distance"))
-                    ->where('distance', '<=' $distance)
+                    ->where('distance', '<=', $distance)
                     ->whereNotIn('id', $this->notAttractionIDs())
                     ->whereNotIn('category.id', $flunkedIDs)//Not flunked
-                    ->take(1)->get(1);
+                    ->take(1)->get();
                 $distance += 5;
-            };
+            }
             $default = $defaultDistance;
         }
         return $attraction;
