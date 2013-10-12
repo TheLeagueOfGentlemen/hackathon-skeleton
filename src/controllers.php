@@ -100,6 +100,16 @@ $app->get('/verb/{id}', function($id) use ($app) {
     return new JsonResponse($verb->getCategories()->get()->toArray());
 });
 
+$app->get('/preference/{id}', function(Request $request, $id) use ($app) {
+    if ($request->isMethod('POST')) {
+        $app['user_manager']->setPreferences($id, $request->request->get('preferences'));
+    }
+    $prefs = $app['user_manager']->getPreferences($id);
+    return new JsonResponse($prefs->get()->toArray());
+})
+->method('GET|POST');
+
+
 /* ------------------------------------------------*/
 /* App
 /*-------------------------------------------------*/
