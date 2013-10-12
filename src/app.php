@@ -1,13 +1,16 @@
 <?php
 
-use Silex\Application,
+use Symfony\Component\HttpFoundation\Request,
+    Silex\Application,
     Silex\Provider;
 
-use Foo\Controller;
-use Foo\Model\User;
-
 $app = new Application();
+
 $app['debug'] = true;
+
+// Enabled put/delete/option
+Request::enableHttpMethodParameterOverride();
+
 $app->register(new Provider\UrlGeneratorServiceProvider());
 $app->register(new Provider\ValidatorServiceProvider());
 $app->register(new Provider\ServiceControllerServiceProvider());
@@ -15,6 +18,7 @@ $app->register(new Provider\TwigServiceProvider(), array(
     'twig.path'    => array(__DIR__.'/../templates'),
     'twig.options' => array('cache' => __DIR__.'/../cache/twig'),
 ));
+
 
 // Session
 $app->register(new Provider\SessionServiceProvider());
