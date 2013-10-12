@@ -122,7 +122,9 @@ $app->get('/verb/{id}', function($id) use ($app) {
 // WhereTo
 $app->get('/whereto/{id}', function($id) use ($app) {
     $crit = AdventureCriteria::find($id);
-    return new JsonResponse($app['where_to']->setAdventureCriteria($crit)->getAttractions());
+    $attractions = $app['where_to']->setAdventureCriteria($crit)->getAttractions();
+    var_dump(array_map(function ($a) {return $a->name;}, iterator_to_array($attractions)));
+    return new JsonResponse($attractions);
 });
 
 /* ------------------------------------------------*/
