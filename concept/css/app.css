@@ -285,16 +285,15 @@ ul.fancy-list{
 	padding: 0;
 	float: left;
 	width: 100%;
+	background: #06610D;
 }
 ul.fancy-list li{
 	list-style: none;
 	float: left;
-	background: #06610D;
 	color: white;
 	width: 190%;
 	position: relative;
-	-webkit-transition: margin-left .3s,
-						background .2s;
+	-webkit-transition: all .3s;
 	box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.15), 
 				inset 0 -2px 2px rgba(0, 0, 0, 0.15);
 }
@@ -329,6 +328,14 @@ ul.fancy-list li div:last-child{
 	padding: 20px 15px;
 	width: 15%;
 }
+ul.fancy-list li div.toggle p{
+	margin: 0;
+	color: #ddd;
+}
+ul.fancy-list li div.toggle p:first-child{
+	margin-bottom: 10px;
+	color: white;
+}
 ul.fancy-list li div span{
 	width: 55px;
 	height: 55px;
@@ -353,7 +360,7 @@ ul.fancy-list li div:last-child span{
 }
 ul.fancy-list li.open{
 	margin-left: -90%;
-	background-color: #0A500F;
+	background-color: rgba(160, 160, 160, 0.1);
 }
 ul.fancy-list li.open:before{
 	border-right: 15px solid #FFF;
@@ -381,6 +388,49 @@ ul.adventure-list li:nth-child(2n+0) div:first-child span:after{
 ul.adventure-list li:nth-child(3n+0) div:first-child span:after{
 	content:"3";
 }
+ul.fancy-list li.complete:before {
+	top: 25%;
+	border-left: 10px solid rgba(44, 44, 44, 0.5);
+	border-top: 10px solid rgba(0, 0, 0, 0);
+	border-bottom: 10px solid rgba(0, 0, 0, 0);
+}
+ul.fancy-list li.complete.open:before{
+	border-right: 10px solid #FFF;
+	border-top: 10px solid rgba(0, 0, 0, 0);
+	border-bottom: 10px solid rgba(0, 0, 0, 0);
+	border-left: none;
+}
+ul.adventure-list li.complete div{
+	padding: 5px 10px;
+}
+ul.adventure-list li.complete div p{
+	display: none;
+}
+ul.adventure-list li.complete div p:first-child {
+	display: block;
+	margin: 7px 0 0 -7px;
+	font-size: .8em;
+}
+ul.adventure-list li.complete div span{
+	width: 30px;
+	height: 30px;
+	box-shadow: none;
+}
+ul.adventure-list li.complete div:last-child span{
+	display: none;
+}
+ul.adventure-list li.complete div:first-child span:after {
+	width: 30px;
+	height: 30px;
+	top: -3px;
+	left: -36px;
+	border-radius: 10px;
+}
+ul.adventure-list li.complete div:first-child span {
+	width: 30px;
+	height: 30px;
+	right: -6px;
+}
 /* 4 - Activity Detail Page */
 
 .detail.screen{
@@ -399,12 +449,10 @@ ul.adventure-list li:nth-child(3n+0) div:first-child span:after{
 .profile h3{
 	text-align: center;
 }
-ul.badge-list li{
+ul.badge-list{
 	background-color: #EEA303;
 }
-ul.badge-list li.open{
-	background-color: #C48705;
-}
+
 ul.badge-list li div.toggle{
 	width: 75%;
 }
@@ -414,14 +462,11 @@ ul.badge-list li div.toggle p:first-child{
 ul.badge-list li div.toggle p:last-child{
 	float: right;
 }
-ul.progress-list li{
+ul.progress-list{
 	background: #555;
 }
 ul.progress-list li div.toggle{
 	width: 75%;
-}
-ul.proress-list li.open{
-	background: #444;
 }
 
 /* # - Animation */
