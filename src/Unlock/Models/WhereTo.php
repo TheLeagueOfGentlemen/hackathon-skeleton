@@ -75,7 +75,7 @@ class WhereTo
                     ->having('distance', '<=', $distance)
                     ->orderBy($this->DB->connection()->raw('RAND()'));
         if ($skipIDs) {
-            $query->whereNotIn('attraction.id', $this->notAttractionIDs($attractions));
+            $query->whereNotIn('attraction.id', $skipIDs);
         }
         return $query;
     }
@@ -88,14 +88,14 @@ class WhereTo
         //If has attraction
         if ($attractions->count() and !empty($attractions[$attractions->count() - 1])) {
             return $attractions[$attractions->count() - 1];
-
         }
+
         //If has City
-        else if ($crit->city and $crit->city->count()) {
+        if ($crit->city and $crit->city->count()) {
             $attractions = City::find($crit->city->id)->attractions;
 
             $attractions = array_filter(iterator_to_array($attractions), function($attraction) use ($skipIDs, $categories) {
-                if ($skipIDs and in_array($attraction->id, $skipIds)) {
+                if ($skipIDs and in_array($attraction->id, $skipIDs)) {
                     return false;
                 }
 
@@ -110,12 +110,20 @@ class WhereTo
                 return false;
             });
 
-            shuffle($attractions);
-            return array_pop($attractions);
-
+            if ($attractions) {
+                shuffle($attractions);
+                return array_pop($attractions);
+            }
         }
-        //If has County
-        else if ($crit->county and $crit->county->count()) {
+
+        // If had city, but couldn't find shit, figure out county and try that.
+        if (($crit->city and $crit->city->count()) and (!$crit->county or ($crit->county and !$crit->county->count()))) {
+            $crit->county_id = $crit->city->county->id;
+            $crit->save();
+        }
+
+        // if has County
+        if ($crit->county and $crit->county->count()) {
             $cities = County::find($crit->county->id)->cities;
 
             $attractions = array_reduce(iterator_to_array($cities),function($result, $city) use ($skipIDs) {
@@ -124,7 +132,7 @@ class WhereTo
             }, array());
 
             $attractions = array_filter($attractions, function($attraction) use ($skipIDs, $categories) {
-                if ($skipIDs and in_array($attraction->id, $skipIds)) {
+                if ($skipIDs and in_array($attraction->id, $skipIDs)) {
                     return false;
                 }
 
@@ -140,12 +148,15 @@ class WhereTo
             });
 
 
-            shuffle($attractions);
-            return array_pop($attractions);
+            if ($attractions) {
+                shuffle($attractions);
+                return array_pop($attractions);
+            }
 
         }
+
         //Do some random shit with the geolocation
-        else if (!empty($crit->geolocation)) {
+        if (!empty($crit->geolocation)) {
             //Get attractions within a radius of their geolocation
             $query = $this->distanceQuery($attractions, 10, $lat, $lon);
             return $query->first();
