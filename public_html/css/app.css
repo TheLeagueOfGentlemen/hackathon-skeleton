@@ -80,6 +80,12 @@ body.home .device{
     right: 30px;
     left: auto;
 }
+
+#preferences {
+    padding: 15px 15px;
+    background-color: white;
+}
+
 .section{
 	padding: 0 30px;
 	color: white;

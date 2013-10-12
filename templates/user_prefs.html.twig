@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<div id="preferences">
+
 <h2>Pick your categories:</h2>
 
 <form name="prefs_form" action="{{ path('preferences', {id: user.id}) }}" method="POST">
@@ -16,5 +18,5 @@
 </form>
 
 <!-- <a href="{{ app.request.baseUrl }}">Return Home</a> -->
-
+</div><!-- preferences -->
 {% endblock %}
