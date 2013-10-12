@@ -41,26 +41,32 @@ body.home .device{
 }
 .adventure{
 	padding: 30px 30px 20px;
+	background: #06610D;
+	z-index: 2;
+    width: 100%;
+}
+#directions{
+	padding: 30px 30px 20px;
 	background: rgba(255, 255, 255, 0.5);
 	position: absolute;
 	z-index: 2;
     bottom: 0;
     width: 100%;
 }
-.adventure div {
+#directions div {
     position:relative;
 }
-.adventure blockquote{
+#directions blockquote{
     padding: 0;
     margin: 0;
 }
-.adventure var,
-.adventure strong{
+#directions var,
+#directions strong{
     position: absolute;
     top: 10px;
     left: 30px;
 }
-.adventure strong {
+#directions strong {
     right: 30px;
     left: auto;
 }
@@ -283,8 +289,6 @@ input[type="text"]:focus{
 }
 
 .screen.directions .fancy-list {
-    height: 0;
-    padding: 0;
     overflow: hidden;
 }
 
@@ -372,6 +376,68 @@ ul.fancy-list li.open:before{
 	border-bottom: 15px solid rgba(0, 0, 0, 0);
 	border-left: none;
 	left: 50%;
+}
+ul.attraction-list li div:first-child span:after {
+	content: "1";
+	width: 30px;
+	height: 30px;
+	background: #111;
+	display: block;
+	position: absolute;
+	top: 29px;
+	left: 4px;
+	border-radius: 20px;
+	color: #FFF;
+	line-height: 1.8em;
+}
+ul.attraction-list li:nth-child(2n+0) div:first-child span:after{
+	content:"2";
+}
+ul.attraction-list li:nth-child(3n+0) div:first-child span:after{
+	content:"3";
+}
+.directions ul.fancy-list li:before {
+	top: 25%;
+	border-left: 10px solid rgba(44, 44, 44, 0.5);
+	border-top: 10px solid rgba(0, 0, 0, 0);
+	border-bottom: 10px solid rgba(0, 0, 0, 0);
+}
+.directions ul.fancy-list li.open:before{
+	border-right: 10px solid #FFF;
+	border-top: 10px solid rgba(0, 0, 0, 0);
+	border-bottom: 10px solid rgba(0, 0, 0, 0);
+	border-left: none;
+}
+.directions ul.attraction-list li div{
+	padding: 5px 10px;
+}
+.directions ul.attraction-list li div p{
+	display: none;
+}
+.directions ul.attraction-list li div p:first-child {
+	display: block;
+	margin: 7px 0 0 -7px;
+	font-size: .8em;
+}
+.directions ul.attraction-list li div span{
+	width: 30px;
+	height: 30px;
+	box-shadow: none;
+}
+.directions ul.attraction-list li div:last-child span{
+	display: none;
+}
+.directions ul.attraction-list li div:first-child span:after {
+	width: 30px;
+	height: 30px;
+	top: -3px;
+	left: -36px;
+	border-radius: 10px;
+}
+.directions ul.attraction-list li div:first-child span {
+	width: 30px;
+	height: 30px;
+	right: -6px;
 }
 
 /* 4 - Activity Detail Page */

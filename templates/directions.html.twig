@@ -23,7 +23,7 @@
     {% endfor %}
     </ul>
     <div id="map-canvas" class="google-map" style="height: 200px; width: 100%;"><img src="/img/map.png" /></div>
-    <div id="directions" class="adventure">
+    <div id="directions" class="directions">
     </div>
 </div>
 
@@ -69,7 +69,7 @@
 
     function confirm () {
         $('.screen').removeClass('list').addClass('directions');
-        map.resize('100%', '508px');
+        map.resize('100%', '354px');
         directions.zoom();
     }
 
