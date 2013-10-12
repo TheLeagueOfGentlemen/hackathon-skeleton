@@ -18,6 +18,15 @@ class Attraction extends Model
         return $this->belongsToMany('\Unlock\Models\Category');
     }
 
+    public function firstVerb() {
+        foreach ($this->categories as $cat) {
+            if ($cat->verb) {
+                return $cat->verb;
+            }
+        }
+        return null;
+    }
+
     public function getCities () {
         return $this->hasOne('\Unlock\Models\City');
     }

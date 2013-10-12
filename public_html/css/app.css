@@ -266,6 +266,7 @@ input[type="text"]:focus{
 }
 
 /* Badges */
+
 .badge span{
 	background-image: url('../img/badge.png');
 }
@@ -275,6 +276,9 @@ input[type="text"]:focus{
 .white-badge span{
 	background-image: url('../img/badge-white.png');
 }
+.map-badge span{
+	background-image: url('../img/map-badge.png');
+}
 .hiking span{
 	background-image: url('../img/hiking-badge.png');
 }
@@ -283,6 +287,15 @@ input[type="text"]:focus{
 }
 .eating span{
 	background-image: url('../img/eating-badge.png');
+}
+.learning span{
+	background-image: url('../img/learning-badge.png');
+}
+.sleeping span{
+	background-image: url('../img/sleeping-badge.png');
+}
+.alpine-skiing span, .nordic-skiing span{
+	background-image: url('../img/skiing-badge.png');
 }
 
 /* 1 - Landing Page */

@@ -1,0 +1,190 @@
+[
+  {
+    "name": "Burrows Trail",
+    "trailmarker": {
+      "lat": "44.3039524580006",
+      "lng": "-72.9108715765498"
+    },
+    "description": null,
+    "trailuses": [
+      "Hiking Trail",
+      "Natural Area"
+    ],
+    "length": 32.0,
+    "trailhead": "Various trailheads. See details below.",
+    "subname": null,
+    "address": {
+      "town": "Huntington Center",
+      "country": "United States of America",
+      "county": "Chittenden County",
+      "state": "Vermont",
+      "postcode": "05462",
+      "country_code": "us",
+      "road": "Camels Hump Rd"
+    },
+    "lengthunits": "miles",
+    "id": 455,
+    "features": "Camel's Hump is one of Vermont's highest mountain peaks, and easily the most recognizable by its double-humped profile."
+  },
+  {
+    "name": "Monroe Trail",
+    "trailmarker": {
+      "lat": "44.3224631108791",
+      "lng": "-72.8830204960098"
+    },
+    "description": null,
+    "trailuses": [
+      "Hiking Trail",
+      "Natural Area"
+    ],
+    "length": 32.0,
+    "trailhead": "Various trailheads. See details below.",
+    "subname": null,
+    "address": {
+      "town": "North Duxbury",
+      "country": "United States of America",
+      "county": "Washington",
+      "state": "Vermont",
+      "country_code": "us"
+    },
+    "lengthunits": "miles",
+    "id": 455,
+    "features": "Camel's Hump is one of Vermont's highest mountain peaks, and easily the most recognizable by its double-humped profile."
+  },
+  {
+    "name": "Dean Trail",
+    "trailmarker": {
+      "lat": "44.3093798428345",
+      "lng": "-72.8746803932022"
+    },
+    "description": null,
+    "trailuses": [
+      "Hiking Trail",
+      "Natural Area"
+    ],
+    "length": 32.0,
+    "trailhead": "Various trailheads. See details below.",
+    "subname": null,
+    "address": {
+      "city": "Montpelier",
+      "country_code": "us",
+      "footway": "Dean Trail",
+      "country": "United States of America",
+      "county": "Washington County",
+      "state": "Vermont",
+      "address29": "Hump Brook Campsite"
+    },
+    "lengthunits": "miles",
+    "id": 455,
+    "features": "Camel's Hump is one of Vermont's highest mountain peaks, and easily the most recognizable by its double-humped profile."
+  },
+  {
+    "name": "Forest City Trail",
+    "trailmarker": {
+      "lat": "44.3004562369579",
+      "lng": "-72.9168313492582"
+    },
+    "description": null,
+    "trailuses": [
+      "Hiking Trail",
+      "Natural Area"
+    ],
+    "length": 32.0,
+    "trailhead": "Various trailheads. See details below.",
+    "subname": null,
+    "address": {
+      "town": "Huntington Center",
+      "country": "United States of America",
+      "county": "Chittenden County",
+      "state": "Vermont",
+      "postcode": "05462",
+      "country_code": "us",
+      "road": "Camels Hump Rd"
+    },
+    "lengthunits": "miles",
+    "id": 455,
+    "features": "Camel's Hump is one of Vermont's highest mountain peaks, and easily the most recognizable by its double-humped profile."
+  },
+  {
+    "name": "Allis Trail",
+    "trailmarker": {
+      "lat": "44.3036746117773",
+      "lng": "-72.88280030759202"
+    },
+    "description": null,
+    "trailuses": [
+      "Hiking Trail",
+      "Natural Area"
+    ],
+    "length": 32.0,
+    "trailhead": "Various trailheads. See details below.",
+    "subname": null,
+    "address": {},
+    "lengthunits": "miles",
+    "id": 455,
+    "features": "Camel's Hump is one of Vermont's highest mountain peaks, and easily the most recognizable by its double-humped profile."
+  },
+  {
+    "name": "Alpine Trail",
+    "trailmarker": {
+      "lat": "44.318843570598",
+      "lng": "-72.8862528449375"
+    },
+    "description": null,
+    "trailuses": [
+      "Hiking Trail",
+      "Natural Area"
+    ],
+    "length": 32.0,
+    "trailhead": "Various trailheads. See details below.",
+    "subname": null,
+    "address": {},
+    "lengthunits": "miles",
+    "id": 455,
+    "features": "Camel's Hump is one of Vermont's highest mountain peaks, and easily the most recognizable by its double-humped profile."
+  },
+  {
+    "name": "LongTrail",
+    "trailmarker": {
+      "lat": "44.2994213359",
+      "lng": "-72.8790767715"
+    },
+    "description": null,
+    "trailuses": [
+      "Hiking Trail",
+      "Natural Area"
+    ],
+    "length": 32.0,
+    "trailhead": "Various trailheads. See details below.",
+    "subname": null,
+    "address": {},
+    "lengthunits": "miles",
+    "id": 455,
+    "features": "Camel's Hump is one of Vermont's highest mountain peaks, and easily the most recognizable by its double-humped profile."
+  },
+  {
+    "name": "LongTrail",
+    "trailmarker": {
+      "lat": "44.3357770419",
+      "lng": "-72.875488808"
+    },
+    "description": null,
+    "trailuses": [
+      "Hiking Trail",
+      "Natural Area"
+    ],
+    "length": 32.0,
+    "trailhead": "Various trailheads. See details below.",
+    "subname": null,
+    "address": {
+      "town": "North Duxbury",
+      "country": "United States of America",
+      "county": "Washington",
+      "state": "Vermont",
+      "country_code": "us"
+    },
+    "lengthunits": "miles",
+    "id": 455,
+    "features": "Camel's Hump is one of Vermont's highest mountain peaks, and easily the most recognizable by its double-humped profile."
+  }
+]

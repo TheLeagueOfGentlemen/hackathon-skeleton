@@ -9,12 +9,17 @@
 <div class="list screen">
     <ul class="fancy-list attraction-list">
     {% for attraction in attractions %}
+        {% set verb = attraction.firstVerb() %}
         <li class="attraction" data-geolocation="[{{ attraction.lat }}, {{ attraction.lon }}]">
-            <div class="hiking badge">
+            <div class="{{ verb.gerund | lower | replace(' ', '-') }} badge">
                 <span></span>
             </div>
             <div class="toggle">
-                <p><strong>{{ attraction.name }}</strong><br />{{ attraction.city().first() ? attraction.city().first().name : '' }}</p>
+                <p>
+                    {% if verb %}
+                    {{ verb.gerund }}@<br />
+                    {% endif %}
+                    <strong>{{ attraction.name }}</strong><br />{{ attraction.city().first() ? attraction.city().first().name : '' }}</p>
             </div>
             <div>
                 <span data-provides="attraction-replace" data-attraction="{{ attraction.id }}">X</span>
@@ -37,11 +42,13 @@
 {% block scripts %}
 <script type="text/x-template" id="attraction-tpl">
 <li class="attraction" data-geolocation="[<%- lat %>, <%- lon %>]">
-    <div class="hiking badge">
+    <div class="<% print(verb.gerund.toLowerCase().replace(' ', '-')) %> badge">
         <span></span>
     </div>
     <div class="toggle">
-        <p><strong><%- name %></strong><br /><% print(city.name) %></p>
+        <p>
+        <% print(verb.gerund) %>@<br />
+        <strong><%- name %></strong><br /><% print(city.name) %></p>
     </div>
     <div>
         <span data-provides="attraction-replace" data-attraction="<%- id %>">X</span>
