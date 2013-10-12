@@ -267,6 +267,15 @@ select:focus{
 .eating span{
 	background-image: url('../img/eating-badge.png');
 }
+.learning span{
+	background-image: url('../img/learning-badge.png');
+}
+.sleeping span{
+	background-image: url('../img/sleeping-badge.png');
+}
+.skiing span{
+	background-image: url('../img/skiing-badge.png');
+}
 
 /* 1 - Landing Page */
 
@@ -328,9 +337,13 @@ ul.fancy-list li div:last-child{
 	padding: 20px 15px;
 	width: 15%;
 }
-ul.fancy-list li div.toggle p{
+ul.fancy-list li div.toggle p {
 	margin: 0;
-	color: #ddd;
+	color: #DDD;
+	max-width: 185px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 ul.fancy-list li div.toggle p:first-child{
 	margin-bottom: 10px;
@@ -369,7 +382,7 @@ ul.fancy-list li.open:before{
 	border-left: none;
 	left: 50%;
 }
-ul.adventure-list li div:first-child span:after {
+ul.attraction-list li div:first-child span:after {
 	content: "1";
 	width: 30px;
 	height: 30px;
@@ -382,10 +395,10 @@ ul.adventure-list li div:first-child span:after {
 	color: #FFF;
 	line-height: 1.8em;
 }
-ul.adventure-list li:nth-child(2n+0) div:first-child span:after{
+ul.attraction-list li:nth-child(2n+0) div:first-child span:after{
 	content:"2";
 }
-ul.adventure-list li:nth-child(3n+0) div:first-child span:after{
+ul.attraction-list li:nth-child(3n+0) div:first-child span:after{
 	content:"3";
 }
 ul.fancy-list li.complete:before {
@@ -400,33 +413,33 @@ ul.fancy-list li.complete.open:before{
 	border-bottom: 10px solid rgba(0, 0, 0, 0);
 	border-left: none;
 }
-ul.adventure-list li.complete div{
+ul.attraction-list li.complete div{
 	padding: 5px 10px;
 }
-ul.adventure-list li.complete div p{
+ul.attraction-list li.complete div p{
 	display: none;
 }
-ul.adventure-list li.complete div p:first-child {
+ul.attraction-list li.complete div p:first-child {
 	display: block;
 	margin: 7px 0 0 -7px;
 	font-size: .8em;
 }
-ul.adventure-list li.complete div span{
+ul.attraction-list li.complete div span{
 	width: 30px;
 	height: 30px;
 	box-shadow: none;
 }
-ul.adventure-list li.complete div:last-child span{
+ul.attraction-list li.complete div:last-child span{
 	display: none;
 }
-ul.adventure-list li.complete div:first-child span:after {
+ul.attraction-list li.complete div:first-child span:after {
 	width: 30px;
 	height: 30px;
 	top: -3px;
 	left: -36px;
 	border-radius: 10px;
 }
-ul.adventure-list li.complete div:first-child span {
+ul.attraction-list li.complete div:first-child span {
 	width: 30px;
 	height: 30px;
 	right: -6px;
