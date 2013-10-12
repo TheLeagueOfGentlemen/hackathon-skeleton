@@ -32,6 +32,8 @@ class WhereTo
             //Based on previous/first attractions category
             if ($attractions->count() > 0) {
                 $flunkedIDs = self::flunkCategory(iterator_to_array($attractions));
+            } else {
+                $attractions->put($attractions->count(), $attraction);
             }
 
             //Geo based radius for next attraction
@@ -81,36 +83,76 @@ class WhereTo
     public function getTailAttraction ($attractions) {
         $crit = $this->criteria;
         $skipIDs = $this->notAttractionIDs($attractions);
+        $categories = $this->criteria->getCategories();
 
-        if (!empty($attractions[$attractions->count() - 1])) {//If has attraction
+        //If has attraction
+        if ($attractions->count() and !empty($attractions[$attractions->count() - 1])) {
             return $attractions[$attractions->count() - 1];
 
-        } else if (!empty($crit->city)) {//If has City
+        }
+        //If has City
+        else if ($crit->city and $crit->city->count()) {
             $attractions = City::find($crit->city->id)->attractions;
 
-            $query = $attractions->orderBy($this->DB->connection()->raw('RAND()'));
-            if ($skipIDs) {
-                $query->whereNotIn('id', $skipIDs);
-            }
+            $attractions = array_filter(iterator_to_array($attractions), function($attraction) use ($skipIDs, $categories) {
+                if ($skipIDs and in_array($attraction->id, $skipIds)) {
+                    return false;
+                }
 
-            return $query->take(1)->get();
+                foreach($categories as $category) {
+                    foreach ($attraction->categories as $innerCategory) {
+                        if ($innerCategory->id == $category->id) {
+                            return true;
+                        }
+                    }
+                }
 
-        } else if (!empty($crit->county)) {//If has County
-            $attractions = County::find($crit->county)->getCities()->attractions;
+                return false;
+            });
 
-            $query = $attractions->orderBy($this->DB->connection()->raw('RAND()'));
-            if ($skipIDs) {
-                $query->whereNotIn('id', $skipIDs);
-            }
+            shuffle($attractions);
+            return array_pop($attractions);
 
-            return $query->take(1)->get();
+        }
+        //If has County
+        else if ($crit->county and $crit->county->count()) {
+            $cities = County::find($crit->county->id)->cities;
 
-        } else if (!empty($crit->geolocation)) {//Do some random shit with the geolocation
+            $attractions = array_reduce(iterator_to_array($cities),function($result, $city) use ($skipIDs) {
+                $attractions = iterator_to_array($city->attractions);
+                return array_merge($result, $attractions);
+            }, array());
+
+            $attractions = array_filter($attractions, function($attraction) use ($skipIDs, $categories) {
+                if ($skipIDs and in_array($attraction->id, $skipIds)) {
+                    return false;
+                }
+
+                foreach($categories as $category) {
+                    foreach ($attraction->categories as $innerCategory) {
+                        if ($innerCategory->id == $category->id) {
+                            return true;
+                        }
+                    }
+                }
+
+                return false;
+            });
+
+
+            shuffle($attractions);
+            return array_pop($attractions);
+
+        }
+        //Do some random shit with the geolocation
+        else if (!empty($crit->geolocation)) {
             //Get attractions within a radius of their geolocation
             $query = $this->distanceQuery($attractions, 10, $lat, $lon);
             return $query->first();
 
-        } else {//Else do some even more random shit
+        }
+        //Else do some even more random shit
+        else {
             $query = Attraction::orderBy($this->DB->connection()->raw('RAND()'));
             if ($skipIDs) {
                 $query->whereNotIn('id', $this->notAttractionIDs($attractions));
