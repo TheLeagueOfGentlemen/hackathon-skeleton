@@ -2,7 +2,11 @@
 
 use Symfony\Component\HttpFoundation\Request,
     Silex\Application,
-    Silex\Provider;
+    Silex\Provider,
+    Unlock\Models\User,
+    Unlock\Models\Adventure,
+    Unlock\Models\Attraction,
+    Unlock\Models\Category;
 
 $app = new Application();
 
@@ -25,6 +29,15 @@ $app->register(new Provider\SessionServiceProvider());
 
 // Database
 $app->register(new Unlock\ServiceProviders\EloquentServiceProvider());
+
+// Model quick access
+$app['adventure_manager'] = function () use ($app) {
+    return new Unlock\Models\AdventureManager();
+};
+
+$app['user_manager'] = function () use ($app) {
+    return new Unlock\Models\UserManager();
+};
 
 /*$app['foo.controller'] = $app->share(function() use ($app) {
     return new Foo\Controller\FooController($app);

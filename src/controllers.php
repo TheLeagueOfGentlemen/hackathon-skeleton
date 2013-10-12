@@ -27,12 +27,12 @@ $app->get('/', function () use ($app) {
 // Users
 // Dump users
 $app->get('/user', function(Request $request) use ($app) {
-    return (string)User::all();
+    return (string)$app['user_manager']->getUsers();
 });
 
 // Display user profile
 $app->get('/user/{id}', function(Request $request, $id) use ($app) {
-    $user = User::find($id);
+    $user = $app['user_manager']->getUser($id);
     if ($request->isXmlHttpRequest()) {
         return (string)$user;
     } else {
@@ -43,18 +43,21 @@ $app->get('/user/{id}', function(Request $request, $id) use ($app) {
 
 // Display new adventure
 $app->get('/adventure', function(Request $request) use ($app) {
-    $request = Request::create('/category');
-    $request->headers->set('X-Requested-With', 'XMLHttpRequest');
-    $categories = json_decode($app->handle($request, HttpKernelInterface::SUB_REQUEST, false)->getContent(), 'true');
+    // Term Search
+    if ($request->get('category') && $request->get('term')) {
+        var_dump($request->get('category'));
+        var_dump($catID);
+        var_dump($term);
+        return;
+        $result = $app['adventure_manager']->findLocationsByTerm($request->get('category'), $term);
+        var_dump($result);
+        return;
+    }
 
-    $request = Request::create('/user/' . $app['UserID']);
-    $request->headers->set('X-Requested-With', 'XMLHttpRequest');
-    $user = json_decode($app->handle($request, HttpKernelInterface::SUB_REQUEST, false)->getContent(), 'true');
+    $categories = $app['adventure_manager']->getCategories();
+    $user = $app['user_manager']->getUser($app['UserID']);
 
-    return json_encode(array('User' => $user, 'Categories' => $categories));
-
-    // Return adventure page twig template
-    //return $app['twig']->rend('adventure.html.twig', array('categories' => , 'attractions' => ''));
+    return json_encode(array('User' => $user->toArray(), 'Categories' => $categories->toArray()));
 });
 
 // Adventures
@@ -73,28 +76,23 @@ $app->put('/adventure/{id}', function($id) use ($app) {
 
 });
 
-// Create new adventure
-$app->post('/adventure', function() {
-
-});
-
 // Categories
 $app->get('/category', function() use ($app) {
-    return (string)Category::all();
+    return (string)$app['adventure_manager']->getCategories();
 });
 
 // Get all attractions from specific category
 $app->get('/category/{id}/attractions', function($id) use ($app) {
-    $attractions = Cateogry::find($id)->attractions();
+    return (string)$app['adventure_manager']->getCategoryAttractions($id);
 });
 
 $app->get('/category/{id}', function($id) use ($app) {
-    return (string)Category::find($id);
+    return (string)$app['adventure_manager']->getCategory($id);
 });
 
 // Attractions
 $app->get('/attraction/{id}', function($id) use ($app) {
-    return (string)Attraction::find($id);
+    return (string)$app['adventure_manager']->getAttraction($id);
 });
 
 

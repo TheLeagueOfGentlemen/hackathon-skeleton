@@ -6,7 +6,7 @@ class Category extends Model
 {
     protected $table = 'category';
 
-    public function attractions() {
-        return $this->belongsToMany('Attraction', 'attraction_category');
+    public function getAttractions() {
+        return $this->belongsToMany('\Unlock\Models\Attraction', 'attraction_category')->getResults();
     }
 }
