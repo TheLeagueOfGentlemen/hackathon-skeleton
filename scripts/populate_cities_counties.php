@@ -14,6 +14,7 @@ R::exec('DROP TABLE city');
 R::exec('DROP TABLE county');
 R::exec('SET FOREIGN_KEY_CHECKS = 1');
 
+$townsCounties = include __DIR__.'/../data/towns_counties_wikipedia.php';
 $townsCounties = include __DIR__.'/../data/towns_counties.php';
 
 $counties = array();
