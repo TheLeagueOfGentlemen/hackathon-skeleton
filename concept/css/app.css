@@ -12,6 +12,7 @@ body{
 	height: 100%;	
 }
 body{
+	color: white;
 	background: #333;
 	padding-top: 100px;
 	font-family: 'Lato', sans-serif;
@@ -60,7 +61,18 @@ body.home .device{
 	padding: 0;
 	list-style: none;
 }
-
+h3 {
+	padding: 10px 0;
+	text-align: center;
+	margin: 0;
+	clear: both;
+}
+h3.user-badges{
+	background: #AF7103;
+}
+h3.user-progress{
+	background: #333;
+}
 /* Menu */
 
 .menu{
@@ -203,33 +215,37 @@ nav.open h5{
 
 /* # - Inputs and Buttons */
 
-input[type="text"]{
+.select2-container{
 	width: 100%;
-	padding: 20px 30px 20px 60px;
 	border: none;
 	margin: 0 0 10px;
 	color: #999;
+	background: white;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	display: block;
 	-webkit-transition: box-shadow .2s ease,
 						background-position .3s ease;
+	-webkit-appearance: none;
 }
-input.activity-input{
+.select2-container > a:first-child{
+	padding: 20px 30px 20px 60px;
+}
+.select2-container.activity-select{
 	background: white url('../img/activity-input.png') 10px center no-repeat;
 }
-input.location-input{
+.select2-container.location-select{
 	background: white url('../img/location-input.png') 10px center no-repeat;
 }
-input[type="text"]:focus{
+select:focus{
 	background-color: #f5f5f5;
 	outline: none;
 	box-shadow: inset 0px 0px 0px 5px #FFF;
 	background-position: 10px 30%;
 }
-::-webkit-input-placeholder{
-	color: #999;
-}
+
 
 /* Badges */
+
 .badge span{
 	background-image: url('../img/badge.png');
 }
@@ -238,6 +254,9 @@ input[type="text"]:focus{
 }
 .white-badge span{
 	background-image: url('../img/badge-white.png');
+}
+.map-badge span{
+	background-image: url('../img/map-badge.png');
 }
 .hiking span{
 	background-image: url('../img/hiking-badge.png');
@@ -264,6 +283,8 @@ input[type="text"]:focus{
 ul.fancy-list{
 	margin: 0;
 	padding: 0;
+	float: left;
+	width: 100%;
 }
 ul.fancy-list li{
 	list-style: none;
@@ -271,12 +292,11 @@ ul.fancy-list li{
 	background: #06610D;
 	color: white;
 	width: 190%;
-	text-overflow: ellipsis;
-	white-space: nowrap;
 	position: relative;
-	border-bottom: 2px solid #013C0A;
 	-webkit-transition: margin-left .3s,
 						background .2s;
+	box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.15), 
+				inset 0 -2px 2px rgba(0, 0, 0, 0.15);
 }
 ul.fancy-list li:before{
 	content: "";
@@ -291,7 +311,7 @@ ul.fancy-list li:before{
 	text-align: center;
 	line-height: 1.8em;
 	font-weight: 700;
-	border-left: 15px solid #013C0A;
+	border-left: 15px solid rgba(44, 44, 44, 0.5);
 	border-top: 15px solid rgba(0, 0, 0, 0);
 	border-bottom: 15px solid rgba(0, 0, 0, 0);
 	-webkit-transition: border .2s;
@@ -300,6 +320,9 @@ ul.fancy-list li div{
 	width: 70%;
 	float: left;
 	padding: 20px 0;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 ul.fancy-list li div:first-child,
 ul.fancy-list li div:last-child{
@@ -312,18 +335,17 @@ ul.fancy-list li div span{
 	display: block;
 	margin: 0 auto;
 	text-align: center;
-	border: 3px solid #0C4607;
+	border: 3px solid rgba(34, 34, 34, 0.5);
 	border-radius: 10px;
-	box-shadow: 0 5px #0A361D;
+	box-shadow: 0 5px rgba(17, 17, 17, 0.2);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: 80%;
+	position: relative;
 }
 ul.fancy-list li div:last-child span{
 	background: #C22727;
 	color: #FFF;
-	top: 7px;
-	right: 10px;
 	line-height: 3.1em;
 	font-weight: 700;
 	border: 3px solid darkred;
@@ -340,7 +362,25 @@ ul.fancy-list li.open:before{
 	border-left: none;
 	left: 50%;
 }
-
+ul.adventure-list li div:first-child span:after {
+	content: "1";
+	width: 30px;
+	height: 30px;
+	background: #111;
+	display: block;
+	position: absolute;
+	top: 9px;
+	left: -20px;
+	border-radius: 20px;
+	color: #FFF;
+	line-height: 1.8em;
+}
+ul.adventure-list li:nth-child(2n+0) div:first-child span:after{
+	content:"2";
+}
+ul.adventure-list li:nth-child(3n+0) div:first-child span:after{
+	content:"3";
+}
 /* 4 - Activity Detail Page */
 
 .detail.screen{
@@ -349,16 +389,18 @@ ul.fancy-list li.open:before{
 
 /* 5 - User Pref Page, Uses List View Styles*/
 
-.user.screen .profile img:first-child{
+.profile img:first-child{
 	border: 5px solid #FFF;
 	margin: 20px auto 30px;
 	display: block;
 	box-shadow: 0px 10px #AAA;
 	border-radius: 5px;
 }
+.profile h3{
+	text-align: center;
+}
 ul.badge-list li{
 	background-color: #EEA303;
-	border-bottom: 2px solid #CF8D12;
 }
 ul.badge-list li.open{
 	background-color: #C48705;
@@ -372,16 +414,14 @@ ul.badge-list li div.toggle p:first-child{
 ul.badge-list li div.toggle p:last-child{
 	float: right;
 }
-ul.badge-list li span:first-child {
-	border: 3px solid #FFF;
-	box-shadow: 0 5px rgba(116, 111, 9, 0.5);
+ul.progress-list li{
+	background: #555;
 }
-ul.badge-list li:before{
-	border-left: 15px solid rgba(116, 111, 9, .5);
+ul.progress-list li div.toggle{
+	width: 75%;
 }
-.user.screen h3 {
-	border-bottom: 1px solid darkgreen;
-	padding-bottom: 10px;
+ul.proress-list li.open{
+	background: #444;
 }
 
 /* # - Animation */
@@ -412,7 +452,6 @@ ul.badge-list li:before{
 	0%	 { -webkit-transform: translateX(-50px);}
 	100% { -webkit-transform: translateX(  0px);}
 }
-
 
 /* # - Responsive */
 
