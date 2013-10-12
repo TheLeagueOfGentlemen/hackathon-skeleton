@@ -173,7 +173,8 @@ map = (function (window, undefined) {
 }(window));
 
 directions = (function (window, undefined) {
-    var d = window.document;
+    var d = window.document,
+        geo = window.navigator.geolocation;
     function directions (/*start, ...positions, onMove*/) {
         var args = _.toArray(arguments),
             onMove = _.last(args),
@@ -204,6 +205,11 @@ directions = (function (window, undefined) {
                 var current = _.head(turnBy);
                 if (nextDirection || false/*met next point*/) {
                     turnBy = _.rest(turnBy);
+                    if (!turnBy.length) {
+                        geo.clearWatch(watchID);
+                        clearInterval(intervalID);
+                        return;
+                    }
                     nextDirection = false;
                     onMove(map.getMarkerPosition(car));
                 } else {
@@ -220,9 +226,10 @@ directions = (function (window, undefined) {
                     }
                 }
             },
-            car = map.addMarker({position: turnBy[0][1], icon: 'http://fc09.deviantart.net/fs70/f/2011/237/8/c/free_cow_icon_by_cg_icons-d47tjp7.gif'});
-        setInterval(watch, 10);
-        window.navigator.geolocation.watchPosition(watch, null, {enableHighAccuracy: true});
+            watchID,
+            car = map.addMarker({position: turnBy[0][1], icon: 'http://fc09.deviantart.net/fs70/f/2011/237/8/c/free_cow_icon_by_cg_icons-d47tjp7.gif'}),
+            intervalID = setInterval(watch, 10);
+        watchID = geo.watchPosition(watch, null, {enableHighAccuracy: true});
     }
 
     function drawDirections (result) {
