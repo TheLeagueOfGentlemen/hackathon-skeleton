@@ -114,7 +114,6 @@ class WhereTo
                 return Verb::find($c->verb_id)->name;
             }, iterator_to_array($a->getCategories()->getResults()));
         }, $attractions)));
-        var_dump($verbs);
 
         //Flunk categories that shouldn't show up in multiples
         $flunk = array();
