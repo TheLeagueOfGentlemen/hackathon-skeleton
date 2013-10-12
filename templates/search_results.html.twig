@@ -1,0 +1,15 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+{% for attraction in attractions %}
+<div class="attraction">
+    <h2>{{ attraction.name }}</h2>
+    <p>{{ attraction.teaser }}</p>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block scripts %}
+{{ parent() }}
+{% endblock %}
+

@@ -72,6 +72,20 @@ $app->get('/adventure/{id}', function($id) use ($app) {
     }
 });
 
+// Display new adventure
+$app->get('/adventure/results/{criteriaId}', function(Request $request, $criteriaId) use ($app) {
+    $criteria = AdventureCriteria::find($criteriaId);
+    if (!$criteria) die('Bad criteria id');
+
+    $whereTo = $app['where_to'];
+    $whereTo->setAdventureCriteria($criteria);
+    $attractions = $whereTo->getAttractions();
+
+    $data = compact('attractions');
+
+    return $app['twig']->render('search_results.html.twig', $data);
+});
+
 // Update adventure
 $app->put('/adventure/{id}', function($id) use ($app) {
 
