@@ -37,6 +37,8 @@ foreach ($cities as $city) {
     R::store($city);
 }
 
+echo 'The following towns could not be associated.';
+echo PHP_EOL;
 foreach (array_unique($missingTowns) as $town) {
     echo $town;
     echo PHP_EOL;
