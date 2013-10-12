@@ -20,7 +20,7 @@ class WhereTo
     }
 
     public function getAttractions () {
-        $defaultDistance = $distance = 1;
+        $defaultDistance = $distance = .2;
         $crit = $this->criteria;
         $attractions = $crit->getAttractions();
         $flunkedIDs = null;
@@ -48,7 +48,7 @@ class WhereTo
                 }
                 $newAttraction = $query->first();
 
-                $distance += 1;
+                $distance += .2;
                 if ($newAttraction) {
                     $attractions->put($attractions->count(), $newAttraction);
                 }
@@ -86,7 +86,7 @@ class WhereTo
         $categories = $this->criteria->getCategories();
 
         //If has attraction
-        if ($attractions->count() and !empty($attractions[$attractions->count() - 1])) {
+        if ($attractions->count() and !empty($attractions[0])) {
             return $attractions[$attractions->count() - 1];
         }
 

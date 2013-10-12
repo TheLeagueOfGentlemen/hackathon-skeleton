@@ -19,6 +19,10 @@ use Symfony\Component\HttpKernel\HttpKernelInterface,
 $app->before(function (Request $request) use ($app) {
     // Mock User
     $app['UserID'] = 1;
+
+    // Mock User Geo
+    $app['lat'] = 44.490239;
+    $app['lon'] = -73.18479;
 });
 
 $app->get('/', function () use ($app) {
@@ -162,6 +166,8 @@ $app->post('/criteria', function(Request $request) use ($app) {
     $data = array_merge($request->request->all(), array('user_id' => $app['UserID']));
     $data['attractions'] = isset($data['attraction_id']) ? array($data['attraction_id']) : array();
     unset($data['attraction_id']);
+    $data['lat'] = $app['lat'];
+    $data['lon'] = $app['lon'];
 
     $criteria = $app['adventure_manager']->persistAdventureCriteria($data);
 
