@@ -23,10 +23,7 @@
     {% endfor %}
     </ul>
     <div id="map-canvas" class="google-map" style="height: 200px; width: 100%;"><img src="/img/map.png" /></div>
-    <button class="congrats-button">
-        Congratulations
-        <small>View Your Badges</small>
-    </button>
+    <button class="congrats-button">Congratulations</button>
     <button class="go-button">GO</button>
     <div id="directions" class="directions">
     </div>
@@ -70,17 +67,13 @@
     });
     map.init();
 
-    $('button.go-button').on('click', confirm);
+    $('button').on('click', confirm);
 
     function confirm () {
         $(this).remove();
         $('.screen').removeClass('list').addClass('directions');
         map.resize('100%', '354px');
         directions.zoom();
-    }
-
-    function complete () {
-        location.href = '/badges';
     }
 
 
@@ -90,6 +83,7 @@
         function foo (pos) {
             if (ids) {
                 ids.forEach(function (id) {
+                    console.log(id);
                     map.deleteMarker(id);
                 });
             }
@@ -120,7 +114,6 @@
                     }
                 }, function (pos) {
                     $('.fancy-list li:last-child').addClass('complete');
-                    $('button.congrats-button').addClass('show').on('click', complete);
                 });
                 return ids;
             }

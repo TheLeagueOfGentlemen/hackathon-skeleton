@@ -4,6 +4,16 @@ Authors: Evan Briggs;
 Updated: 10.11.13;
 */
 
+.gmnoprint a, .gmnoprint span {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
+}
+#GMapsID div div a div img{
+    display:none;
+}
+
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700,900);
 
 html, 
@@ -439,6 +449,51 @@ ul.attraction-list li:nth-child(3n+0) div:first-child span:after{
 	height: 30px;
 	right: -6px;
 }
+
+
+.go-button{
+	width: 55px;
+	height: 55px;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	border: 3px solid #0C4607;
+	border-radius: 10px;
+	box-shadow: 0 5px #0A361D;
+	background: #06610D;
+    color: #fFf;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 24px;
+}
+
+.congrats-button{
+    width: auto;
+	height: 55px;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	border: 3px solid #EEA303;
+	border-radius: 10px;
+	box-shadow: 0 5px #CF8D12;
+	background: #C48705;
+    color: #fFf;
+    position: absolute;
+    top: -200px;
+    right: 15px;
+    left: 15px;
+    font-size: 24px;
+}
+.congrats-button small{
+    display: block;
+    font-size: 50%;
+}
+.congrats-button.show{
+    -webkit-transition: 2s 0 top;
+    top: 253px;
+}
+
 
 /* 4 - Activity Detail Page */
 
